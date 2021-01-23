@@ -3,8 +3,8 @@
 ### -介绍
 eda软件开发
 
-### -           开发需求
-#### ------------001------------
+## -           开发需求
+### ------------001------------
 点击“新建模块”按钮后，弹出一对话框，如：
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/232300_bb1cd7c7_8607408.png "QQ截图20210123232228.png")  
 
@@ -19,8 +19,24 @@ eda软件开发
 |输入输出类型：可以在input、output、inout中选![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233346_328b5e77_8607408.png "QQ截图20210123233330.png")  
 |数据类型：可以在wire、reg中选![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233408_06262ce9_8607408.png "QQ截图20210123233336.png")  
 |数据长度：可设置正整数值  
-|颜色：此功能目前可先不做。。
-
+|颜色：此功能目前可先不做。。  
+### ------------002------------  
+双击模块矩形，可进入用户代码编辑界面  
+此时用户只需要输入算法代码 如：assign c = a & b;  
+其他代码由软件自动生成。 
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234049_deade8af_8607408.png "QQ截图20210123234037.png")  
+其中第一段的格式为module xxx[*](端口名); 如用户在最开始的对话框中填写模块名为123，且整个模块中所有的端口为a、b、c三个时  
+软件将会生成module 123[*](a,b,c);  
+第二段代码为：input/output/inout 端口名；例如用户设置a为input,b为output,c为inout。则代码为  
+input a; output b; inout c;  
+第三段代码为：端口数据类型 端口名；例如用户定义a端口为wire型，b、c端口为reg型，则：  
+wire a; reg b; reg c;  
+第四段代码为之前用户输入的算法代码  
+最后是固定句式：endmodule 相当于这个模块结束了  
+另外要注意：当端口的数据长度定义为i（正整数）时，相应的在上述第二段、第三段代码中要有所改变，在端口名前加[i-1:0]  
+例如：![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234717_374091e7_8607408.png "QQ截图20210123234621.png")用户定义了p0为3位    
+![![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234738_9816fa9a_8607408.png "QQ截图20210123234630.png")](https://images.gitee.com/uploads/images/2021/0123/234733_4b3c0548_8607408.png "QQ截图20210123234626.png")  
+则p0前面加[2:0]
 
 
 
