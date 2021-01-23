@@ -24,9 +24,6 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <layout class="QVBoxLayout" name="verticalLayout"/>
-     </item>
      <item row="0" column="0">
       <layout class="QVBoxLayout" name="verticalLayout_2"/>
      </item>
@@ -39,7 +36,7 @@
      <x>0</x>
      <y>0</y>
      <width>1056</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
