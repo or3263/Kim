@@ -15,11 +15,11 @@ eda软件开发
 这是我们仿照的软件里的截图，模块名为123，input、output、inout都为1  
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/232955_c341839e_8607408.png "QQ截图20210123232905.png")  
 点击某一端口时，应做到可以修改端口的属性，包括：![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233219_b40e4d51_8607408.png "QQ截图20210123233154.png")  
-端口名：要在矩形图上体现  
-输入输出类型：可以在input、output、inout中选![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233346_328b5e77_8607408.png "QQ截图20210123233330.png")  
-数据类型：可以在wire、reg中选![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233408_06262ce9_8607408.png "QQ截图20210123233336.png")  
-数据长度：可设置正整数值  
-颜色：此功能目前可先不做。。
+|端口名：要在矩形图上体现  
+|输入输出类型：可以在input、output、inout中选![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233346_328b5e77_8607408.png "QQ截图20210123233330.png")  
+|数据类型：可以在wire、reg中选![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/233408_06262ce9_8607408.png "QQ截图20210123233336.png")  
+|数据长度：可设置正整数值  
+|颜色：此功能目前可先不做。。
 
 
 
