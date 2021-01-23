@@ -27,15 +27,15 @@ eda软件开发
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234049_deade8af_8607408.png "QQ截图20210123234037.png")  
 其中第一段的格式为module xxx[*](端口名); 如用户在最开始的对话框中填写模块名为123，且整个模块中所有的端口为a、b、c三个时  
 软件将会生成module 123[*](a,b,c);  
-第二段代码为：input/output/inout 端口名；例如用户设置a为input,b为output,c为inout。则代码为  
+ **第二段** 代码为：input/output/inout 端口名；例如用户设置a为input,b为output,c为inout。则代码为  
 input a; output b; inout c;  
-第三段代码为：端口数据类型 端口名；例如用户定义a端口为wire型，b、c端口为reg型，则：  
+ **第三段** 代码为：端口数据类型 端口名；例如用户定义a端口为wire型，b、c端口为reg型，则：  
 wire a; reg b; reg c;  
 第四段代码为之前用户输入的算法代码  
 最后是固定句式：endmodule 相当于这个模块结束了  
-另外要注意：当端口的数据长度定义为i（正整数）时，相应的在上述第二段、第三段代码中要有所改变，在端口名前加[i-1:0]  
+另外要注意：当端口的数据长度定义为i（正整数）时，相应的在上述 **第二段、第三段** 代码中要有所改变，在端口名前加[i-1:0]  
 例如：![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234717_374091e7_8607408.png "QQ截图20210123234621.png")用户定义了p0为3位    
-![![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234738_9816fa9a_8607408.png "QQ截图20210123234630.png")](https://images.gitee.com/uploads/images/2021/0123/234733_4b3c0548_8607408.png "QQ截图20210123234626.png")  
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234922_d18c6d0d_8607408.png "QQ截图20210123234626.png")  ![输入图片说明](https://images.gitee.com/uploads/images/2021/0123/234930_6490091b_8607408.png "QQ截图20210123234630.png")  
 则p0前面加[2:0]
 
 
