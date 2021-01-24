@@ -5,10 +5,10 @@ Port::Port()
 
 }
 
-Port::Port(std::string name,bool inOut,bool dataType,int dataSize)
+Port::Port(std::string name,PortType portType,bool dataType,int dataSize)
 {
     this->name = name;
-    this->inOut = inOut;
+    this->portType = portType;
     this->dataSize =dataSize;
     this->dataType = dataType;
 }
@@ -23,13 +23,13 @@ std::string Port::getName()
     return this->name;
 }
 
-void Port::setInOut(bool inOut)
+void Port::setPortType(PortType portType)
 {
-    this->inOut = inOut;
+    this->portType = portType;
 }
-bool Port::getInOut()
+PortType Port::getPortType()
 {
-    return this->inOut;
+    return this->portType;
 }
 
 void Port::setDataType(bool dataType)
