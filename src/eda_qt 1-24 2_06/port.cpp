@@ -5,20 +5,21 @@ Port::Port()
 
 }
 
-Port::Port(std::string name,PortType portType,bool dataType,int dataSize)
+Port::Port(QString name,PortType portType,bool dataType,int dataSize,int portNum)
 {
     this->name = name;
     this->portType = portType;
     this->dataSize =dataSize;
     this->dataType = dataType;
+    this->portNum = portNum;
 }
 
-void Port::setName(std::string name)
+void Port::setName(QString name)
 {
    this->name = name;
 }
 
-std::string Port::getName()
+QString Port::getName()
 {
     return this->name;
 }
@@ -48,4 +49,7 @@ void Port::setDataSize(int dataSize)
 int Port::getDataSize()
 {
     return this->dataSize;
+}
+int Port::getPortNum(){
+    return this->portNum;
 }
