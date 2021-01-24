@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    module.cpp \
     new_file.cpp \
     port.cpp
 
 HEADERS += \
     mainwindow.h \
+    module.h \
     new_file.h \
     port.h
 
