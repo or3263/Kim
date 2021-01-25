@@ -62,7 +62,38 @@ QString Module::getCode()
     return this->code;
 }
 
-QString Module::generateCode()
+QString Module::generateCode(QString code)
 {
+    QString generateCodes;
+    generateCodes = "Module "+this->name+"(\n";
+    for(unsigned long i = 0;i<this->ports.size();i++){
+        if(i ==this->ports.size()-1){
+            generateCodes =generateCodes + this->ports.at(i).getName();
+        }else{
+            generateCodes =generateCodes + this->ports.at(i).getName()+",\n";
+        }
+    }
+    generateCodes = generateCodes+");\n\n";
+    for(unsigned long i = 0;i<this->ports.size();i++){
+            if(this->ports.at(i).getPortType()==INPUT){
+                generateCodes =generateCodes + "input ";
 
+            }else if (this->ports.at(i).getPortType()==OUTPUT) {
+                generateCodes =generateCodes + "ouput ";
+            }else{
+                generateCodes =generateCodes + "inout ";
+            }
+            generateCodes =generateCodes + this->ports.at(i).getName()+";\n";
+    }
+    for(unsigned long i = 0;i<this->ports.size();i++){
+            if(this->ports.at(i).getDataType()==0){
+                generateCodes =generateCodes + "wire ";
+
+            }else{
+                generateCodes =generateCodes + "reg ";
+            }
+            generateCodes =generateCodes + this->ports.at(i).getName()+";\n";
+    }
+    generateCodes = generateCodes +code+"\nendmodule";
+    return generateCodes;
 }

@@ -22,7 +22,7 @@ public:
     void deletePort(int);   //删除Port
     void setCode(QString);
     QString getCode();
-    QString generateCode();
+    QString generateCode(QString);
 };
 
 #endif // MODULE_H
