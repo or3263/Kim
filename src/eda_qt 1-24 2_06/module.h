@@ -12,7 +12,7 @@ private:
     int ouputPorts; //输出端口数量
     int inOutPorts; //双向端口数量
     int latestNum;  //vector标识
-    QString code;   //code
+    QString code;   //用户输入的code
     std::vector<Port> ports;    //端口类数组
 public:
     Module();

@@ -79,7 +79,7 @@ QString Module::generateCode(QString code)
                 generateCodes =generateCodes + "input ";
 
             }else if (this->ports.at(i).getPortType()==OUTPUT) {
-                generateCodes =generateCodes + "ouput ";
+                generateCodes =generateCodes + "output ";
             }else{
                 generateCodes =generateCodes + "inout ";
             }
