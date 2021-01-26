@@ -20,13 +20,15 @@ SOURCES += \
     mainwindow.cpp \
     new_file.cpp \
     module.cpp \
-    port.cpp
+    port.cpp \
+    constrain.cpp
 
 HEADERS += \
     mainwindow.h \
     new_file.h \
     module.h \
-    port.h
+    port.h \
+    constrain.h
 
 FORMS += \
     mainwindow.ui \
