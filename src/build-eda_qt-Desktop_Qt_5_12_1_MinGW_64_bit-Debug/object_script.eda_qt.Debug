@@ -1,0 +1,13 @@
+debug/main.o
+debug/mainwindow.o
+debug/new_file.o
+debug/new_constrain.o
+debug/module.o
+debug/constrain.o
+debug/port.o
+debug/testbench.o
+debug/new_testbench.o
+debug/moc_mainwindow.o
+debug/moc_new_file.o
+debug/moc_new_constrain.o
+debug/moc_new_testbench.o

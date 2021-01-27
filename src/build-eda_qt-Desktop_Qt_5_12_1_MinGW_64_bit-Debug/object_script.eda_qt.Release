@@ -1,0 +1,13 @@
+release/main.o
+release/mainwindow.o
+release/new_file.o
+release/new_constrain.o
+release/module.o
+release/constrain.o
+release/port.o
+release/testbench.o
+release/new_testbench.o
+release/moc_mainwindow.o
+release/moc_new_file.o
+release/moc_new_constrain.o
+release/moc_new_testbench.o
