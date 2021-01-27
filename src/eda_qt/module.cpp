@@ -61,6 +61,15 @@ QString Module::getCode()
 {
     return this->code;
 }
+void Module::setAnnotation(QString annotation)
+{
+    this->annotation = annotation;
+}
+
+QString Module::getAnnotation()
+{
+    return this->annotation;
+}
 
 QString Module::generateCode(QString code)
 {

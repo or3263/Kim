@@ -53,3 +53,12 @@ int Port::getDataSize()
 int Port::getPortNum(){
     return this->portNum;
 }
+void Port::setAnnotation(QString annotation)
+{
+    this->annotation = annotation;
+}
+
+QString Port::getAnnotation()
+{
+    return this->annotation;
+}

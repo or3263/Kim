@@ -12,6 +12,7 @@ private:
     bool dataType;  //数据类型  0为wire 1为reg
     int dataSize;   //数据长度
     int portNum;    //端口标识
+    QString annotation;     //端口注释
 public:
     Port();
     Port(QString,PortType,bool,int,int);
@@ -24,6 +25,8 @@ public:
     void setDataSize(int);
     int getDataSize();
     int getPortNum();
+    void setAnnotation(QString);
+    QString getAnnotation();
 };
 
 #endif // PORT_H
