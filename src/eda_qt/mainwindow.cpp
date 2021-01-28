@@ -5,6 +5,7 @@
 #include "new_testbench.h"
 #include "new_constrain.h"
 #include "new_file.h"
+#include "moduleqwidget.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,21 +13,13 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->showMaximized();
-
+    ui->tabWidget->setTabsClosable(true);
     // 设置背景颜色
-    QPalette pal(ui->tab_widget->palette());
-    pal.setColor(QPalette::Background, Qt::black);
-    ui->tab_widget->setAutoFillBackground(true);
-    ui->tab_widget->setPalette(pal);
-
-    ui->tab_widget->resize(ui->tab->width() + 200, ui->tab->height() + 200);
-    ui->tab_widget->move(ui->tab->width() / 2, ui->tab->height() / 2 - 100);
-
+    this->init_tab_widget();
     // 初始化左边list表
     this->init_list();
-
     qDebug() << ui->tab->geometry().width();
-//    ui->tabWidget->insertTab(3, new QWidget, "s");
+    ui->tabWidget->insertTab(3, new QWidget, "s");
 }
 
 MainWindow::~MainWindow()
@@ -81,6 +74,15 @@ void MainWindow::init_list()
     ui->listView_left->setModel(itemModel);
 }
 
+void MainWindow::init_tab_widget()
+{
+    QPalette pal(ui->tab_widget->palette());
+    pal.setColor(QPalette::Background, Qt::black);
+    ui->tab_widget->setAutoFillBackground(true);
+    ui->tab_widget->setPalette(pal);
+    ui->tab_widget->resize(ui->tab->width() + 200, ui->tab->height() + 200);
+    ui->tab_widget->move(ui->tab->width() / 2, ui->tab->height() / 2 - 100);
+}
 void MainWindow::on_actionExit_triggered()
 {
     this->close();
@@ -102,3 +104,8 @@ void MainWindow::on_actionNew_Testbench_triggered()
     s->show();
 }
 
+
+void MainWindow::on_tabWidget_tabCloseRequested(int index)
+{
+    //TODO销毁Module类和tab组件
+}

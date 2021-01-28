@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ffffsss.cpp \
     main.cpp \
     mainwindow.cpp \
     new_file.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
     new_testbench.cpp
 
 HEADERS += \
+    ffffsss.h \
     mainwindow.h \
     new_file.h \
     new_constrain.h \

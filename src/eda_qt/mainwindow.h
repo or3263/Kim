@@ -25,6 +25,7 @@ public:
     ~MainWindow();
 
 private slots:
+
     void on_actionNew_triggered();
 
     void recv_new_file(QString name);
@@ -39,11 +40,15 @@ private slots:
 
     void on_actionNew_Testbench_triggered();
 
+    void on_tabWidget_tabCloseRequested(int index);
+
 private:
     Ui::MainWindow *ui;
 
     void dailog_new_file();
 
     void init_list();
+
+    void init_tab_widget();
 };
 #endif // MAINWINDOW_H
