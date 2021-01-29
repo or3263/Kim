@@ -5,6 +5,8 @@
 #include<vector>
 #include<QString>
 #include<port.h>
+#include <QApplication>
+#include <QFileDialog>
 
 class constrain
 {
@@ -26,6 +28,7 @@ public:
     QString getCode();
     QString generateCodeAltera();
     QString generateCodeXilinx();
+    void saveCodeFile(QString geneCodes);
 };
 
 #endif // CONSTRAIN_H

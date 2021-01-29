@@ -1,5 +1,6 @@
 #include "module.h"
-
+#include <QDebug>
+#include <QFile>
 Module::Module()
 {
 
@@ -77,32 +78,50 @@ QString Module::generateCode(QString code)
     generateCodes = "Module "+this->name+"(\n";
     for(unsigned long i = 0;i<this->ports.size();i++){
         if(i ==this->ports.size()-1){
-            generateCodes =generateCodes + this->ports.at(i).getName();
+            generateCodes =generateCodes + "\t" + this->ports.at(i).getName();
         }else{
-            generateCodes =generateCodes + this->ports.at(i).getName()+",\n";
+            generateCodes =generateCodes + "\t" + this->ports.at(i).getName()+",\n";
         }
     }
     generateCodes = generateCodes+");\n\n";
     for(unsigned long i = 0;i<this->ports.size();i++){
             if(this->ports.at(i).getPortType()==INPUT){
-                generateCodes =generateCodes + "input ";
+                generateCodes =generateCodes + "\tinput ";
 
             }else if (this->ports.at(i).getPortType()==OUTPUT) {
-                generateCodes =generateCodes + "output ";
+                generateCodes =generateCodes + "\toutput ";
             }else{
-                generateCodes =generateCodes + "inout ";
+                generateCodes =generateCodes + "\tinout ";
             }
-            generateCodes =generateCodes + this->ports.at(i).getName()+";\n";
+            if(this->ports.at(i).getDataSize()==1){//判断port的DataSize是不是为1.
+                generateCodes =generateCodes + this->ports.at(i).getName()+";\n";
+            }else{
+                generateCodes =generateCodes + " [" + QString::number(this->ports.at(i).getDataSize()-1) + ":0] " + this->ports.at(i).getName()+";\n";
+            }
     }
+    generateCodes = generateCodes+"\n";
     for(unsigned long i = 0;i<this->ports.size();i++){
             if(this->ports.at(i).getDataType()==0){
-                generateCodes =generateCodes + "wire ";
+                generateCodes =generateCodes + "\twire ";
 
             }else{
-                generateCodes =generateCodes + "reg ";
+                generateCodes =generateCodes + "\treg ";
             }
-            generateCodes =generateCodes + this->ports.at(i).getName()+";\n";
+            if(this->ports.at(i).getDataSize()==1){//判断port的DataSize是不是为1.
+                generateCodes =generateCodes + this->ports.at(i).getName()+";\n";
+            }else{
+                generateCodes =generateCodes + " [" + QString::number(this->ports.at(i).getDataSize()-1) + ":0] " + this->ports.at(i).getName()+";\n";
+            }
     }
-    generateCodes = generateCodes +code+"\nendmodule";
+    generateCodes = generateCodes + "\n" + code+"\n\nendmodule";
     return generateCodes;
+}
+void Module::saveCodeFile(QString geneCodes)
+{
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Verilog代码文件"),QStringLiteral("C:/"),QStringLiteral("verilog(*.v)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){}
+    QByteArray geneCodesArr = geneCodes.toUtf8();//将qstring转换为qbytearray
+    file.write(geneCodesArr);
+    file.close();
 }

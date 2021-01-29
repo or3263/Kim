@@ -6,6 +6,8 @@
 #include "new_constrain.h"
 #include "new_file.h"
 #include "moduleqwidget.h"
+#include <QDebug>
+#include "module.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -107,5 +109,15 @@ void MainWindow::on_actionNew_Testbench_triggered()
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
 {
+    ui->tabWidget->removeTab(index);
     //TODO销毁Module类和tab组件
+}
+
+
+void MainWindow::on_actionCode_Generate_triggered()//代码生成的选项
+{
+    //仅为测试代码
+    Module module;
+    module = Module("TestModule",2,3,4);
+    module.saveCodeFile(module.generateCode("UserCode"));
 }

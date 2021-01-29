@@ -1,4 +1,5 @@
 #include "constrain.h"
+#include <QFile>
 
 constrain::constrain()
 {
@@ -87,4 +88,14 @@ QString constrain::generateCodeXilinx()//生成约束文件代码；还没研究
         generateCodes = generateCodes + "set_property IOSTANDARD LVCMOS33 [get_ports 所包含的module连接的端口\n]";
     }
     return generateCodes;
+}
+
+void constrain::saveCodeFile(QString geneCodes)
+{
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成约束文件"),QStringLiteral("C:/"),QStringLiteral("Const(*.xxx)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){}
+    QByteArray geneCodesArr = geneCodes.toUtf8();//将qstring转换为qbytearray
+    file.write(geneCodesArr);
+    file.close();
 }

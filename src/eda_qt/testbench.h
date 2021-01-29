@@ -4,6 +4,8 @@
 #include <vector>
 #include <QString>
 #include "port.h"
+#include <QApplication>
+#include <QFileDialog>
 
 class testbench
 {
@@ -24,6 +26,7 @@ public:
     void setCode(QString);
     QString getCode();
     QString generateCode(QString);
+    void saveCodeFile(QString geneCodes);
 };
 
 #endif // TESTBENCH_H

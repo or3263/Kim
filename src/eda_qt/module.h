@@ -4,6 +4,9 @@
 #include <vector>
 #include <QString>
 #include "port.h"
+#include <QApplication>
+#include <QFileDialog>
+
 class Module
 {
 private:
@@ -26,6 +29,7 @@ public:
     void setAnnotation(QString);
     QString getAnnotation();
     QString generateCode(QString);
+    void saveCodeFile(QString geneCodes);
 };
 
 #endif // MODULE_H

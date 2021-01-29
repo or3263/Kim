@@ -82,3 +82,13 @@ QString testbench::generateCode(QString code)
     generateCodes = generateCodes + "endmodule";
     return generateCodes;
 }
+
+void testbench::saveCodeFile(QString geneCodes)
+{
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Testbench文件"),QStringLiteral("C:/"),QStringLiteral("Testbench(*.xxx)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){}
+    QByteArray geneCodesArr = geneCodes.toUtf8();//将qstring转换为qbytearray
+    file.write(geneCodesArr);
+    file.close();
+}
