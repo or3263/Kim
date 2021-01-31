@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.12.0, 2021-02-01T01:47:34. -->
+=======
+<!-- Written by QtCreator 4.11.1, 2021-01-29T20:43:39. -->
+>>>>>>> 97b593906d4c69a7d99c89b6e217247cbbcc61a0
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -576,6 +580,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
+<<<<<<< HEAD
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
@@ -830,6 +835,8 @@
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
+=======
+>>>>>>> 97b593906d4c69a7d99c89b6e217247cbbcc61a0
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
