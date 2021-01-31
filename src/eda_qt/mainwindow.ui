@@ -41,9 +41,9 @@
          <enum>QLayout::SetMinimumSize</enum>
         </property>
         <item>
-         <widget class="QPushButton" name="pushButton_new_file">
+         <widget class="QPushButton" name="pushButton_new_module">
           <property name="text">
-           <string>New File</string>
+           <string>New Module</string>
           </property>
          </widget>
         </item>
@@ -145,7 +145,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -158,7 +158,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -195,26 +195,8 @@
         <item>
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>-1</number>
           </property>
-          <widget class="ffffsss" name="tab">
-           <attribute name="title">
-            <string>Tab 1</string>
-           </attribute>
-           <widget class="QWidget" name="tab_widget" native="true">
-            <property name="geometry">
-             <rect>
-              <x>50</x>
-              <y>50</y>
-              <width>561</width>
-              <height>251</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-           </widget>
-          </widget>
          </widget>
         </item>
         <item>
@@ -240,7 +222,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -253,7 +235,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -291,7 +273,7 @@
      <x>0</x>
      <y>0</y>
      <width>1056</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
@@ -382,14 +364,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ffffsss</class>
-   <extends>QWidget</extends>
-   <header>ffffsss.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

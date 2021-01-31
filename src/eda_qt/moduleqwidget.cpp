@@ -1,5 +1,9 @@
 #include "moduleqwidget.h"
 
+#include "project_head.h"
+
+#include "module.h"
+
 moduleQWidget::moduleQWidget(QWidget *parent) : QWidget(parent)
 {
 

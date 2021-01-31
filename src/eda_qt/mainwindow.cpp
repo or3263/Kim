@@ -2,12 +2,8 @@
 //修改了mainwindow的菜单栏
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "new_testbench.h"
-#include "new_constrain.h"
-#include "new_file.h"
-#include "moduleqwidget.h"
-#include <QDebug>
-#include "module.h"
+
+#include "project_head.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,12 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->showMaximized();
     ui->tabWidget->setTabsClosable(true);
-    // 设置背景颜色
-    this->init_tab_widget();
+
+//    this->init_tab_widget("", 0, 0, 0);
     // 初始化左边list表
     this->init_list();
-    qDebug() << ui->tab->geometry().width();
-    ui->tabWidget->insertTab(3, new QWidget, "s");
+
 }
 
 MainWindow::~MainWindow()
@@ -29,26 +24,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_actionNew_triggered()
+void MainWindow::recv_new_module(QString name, int inp1, int out, int inp2) //接收新建module窗口发送来的Module类
 {
-    this->dailog_new_file();
+    this->init_tab_widget(name, inp1, out, inp2);
 }
 
-void MainWindow::recv_new_file(QString name)
-{
-    ui->textEdit->setText(name);
-}
 
-void MainWindow::on_pushButton_new_file_clicked()
+void MainWindow::dailog_new_module() //弹出新建module窗口
 {
-    this->dailog_new_file();
-}
-
-void MainWindow::dailog_new_file()
-{
-    new_file *s = new new_file(this);
-    connect(s, SIGNAL(send_data(QString)), this, SLOT(recv_new_file(QString)));
+    new_module *s = new new_module(this);
+    connect(s, SIGNAL(send_data(QString, int, int, int)), this, SLOT(recv_new_module(QString, int, int, int)));
     s->show();
 }
 
@@ -76,14 +61,159 @@ void MainWindow::init_list()
     ui->listView_left->setModel(itemModel);
 }
 
-void MainWindow::init_tab_widget()
+void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // inp1 = input， out = output, inp2 = input and output
 {
-    QPalette pal(ui->tab_widget->palette());
-    pal.setColor(QPalette::Background, Qt::black);
-    ui->tab_widget->setAutoFillBackground(true);
-    ui->tab_widget->setPalette(pal);
-    ui->tab_widget->resize(ui->tab->width() + 200, ui->tab->height() + 200);
-    ui->tab_widget->move(ui->tab->width() / 2, ui->tab->height() / 2 - 100);
+
+    // 新建标签
+    tabs *tab = new tabs();
+    tab->setObjectName(name + "_tab"); // 设置module table object名字
+    qDebug() << "tab1 " << tab->width() << tab->height();
+    ui->tabWidget->addTab(tab, name);
+
+    tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
+    qDebug() << "tab2 " << tab->width() << tab->height();
+
+    // 新建module
+    QWidget *tab_module = new QWidget(tab);
+    tab_module->setObjectName(name + "_module");  // 设置module object名字
+
+    // 设置table module的背景颜色
+//    QPalette pal(tab_module->palette());
+//    pal.setColor(QPalette::Background, Qt::black);
+
+    tab_module->setAutoFillBackground(true);
+    tab_module->setStyleSheet("background-color: rgb(0, 0, 0);");
+//    tab_module->setPalette(pal);
+
+    int module_width = tab->width() / 3 * 2;
+    int module_height = tab->height() - 80;
+
+    qDebug() << "tabWidget " << ui->tabWidget->width() << ui->tabWidget->height();
+
+    tab_module->setGeometry(QRect((tab->width() - module_width) / 2, (tab->height() - module_height) / 2, module_width, module_height));
+    tab_module->show();
+
+
+    int widget_2_width = module_width - 100;
+    int widget_2_height = module_height - 100;
+
+//    qDebug() << "tab module" << tab_module->pos();
+//    qDebug() << "tab width " << tab->width();
+//    qDebug() << "tab height " << tab->height();
+    if (tab_module->palette() == tab->palette())
+    {
+        qDebug() << "yes";
+    }
+
+    // 二层widget
+
+    QWidget *widget_2 = new QWidget();
+
+    widget_2->setGeometry(QRect(50, 50, widget_2_width, widget_2_height));
+    widget_2->setObjectName(name + "_2");
+
+    widget_2->setAutoFillBackground(true); // 填充背景
+    widget_2->setStyleSheet("background-color: rgb(170, 0, 0);"); // 设置背景颜色
+
+    widget_2->setParent(tab_module);
+    widget_2->show();
+
+//    QPushButton *port1 = new QPushButton(tab_module);
+//    port1->setGeometry(QRect(50, 50, 50, 50));
+//    port1->show();
+
+    // 插入端口
+//    Module m = Module(name, inp1, out, inp2);
+//    tab->setModuleObject(m);
+    tab->setModuleObject(Module(name, inp1, out, inp2));
+
+    double paragraph; // 分段变量
+    int port_number = 0;
+    QPoint widget_2_pos = widget_2->pos();
+
+    // 增加左边端口
+    paragraph = 1.0 / (inp1 + 1);
+
+    for (int cycle = 1; cycle <= inp1; cycle++) {
+        QPushButton *port = new QPushButton();
+
+        // 设置名称
+        port->setObjectName(name + "_p_" + QString::number(port_number));
+        port->setText("P" + QString::number(port_number));
+
+        // 设置大小，位置
+        port->resize(50, 50);
+        port->move(this->calculate_pos(widget_2_pos.x() - port->width() / 2, widget_2_height, paragraph * cycle));
+
+        // 设置背景颜色
+        widget_2->setAutoFillBackground(true);
+        port->setStyleSheet("background-color: rgb(100, 100, 10);");
+
+        // 显示
+        port->setParent(tab_module);
+        port->show();
+
+//        qDebug() << port->pos();
+
+        port_number++;
+    }
+
+
+    // 增加右边端口
+    int right_port_num = out + inp2;
+    paragraph = 1.0 / (right_port_num + 1);
+
+    for (int cycle = 1; cycle <= right_port_num; cycle++) {
+        QPushButton *port = new QPushButton();
+
+        // 设置名称
+        port->setObjectName(name + "_p_" + QString::number(port_number));
+        port->setText("P" + QString::number(port_number));
+
+        // 设置大小，位置
+        port->resize(50, 50);
+        port->move(this->calculate_pos(widget_2_pos.x() + widget_2_width - port->width() / 2, widget_2_height, paragraph * cycle));
+
+        // 设置背景颜色
+        widget_2->setAutoFillBackground(true);
+        if (cycle > out) // in out
+        {
+            port->setStyleSheet("background-color: rgb(200, 200, 200);");
+        }
+        else
+        {
+            port->setStyleSheet("background-color: rgb(75, 75, 75);");
+        }
+
+        // 显示
+        port->setParent(tab_module);
+        port->show();
+
+        port_number++;
+    }
+
+//    for (int cycle = 1; cycle <= out; cycle++) {
+//        QPushButton *port = new QPushButton();
+
+//        // 设置名称
+//        port->setObjectName(name + "_p_" + QString::number(port_number));
+//        port->setText("P" + QString::number(port_number));
+
+//        // 设置大小，位置
+//        port->resize(50, 50);
+//        port->move(this->calculate_pos(widget_2_pos, widget_2_height, paragraph * cycle));
+
+//        // 设置背景颜色
+//        widget_2->setAutoFillBackground(true);
+//        port->setStyleSheet("background-color: rgb(100, 100, 10);");
+
+//        // 显示
+//        port->setParent(tab_module);
+//        port->show();
+
+//        port_number++;
+//    }
+
 }
 void MainWindow::on_actionExit_triggered()
 {
@@ -92,7 +222,7 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionNew_Module_triggered()//菜单栏new module弹出的对话框
 {
-    this->dailog_new_file();
+    this->dailog_new_module();
 }
 
 void MainWindow::on_actionNew_Constrain_triggered()
@@ -120,4 +250,62 @@ void MainWindow::on_actionCode_Generate_triggered()//代码生成的选项
     Module module;
     module = Module("TestModule",2,3,4);
     module.saveCodeFile(module.generateCode("UserCode"));
+}
+
+void MainWindow::on_actionCode_Viver_triggered()
+{
+
+}
+
+void MainWindow::on_pushButton_new_module_clicked()
+{
+//    this->dailog_new_module();
+//    ui->pushButton_new_module->setText("s");
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event) //当鼠标拖动时
+{
+    if (event->buttons() == Qt::LeftButton)
+    {
+//        QPoint p = event->globalPos() - source_mouse_point;
+//        qDebug() << "拖动：" << p;
+//        QPoint d = this->source_widget_point + p;
+//        qDebug() << d;
+
+//        int tab_width = ui->tab->width();
+//        int tab_height = ui->tab->height();
+//        int w_width = ui->tab_widget->width();
+//        int w_height = ui->tab_widget->height();
+
+//        if (d.x() <= 0 || d.y() <=0)
+//        {
+//            return;
+//        }
+//        else if ((d.x() + w_width) >= tab_width || (d.y() + w_height) >= tab_height)
+//        {
+//            return;
+//        }
+
+//        ui->tab_widget->move(d);
+/*
+        qDebug() << ui->tabWidget->currentIndex(); */// 获取当前标签
+    }
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event) //当鼠标按下时
+{
+    if (event->button() == Qt::LeftButton)
+    {
+//        this->source_mouse_point = event->globalPos();
+//        this->source_widget_point = ui->tab_widget->pos();
+//        qDebug() << this->source_widget_point;
+    }
+}
+
+QPoint MainWindow::calculate_pos(int source_x, int source_height, double paragraph)
+{
+    double y = source_height * paragraph;
+    qDebug() << y;
+    QPoint point = QPoint(source_x,  y);
+    return point;
 }

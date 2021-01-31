@@ -2,7 +2,9 @@
 #define MODULEQWIDGET_H
 
 #include <QWidget>
-#include"module.h"
+
+#include "project_head.h"
+
 class moduleQWidget : public QWidget
 {
     Q_OBJECT

@@ -3,14 +3,7 @@
 
 #include <QMainWindow>
 
-#include <QDialog>
-#include <QLabel>
-#include <QPushButton>
-#include <QString>
-#include <QPalette>
-#include <QStandardItem>
-
-#include <QDebug>
+#include "project_head.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,11 +19,7 @@ public:
 
 private slots:
 
-    void on_actionNew_triggered();
-
-    void recv_new_file(QString name);
-
-    void on_pushButton_new_file_clicked();
+    void recv_new_module(QString, int, int, int);
 
     void on_actionExit_triggered();
 
@@ -42,13 +31,28 @@ private slots:
 
     void on_tabWidget_tabCloseRequested(int index);
 
+    void on_actionCode_Viver_triggered();
+
+    void on_actionCode_Generate_triggered();
+
+    void on_pushButton_new_module_clicked();
+
 private:
     Ui::MainWindow *ui;
 
-    void dailog_new_file();
+    void dailog_new_module();
 
     void init_list();
 
-    void init_tab_widget();
+    void init_tab_widget(QString, int, int, int);
+
+    QPoint calculate_pos(int source_x, int source_height, double paragraph); // 计算相对位置
+
+    QPoint source_mouse_point;
+    QPoint source_widget_point;
+
+protected:
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 };
 #endif // MAINWINDOW_H

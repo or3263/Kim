@@ -1,12 +1,11 @@
 /* New Constrain功能的类*/
 #ifndef CONSTRAIN_H
 #define CONSTRAIN_H
-#include <iostream>
-#include<vector>
-#include<QString>
+
 #include<port.h>
 #include <QApplication>
-#include <QFileDialog>
+
+#include "project_head.h"
 
 class constrain
 {
