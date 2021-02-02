@@ -2,7 +2,8 @@
 //修改了mainwindow的菜单栏
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <Qsci/qsciscintilla.h>
+#include <Qsci/qscilexerverilog.h>
 #include "project_head.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,6 +13,22 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->showMaximized();
     ui->tabWidget->setTabsClosable(true);
+
+
+    //测试代码编辑器
+    QWidget *a = new QWidget(ui->tab_code);
+    QsciLexerVerilog *textLexer =new QsciLexerVerilog;
+    QsciScintilla *editext = new QsciScintilla;
+    editext->setLexer(textLexer);
+    editext->setParent(a);
+    a->show();
+    editext->resize(500,500);
+    editext->show();
+    Module b =  Module("asa",3,2,3);
+    editext->setText(b.generateCode("")) ;
+
+
+
 
 //    this->init_tab_widget("", 0, 0, 0);
     // 初始化左边list表
