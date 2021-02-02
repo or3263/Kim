@@ -145,7 +145,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>328</height>
             </rect>
            </property>
            <attribute name="label">
@@ -158,7 +158,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>328</height>
             </rect>
            </property>
            <attribute name="label">
@@ -230,7 +230,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>328</height>
             </rect>
            </property>
            <attribute name="label">
@@ -243,12 +243,37 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>328</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Property</string>
            </attribute>
+           <widget class="QListView" name="listView_right">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>201</width>
+              <height>16777215</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+           </widget>
           </widget>
          </widget>
         </item>
@@ -281,7 +306,7 @@
      <x>0</x>
      <y>0</y>
      <width>1056</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
