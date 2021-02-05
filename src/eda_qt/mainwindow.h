@@ -37,6 +37,10 @@ private slots:
 
     void on_pushButton_new_module_clicked();
 
+    void on_code_Editor_clicked();
+
+    void on_code_View_clicked();
+
 private:
     Ui::MainWindow *ui;
 

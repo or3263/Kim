@@ -35,6 +35,9 @@
 #include <QFileDialog>
 #include <QLayout>
 
+#include <Qsci/qsciscintilla.h>
+#include <Qsci/qscilexerverilog.h>
+
 #include <iostream>
 #include <vector>
 

@@ -2,9 +2,10 @@
 //修改了mainwindow的菜单栏
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <Qsci/qsciscintilla.h>
-#include <Qsci/qscilexerverilog.h>
+
 #include "project_head.h"
+
+#include "code_editor_dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->showMaximized();
+    this->setWindowTitle("");
+
     ui->tabWidget->setTabsClosable(true);
 
 
@@ -26,9 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     editext->show();
     Module b =  Module("asa",3,2,3);
     editext->setText(b.generateCode("")) ;
-
-
-
 
 //    this->init_tab_widget("", 0, 0, 0);
     // 初始化左边list表
@@ -89,6 +89,30 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
+
+    // 新建Code Editor按钮
+    QPushButton *codeEditor_button = new QPushButton(tab);
+    codeEditor_button->setGeometry(QRect(0, tab->height() - 85, 50, 50));
+
+    codeEditor_button->setObjectName(name + "_codeEditor");
+    codeEditor_button->setText("Eidtor");
+
+    connect(codeEditor_button, SIGNAL(clicked()), this, SLOT(on_code_Editor_clicked()));
+    codeEditor_button->show();
+
+    codeEditor_button->parent();
+
+    // 新建Code View按钮
+    QPushButton *codeView_button = new QPushButton(tab);
+    codeView_button->setGeometry(QRect(0, tab->height() - 85 - 100 , 50, 50));
+
+    codeView_button->setObjectName(name + "_codeView");
+    codeView_button->setText("View");
+
+    connect(codeView_button, SIGNAL(clicked()), this, SLOT(on_code_View_clicked()));
+    codeView_button->show();
+
+    codeView_button->parent();
 
     // 新建module
     QWidget *tab_module = new QWidget(tab);
@@ -325,4 +349,28 @@ QPoint MainWindow::calculate_pos(int source_x, int source_height, double paragra
     qDebug() << y;
     QPoint point = QPoint(source_x,  y);
     return point;
+}
+
+void MainWindow::on_code_Editor_clicked()
+{
+    // 打开code editor窗口
+    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+//    qDebug() << clickedButton->parent()->objectName();
+    code_editor_dialog *d = new code_editor_dialog();
+    d->get_tab((tabs *)clickedButton->parent());
+    d->init_text_edit();
+    d->set_type(code_editor_dialog::editor);
+    d->show();
+}
+
+void MainWindow::on_code_View_clicked()
+{
+    // 打开code editor窗口
+    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+//    qDebug() << clickedButton->parent()->objectName();
+    code_editor_dialog *d = new code_editor_dialog();
+    d->get_tab((tabs *)clickedButton->parent());
+    d->init_text_edit();
+    d->set_type(code_editor_dialog::view);
+    d->show();
 }

@@ -8,7 +8,7 @@ class tabs : public QWidget
 public:
     explicit tabs(QWidget *parent = nullptr);
     void setModuleObject(const Module &);
-    const Module & getModuleObject();
+    Module & getModuleObject();
 signals:
 
 private:

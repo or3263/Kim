@@ -9,7 +9,7 @@ void tabs::setModuleObject(const Module & moduleObject)
 {
     this->moduleObject=moduleObject;
 }
-const Module & tabs::getModuleObject()
+Module & tabs::getModuleObject()
 {
     return this->moduleObject;
 }
