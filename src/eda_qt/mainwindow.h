@@ -41,6 +41,10 @@ private slots:
 
     void on_code_View_clicked();
 
+    void on_code_Save_clicked();
+
+    void on_module_Save_clicked();
+
 private:
     Ui::MainWindow *ui;
 

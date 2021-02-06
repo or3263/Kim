@@ -30,6 +30,7 @@ public:
     QString getAnnotation();
     QString generateCode(QString);
     void saveCodeFile(QString geneCodes);
+    void saveModuleFile();
 
     int getLatestNum();
 };

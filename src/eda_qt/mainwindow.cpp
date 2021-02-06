@@ -18,17 +18,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->setTabsClosable(true);
 
 
-    //测试代码编辑器
-    QWidget *a = new QWidget(ui->tab_code);
-    QsciLexerVerilog *textLexer =new QsciLexerVerilog;
-    QsciScintilla *editext = new QsciScintilla;
-    editext->setLexer(textLexer);
-    editext->setParent(a);
-    a->show();
-    editext->resize(500,500);
-    editext->show();
-    Module b =  Module("asa",3,2,3);
-    editext->setText(b.generateCode("")) ;
+//    //测试代码编辑器
+//    QWidget *a = new QWidget(ui->tab_code);
+//    QsciLexerVerilog *textLexer =new QsciLexerVerilog;
+//    QsciScintilla *editext = new QsciScintilla;
+//    editext->setLexer(textLexer);
+//    editext->setParent(a);
+//    a->show();
+//    editext->resize(500,500);
+//    editext->show();
+//    Module b =  Module("asa",3,2,3);
+//    editext->setText(b.generateCode("")) ;
 
 //    this->init_tab_widget("", 0, 0, 0);
     // 初始化左边list表
@@ -93,26 +93,38 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     // 新建Code Editor按钮
     QPushButton *codeEditor_button = new QPushButton(tab);
     codeEditor_button->setGeometry(QRect(0, tab->height() - 85, 50, 50));
-
     codeEditor_button->setObjectName(name + "_codeEditor");
     codeEditor_button->setText("Eidtor");
-
     connect(codeEditor_button, SIGNAL(clicked()), this, SLOT(on_code_Editor_clicked()));
     codeEditor_button->show();
-
     codeEditor_button->parent();
 
     // 新建Code View按钮
     QPushButton *codeView_button = new QPushButton(tab);
     codeView_button->setGeometry(QRect(0, tab->height() - 85 - 100 , 50, 50));
-
     codeView_button->setObjectName(name + "_codeView");
     codeView_button->setText("View");
-
     connect(codeView_button, SIGNAL(clicked()), this, SLOT(on_code_View_clicked()));
     codeView_button->show();
-
     codeView_button->parent();
+
+    //新建Save Code
+    QPushButton *codeSave_button = new QPushButton(tab);
+    codeSave_button->setGeometry(QRect(tab->width()-55, tab->height() - 85 - 100 , 50, 50));
+    codeSave_button->setObjectName(name + "_codeSave");
+    codeSave_button->setText("Save\nCode");
+    connect(codeSave_button, SIGNAL(clicked()), this, SLOT(on_code_Save_clicked()));
+    codeSave_button->show();
+    codeSave_button->parent();
+
+    //新建Save Module
+    QPushButton *moduleSave_button = new QPushButton(tab);
+    moduleSave_button->setGeometry(QRect(tab->width()-55, tab->height() - 85 , 50, 50));
+    moduleSave_button->setObjectName(name + "_codeModule");
+    moduleSave_button->setText("Save\nModule");
+    connect(moduleSave_button, SIGNAL(clicked()), this, SLOT(on_module_Save_clicked()));
+    moduleSave_button->show();
+    moduleSave_button->parent();
 
     // 新建module
     QWidget *tab_module = new QWidget(tab);
@@ -373,4 +385,18 @@ void MainWindow::on_code_View_clicked()
     d->init_text_edit();
     d->set_type(code_editor_dialog::view);
     d->show();
+}
+
+void MainWindow::on_code_Save_clicked()
+{
+    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+    Module m = ((tabs *)clickedButton->parent())->getModuleObject();
+    m.saveCodeFile(m.generateCode(m.getCode()));
+}
+
+void MainWindow::on_module_Save_clicked()
+{
+    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+    Module m = ((tabs *)clickedButton->parent())->getModuleObject();
+    m.saveModuleFile();
 }

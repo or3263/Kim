@@ -35,7 +35,7 @@ void code_editor_dialog::set_type(int window_type)
     }
 }
 
-code_editor_dialog::~code_editor_dialog()
+code_editor_dialog::~code_editor_dialog()//关闭时保存代码
 {
     this->save_tab();
 //    qDebug() << "save";
@@ -59,7 +59,7 @@ void code_editor_dialog::save_tab()
     this->temp_tab->getModuleObject().setCode(code);
 }
 
-void code_editor_dialog::init_text_edit()
+void code_editor_dialog::init_text_edit()//打开时获取代码
 {
     Module m = this->temp_tab->getModuleObject();
     QString code = m.getCode();

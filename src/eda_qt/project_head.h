@@ -42,5 +42,5 @@
 #include <vector>
 
 #include <QDebug>
-
+#include <QtXml>
 #endif // PROJECT_HEAD_H
