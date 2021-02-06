@@ -167,7 +167,12 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
     widget_2->setAutoFillBackground(true); // 填充背景
     widget_2->setStyleSheet("background-color: rgb(170, 0, 0);"); // 设置背景颜色
-
+    QLabel *nameLable = new QLabel;
+    nameLable->setGeometry(200,200,100,100);
+    nameLable->setObjectName(name + "_nameLable");
+    nameLable->setText(name);
+    nameLable->setParent(widget_2);
+    nameLable->show();
     widget_2->setParent(tab_module);
     widget_2->show();
 

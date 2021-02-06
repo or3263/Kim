@@ -144,7 +144,7 @@ void Module::saveModuleFile()
     QDomElement element_M_Name = doc.createElement("m_name");
     QDomElement element_Code = doc.createElement("code");
     QDomElement element_Ports = doc.createElement("Ports");
-    for(unsigned long i = 0;i<this->ports.size();i++){
+    for(unsigned long i = 0;i<this->ports.size();i++){  //循环生成每个端口的节点
         QDomElement element_Port = doc.createElement(this->ports.at(i).getName());//端口标签设置为端口名
         element_Ports.appendChild(element_Port);//每个端口标签是ports的子
         QDomElement element_Port_PType = doc.createElement("PType");//生成端口输入输出类型节点
