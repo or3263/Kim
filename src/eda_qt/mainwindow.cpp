@@ -88,7 +88,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     tab->setObjectName(name + "_tab"); // 设置module table object名字
     qDebug() << "tab1 " << tab->width() << tab->height();
     ui->tabWidget->addTab(tab, name);
-    ui->textEdit->append(getSysTime()+"新建了"+name+"模块\n");
+    ui->textEdit->append(getSysTime()+"新建了"+name+"模块\n");//发送log消息
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
 
