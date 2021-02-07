@@ -96,7 +96,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     QPushButton *codeEditor_button = new QPushButton(tab);
     codeEditor_button->setGeometry(QRect(0, tab->height() - 85, 50, 50));
     codeEditor_button->setObjectName(name + "_codeEditor");
-    codeEditor_button->setText("Eidtor");
+    codeEditor_button->setText("Code\nEidtor");
     connect(codeEditor_button, SIGNAL(clicked()), this, SLOT(on_code_Editor_clicked()));
     codeEditor_button->show();
     codeEditor_button->parent();
@@ -105,7 +105,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     QPushButton *codeView_button = new QPushButton(tab);
     codeView_button->setGeometry(QRect(0, tab->height() - 85 - 100 , 50, 50));
     codeView_button->setObjectName(name + "_codeView");
-    codeView_button->setText("View");
+    codeView_button->setText("Code\nView");
     connect(codeView_button, SIGNAL(clicked()), this, SLOT(on_code_View_clicked()));
     codeView_button->show();
     codeView_button->parent();
@@ -319,8 +319,7 @@ void MainWindow::on_actionCode_Viver_triggered()
 
 void MainWindow::on_pushButton_new_module_clicked()
 {
-//    this->dailog_new_module();
-//    ui->pushButton_new_module->setText("s");
+    this->dailog_new_module();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event) //当鼠标拖动时
@@ -429,4 +428,9 @@ void MainWindow::on_actionLog_triggered()
     file.write(logArr);
     file.close();
     ui->textEdit->append(getSysTime()+"日志文件已保存至路径： "+fileName+"\n");
+}
+
+void MainWindow::on_actionClear_Log_triggered()
+{
+    ui->textEdit->setText("Time:\t\tOUTPUT:\n");
 }
