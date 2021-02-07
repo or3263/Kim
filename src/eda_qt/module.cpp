@@ -25,13 +25,12 @@ Module::Module(QString name,int inputPorts,int outputPorts,int inOutPorts)
     }
 }
 
-Port Module::getSelectedPort(int portNum)
+Port & Module::getSelectedPort(int portNum)
 {
     for(unsigned long i = 0;i<this->ports.size();i++){
         if(this->ports.at(i).getPortNum()==portNum)
             return this->ports.at(i);
     }
-    return Port();
 }
 
 void Module::addPort()

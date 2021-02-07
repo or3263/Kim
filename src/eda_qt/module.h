@@ -21,7 +21,7 @@ private:
 public:
     Module();
     Module(QString,int,int,int);    //构造函数 （名字，输入端口数量，输出端口数量，双向端口数量）
-    Port getSelectedPort(int);  //返回选中的Port 参数为port对象标识默认从0开始
+    Port & getSelectedPort(int);  //返回选中的Port 参数为port对象标识默认从0开始
     void addPort();     //添加Port
     void deletePort(int);   //删除Port
     QString getName();
