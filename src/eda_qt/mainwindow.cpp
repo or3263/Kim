@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->tabWidget->setTabsClosable(true);
 
+    ui->textEdit->setTextColor(QColor(100, 200, 100));
+    ui->textEdit->setText("Time:\t\tOUTPUT:\n");
 
 //    //测试代码编辑器
 //    QWidget *a = new QWidget(ui->tab_code);
@@ -86,7 +88,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     tab->setObjectName(name + "_tab"); // 设置module table object名字
     qDebug() << "tab1 " << tab->width() << tab->height();
     ui->tabWidget->addTab(tab, name);
-
+    ui->textEdit->append(getSysTime()+"新建了"+name+"模块\n");
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
 
@@ -396,12 +398,35 @@ void MainWindow::on_code_Save_clicked()
 {
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
     Module m = ((tabs *)clickedButton->parent())->getModuleObject();
-    m.saveCodeFile(m.generateCode(m.getCode()));
+    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveCodeFile(m.generateCode(m.getCode())));
+
 }
 
 void MainWindow::on_module_Save_clicked()
 {
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
     Module m = ((tabs *)clickedButton->parent())->getModuleObject();
-    m.saveModuleFile();
+    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveModuleFile());
+}
+
+QString MainWindow::getSysTime()
+{
+    QTime t=QTime::currentTime();
+    QString SysTime=t.toString("HH:mm:ss");
+    SysTime = SysTime + "\t";
+    return  SysTime;
+}
+
+void MainWindow::on_actionLog_triggered()
+{
+    QString log = ui->textEdit->toPlainText();
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("导出日志文件"),QStringLiteral("C:/"),QStringLiteral("log(*.log)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){
+        ui->textEdit->append(getSysTime()+"文件保存失败，请检查权限。");
+    }
+    QByteArray logArr = log.toUtf8();//将qstring转换为qbytearray
+    file.write(logArr);
+    file.close();
+    ui->textEdit->append(getSysTime()+"日志文件已保存至路径： "+fileName+"\n");
 }

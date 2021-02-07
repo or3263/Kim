@@ -24,14 +24,14 @@ public:
     Port getSelectedPort(int);  //返回选中的Port 参数为port对象标识默认从0开始
     void addPort();     //添加Port
     void deletePort(int);   //删除Port
+    QString getName();
     void setCode(QString);
     QString getCode();
     void setAnnotation(QString);
     QString getAnnotation();
     QString generateCode(QString);
-    void saveCodeFile(QString geneCodes);
-    void saveModuleFile();
-
+    QString saveCodeFile(QString geneCodes);
+    QString saveModuleFile();
     int getLatestNum();
 };
 

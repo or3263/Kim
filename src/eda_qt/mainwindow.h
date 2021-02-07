@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
 #include "project_head.h"
 
 QT_BEGIN_NAMESPACE
@@ -16,7 +15,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    QString getSysTime();
 private slots:
 
     void recv_new_module(QString, int, int, int);
@@ -44,6 +43,9 @@ private slots:
     void on_code_Save_clicked();
 
     void on_module_Save_clicked();
+
+
+    void on_actionLog_triggered();
 
 private:
     Ui::MainWindow *ui;

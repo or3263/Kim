@@ -11,8 +11,6 @@
 
 #include "new_constrain.h"
 
-#include "new_constrain.h"
-
 #include "moduleqwidget.h"
 
 #include "testbench.h"
@@ -21,7 +19,7 @@
 
 #include "tabs.h"
 
-
+//#include "code_editor_dialog.h"
 // qt头部
 
 #include <QDialog>
@@ -34,10 +32,10 @@
 #include <QString>
 #include <QFileDialog>
 #include <QLayout>
-
+#include <QTime>
 #include <Qsci/qsciscintilla.h>
 #include <Qsci/qscilexerverilog.h>
-
+#include <QFile>
 #include <iostream>
 #include <vector>
 

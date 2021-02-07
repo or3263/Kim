@@ -63,6 +63,12 @@ QString Module::getCode()
 {
     return this->code;
 }
+
+QString Module::getName()
+{
+    return this->name;
+}
+
 void Module::setAnnotation(QString annotation)
 {
     this->annotation = annotation;
@@ -117,20 +123,25 @@ QString Module::generateCode(QString code)
     generateCodes = generateCodes + "\n" +code+"\n\nendmodule";
     return generateCodes;
 }
-void Module::saveCodeFile(QString geneCodes)
+QString Module::saveCodeFile(QString geneCodes)
 {
     QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Verilog代码文件"),QStringLiteral("C:/"),QStringLiteral("verilog(*.v)"));
     QFile file(fileName);
-    if(!file.open(QIODevice::WriteOnly)){}
+    if(!file.open(QIODevice::WriteOnly)){
+        return("文件保存出错，请检查权限。\n");
+    }
     QByteArray geneCodesArr = geneCodes.toUtf8();//将qstring转换为qbytearray
     file.write(geneCodesArr);
     file.close();
+    return ("代码文件已保存至路径： "+fileName+"\n");
 }
-void Module::saveModuleFile()
+QString Module::saveModuleFile()
 {
     QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
     QFile file(fileName);
-    if(!file.open(QIODevice::WriteOnly)){}
+    if(!file.open(QIODevice::WriteOnly)){
+        return("文件保存出错，请检查权限。\n");
+    }
     QDomDocument doc;
 
     file.close();
@@ -181,4 +192,5 @@ void Module::saveModuleFile()
     QTextStream out(&file);
     doc.save(out, 4);
     file.close();
+    return ("模块文件已保存至路径： "+fileName+"\n");
 }

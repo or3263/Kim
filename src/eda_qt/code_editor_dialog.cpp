@@ -1,6 +1,6 @@
 #include "code_editor_dialog.h"
 #include "ui_code_editor_dialog.h"
-
+#include "mainwindow.h"
 code_editor_dialog::code_editor_dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::code_editor_dialog)
