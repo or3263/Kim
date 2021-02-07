@@ -434,3 +434,9 @@ void MainWindow::on_actionClear_Log_triggered()
 {
     ui->textEdit->setText("Time:\t\tOUTPUT:\n");
 }
+
+void MainWindow::on_actionAbout_triggered()
+{
+    about_Dialog *s = new about_Dialog(this);
+    s->show();
+}

@@ -49,6 +49,8 @@ private slots:
 
     void on_actionClear_Log_triggered();
 
+    void on_actionAbout_triggered();
+
 private:
     Ui::MainWindow *ui;
 

@@ -19,6 +19,8 @@
 
 #include "tabs.h"
 
+#include "about_dialog.h"
+
 //#include "code_editor_dialog.h"
 // qt头部
 

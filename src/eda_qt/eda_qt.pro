@@ -19,6 +19,7 @@ LIBS += -L$$PWD -lqscintilla2_qt5
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    about_dialog.cpp \
     code_editor_dialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     new_testbench.cpp
 
 HEADERS += \
+    about_dialog.h \
     code_editor_dialog.h \
     mainwindow.h \
     moduleqwidget.h \
@@ -57,6 +59,7 @@ HEADERS += \
     ./Qsci/qscilexer.h
 
 FORMS += \
+    about_dialog.ui \
     code_editor_dialog.ui \
     mainwindow.ui \
     new_constrain.ui \
