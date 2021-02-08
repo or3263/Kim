@@ -63,6 +63,8 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void on_actionOpen_triggered();
+    
     void on_actionProject_triggered();
 
     void on_tabWidget_tabBarClicked(int index);

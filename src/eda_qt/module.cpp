@@ -144,7 +144,7 @@ QDomDocument Module::module_relay()
     QDomDocument doc;
     QDomProcessingInstruction instruction;  //添加处理指令（声明）
     QString data;
-    data = "version=\" encoding=\"" "\" standalone=\"" "\"";
+    data = "version=\"1.0\" encoding=\"UTF-8\"";
     instruction = doc.createProcessingInstruction("xml", data);
     doc.appendChild(instruction);
     QDomElement elementRoot = doc.createElement("module");
