@@ -16,7 +16,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString getSysTime();
-
+    QString getSysDate();
 
 
     enum property_type {port, module};
@@ -34,7 +34,7 @@ private slots:
 
     void on_tabWidget_tabCloseRequested(int index);
 
-    void on_actionCode_Viver_triggered();
+    void on_actionCode_View_triggered();
 
     void on_actionCode_Generate_triggered();
 

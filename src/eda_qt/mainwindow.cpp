@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->setTabsClosable(true);
 
     ui->textEdit->setTextColor(QColor(100, 200, 100));
-    ui->textEdit->setText("Time:\t\tOUTPUT:\n");
+    ui->textEdit->setText("Time:"+getSysDate()+"\t\tOUTPUT:\n");
 
 //    //测试代码编辑器
 //    QWidget *a = new QWidget(ui->tab_code);
@@ -88,7 +88,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     tab->setObjectName(name + "_tab"); // 设置module table object名字
     qDebug() << "tab1 " << tab->width() << tab->height();
     ui->tabWidget->addTab(tab, name);
-    ui->textEdit->append(getSysTime()+"新建了"+name+"模块\n");//发送log消息
+    ui->textEdit->append(getSysTime()+"\t新建了\""+name+"\"模块\n");//发送log消息
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
 
@@ -199,7 +199,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
         // 设置名称
         port->setObjectName(name + "_p_" + QString::number(port_number));
-        port->setText("P" + QString::number(port_number));
+        port->setText(tab->getModuleObject().getSelectedPort(port_number).getName());
+
+
 
         // 设置大小，位置
         port->resize(50, 50);
@@ -231,7 +233,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
         // 设置名称
         port->setObjectName(name + "_p_" + QString::number(port_number));
-        port->setText("P" + QString::number(port_number));
+        port->setText(tab->getModuleObject().getSelectedPort(port_number).getName());
 
         // 设置大小，位置
         port->resize(50, 50);
@@ -312,14 +314,20 @@ void MainWindow::on_tabWidget_tabCloseRequested(int index)
 
 void MainWindow::on_actionCode_Generate_triggered()//代码生成的选项
 {
-    //仅为测试代码
-    Module module;
-    module = Module("TestModule",2,3,4);
-    module.saveCodeFile(module.generateCode("UserCode"));
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveCodeFile(m.generateCode(m.getCode())));
 }
 
-void MainWindow::on_actionCode_Viver_triggered()
+void MainWindow::on_actionCode_View_triggered()
 {
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    code_editor_dialog *d = new code_editor_dialog();
+    d->get_tab(tab);
+    d->init_text_edit();
+    d->set_type(code_editor_dialog::view);
+    d->show();
 
 }
 
@@ -389,7 +397,7 @@ void MainWindow::on_code_Editor_clicked()
 
 void MainWindow::on_code_View_clicked()
 {
-    // 打开code editor窗口
+    // 打开code view窗口
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
 //    qDebug() << clickedButton->parent()->objectName();
     code_editor_dialog *d = new code_editor_dialog();
@@ -412,6 +420,13 @@ void MainWindow::on_module_Save_clicked()
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
     Module m = ((tabs *)clickedButton->parent())->getModuleObject();
     ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveModuleFile());
+}
+
+QString MainWindow::getSysDate()
+{
+    QDateTime d = QDateTime::currentDateTime();//获取系统现在的时间
+    QString SysDate = d.toString("yyyy-MM-dd"); //设置显示格式
+    return SysDate;
 }
 
 QString MainWindow::getSysTime()
@@ -529,7 +544,6 @@ void MainWindow::set_property_interface(int type, int port_number)
     }
 
 }
-
 void MainWindow::on_line_edit_editingFinished()
 {
     QLineEdit *line_edit = qobject_cast<QLineEdit *>(sender());
@@ -537,10 +551,11 @@ void MainWindow::on_line_edit_editingFinished()
     QString object_name = line_edit->objectName();
 
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
-
     if (object_name == "name")
     {
         tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(line_edit->text());
+
+       // setText(tab->getModuleObject().getSelectedPort(this->temp_port_number).getName());
     }
     else if (object_name == "datasize")
     {

@@ -145,7 +145,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>334</height>
+             <height>330</height>
             </rect>
            </property>
            <attribute name="label">
@@ -158,7 +158,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>334</height>
+             <height>330</height>
             </rect>
            </property>
            <attribute name="label">
@@ -230,7 +230,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>334</height>
+             <height>330</height>
             </rect>
            </property>
            <attribute name="label">
@@ -243,7 +243,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>334</height>
+             <height>330</height>
             </rect>
            </property>
            <attribute name="label">
@@ -307,7 +307,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>1056</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
@@ -348,7 +348,7 @@ p, li { white-space: pre-wrap; }
      <string>Code</string>
     </property>
     <addaction name="actionCode_Generate"/>
-    <addaction name="actionCode_Viver"/>
+    <addaction name="actionCode_View"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -407,9 +407,9 @@ p, li { white-space: pre-wrap; }
     <string>Code Generate</string>
    </property>
   </action>
-  <action name="actionCode_Viver">
+  <action name="actionCode_View">
    <property name="text">
-    <string>Code Viver</string>
+    <string>Code View</string>
    </property>
   </action>
   <action name="actionLog">
