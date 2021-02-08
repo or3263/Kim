@@ -113,76 +113,6 @@
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="2">
-         <widget class="QToolBox" name="toolBox_right">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>200</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="currentIndex">
-           <number>1</number>
-          </property>
-          <widget class="QWidget" name="toolbox_search">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>200</width>
-             <height>330</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Search</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="toolbox_property">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>200</width>
-             <height>330</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Property</string>
-           </attribute>
-           <widget class="QListView" name="listView_right">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>0</y>
-              <width>201</width>
-              <height>16777215</height>
-             </rect>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>200</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="editTriggers">
-             <set>QAbstractItemView::NoEditTriggers</set>
-            </property>
-           </widget>
-          </widget>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QToolBox" name="toolBox_left">
           <property name="enabled">
@@ -277,6 +207,86 @@
           </widget>
          </widget>
         </item>
+        <item row="0" column="2">
+         <widget class="QToolBox" name="toolBox_right">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <widget class="QWidget" name="toolbox_search">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>200</width>
+             <height>304</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Search</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="toolbox_property">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>200</width>
+             <height>304</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Port Property</string>
+           </attribute>
+           <widget class="QWidget" name="gridLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>191</width>
+              <height>341</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2"/>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="toolbox_m_property">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>200</width>
+             <height>304</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Module Property</string>
+           </attribute>
+           <widget class="QWidget" name="gridLayoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>191</width>
+              <height>301</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3"/>
+           </widget>
+          </widget>
+         </widget>
+        </item>
        </layout>
       </item>
       <item>
@@ -347,6 +357,7 @@ p, li { white-space: pre-wrap; }
       <string>Export…</string>
      </property>
      <addaction name="actionLog"/>
+     <addaction name="actionProject"/>
     </widget>
     <addaction name="menuNew"/>
     <addaction name="actionOpen"/>
@@ -362,7 +373,7 @@ p, li { white-space: pre-wrap; }
      <string>Code</string>
     </property>
     <addaction name="actionCode_Generate"/>
-    <addaction name="actionCode_Viver"/>
+    <addaction name="actionCode_View"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -421,9 +432,9 @@ p, li { white-space: pre-wrap; }
     <string>Code Generate</string>
    </property>
   </action>
-  <action name="actionCode_Viver">
+  <action name="actionCode_View">
    <property name="text">
-    <string>Code Viver</string>
+    <string>Code View</string>
    </property>
   </action>
   <action name="actionLog">
@@ -439,6 +450,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionClear_Log">
    <property name="text">
     <string>Clear Log</string>
+   </property>
+  </action>
+  <action name="actionProject">
+   <property name="text">
+    <string>Project</string>
    </property>
   </action>
  </widget>

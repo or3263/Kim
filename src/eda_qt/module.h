@@ -6,7 +6,7 @@
 #include "port.h"
 #include <QApplication>
 #include <QFileDialog>
-
+#include <QtXml>
 class Module
 {
 private:
@@ -21,9 +21,10 @@ private:
 public:
     Module();
     Module(QString,int,int,int);    //构造函数 （名字，输入端口数量，输出端口数量，双向端口数量）
-    Port getSelectedPort(int);  //返回选中的Port 参数为port对象标识默认从0开始
+    Port & getSelectedPort(int);  //返回选中的Port 参数为port对象标识默认从0开始
     void addPort();     //添加Port
     void deletePort(int);   //删除Port
+    void setName(QString);
     QString getName();
     void setCode(QString);
     QString getCode();
@@ -32,6 +33,7 @@ public:
     QString generateCode(QString);
     QString saveCodeFile(QString geneCodes);
     QString saveModuleFile();
+    QDomDocument module_relay();
     int getLatestNum();
 };
 

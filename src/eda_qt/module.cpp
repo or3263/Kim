@@ -25,13 +25,12 @@ Module::Module(QString name,int inputPorts,int outputPorts,int inOutPorts)
     }
 }
 
-Port Module::getSelectedPort(int portNum)
+Port & Module::getSelectedPort(int portNum)
 {
     for(unsigned long i = 0;i<this->ports.size();i++){
         if(this->ports.at(i).getPortNum()==portNum)
             return this->ports.at(i);
     }
-    return Port();
 }
 
 void Module::addPort()
@@ -62,6 +61,11 @@ void Module::setCode(QString code)
 QString Module::getCode()
 {
     return this->code;
+}
+
+void Module::setName(QString name)
+{
+    this->name = name;
 }
 
 QString Module::getName()
@@ -135,17 +139,9 @@ QString Module::saveCodeFile(QString geneCodes)
     file.close();
     return ("代码文件已保存至路径： "+fileName+"\n");
 }
-QString Module::saveModuleFile()
+QDomDocument Module::module_relay()
 {
-    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
-    QFile file(fileName);
-    if(!file.open(QIODevice::WriteOnly)){
-        return("文件保存出错，请检查权限。\n");
-    }
     QDomDocument doc;
-
-    file.close();
-
     QDomProcessingInstruction instruction;  //添加处理指令（声明）
     QString data;
     data = "version=\"1.0\" encoding=\"UTF-8\"";
@@ -153,6 +149,7 @@ QString Module::saveModuleFile()
     doc.appendChild(instruction);
     QDomElement elementRoot = doc.createElement("module");
     QDomElement element_M_Name = doc.createElement("m_name");
+    QDomElement element_M_Annotation = doc.createElement("m_annotation");
     QDomElement element_Code = doc.createElement("code");
     QDomElement element_Ports = doc.createElement("Ports");
     for(unsigned long i = 0;i<this->ports.size();i++){  //循环生成每个端口的节点
@@ -179,18 +176,36 @@ QString Module::saveModuleFile()
     }
 
     element_M_Name.appendChild(doc.createTextNode(this->name));
+    element_M_Annotation.appendChild(doc.createTextNode(this->getAnnotation()));
     element_Code.appendChild(doc.createTextNode(this->getCode()));
     elementRoot.appendChild(element_M_Name);
+    elementRoot.appendChild(element_M_Annotation);
     elementRoot.appendChild(element_Code);
     elementRoot.appendChild(element_Ports);
     doc.appendChild(elementRoot);
+    return doc;
+
+}
+QString Module::saveModuleFile()
+{
+
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){
+        return("文件保存出错，请检查权限。\n");
+    }
+    file.close();
+
+    QDomDocument doc;
+
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         {
             qDebug() << "open for add error!!";
         }
-
+    doc = Module::module_relay();
     QTextStream out(&file);
     doc.save(out, 4);
     file.close();
     return ("模块文件已保存至路径： "+fileName+"\n");
+
 }

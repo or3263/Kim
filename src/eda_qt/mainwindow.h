@@ -16,6 +16,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QString getSysTime();
+    QString getSysDate();
+
+
+    enum property_type {port, module};
 private slots:
 
     void recv_new_module(QString, int, int, int);
@@ -30,7 +34,7 @@ private slots:
 
     void on_tabWidget_tabCloseRequested(int index);
 
-    void on_actionCode_Viver_triggered();
+    void on_actionCode_View_triggered();
 
     void on_actionCode_Generate_triggered();
 
@@ -44,6 +48,13 @@ private slots:
 
     void on_module_Save_clicked();
 
+    void on_port_clicked(); // port点击事件，显示右边属性栏
+
+    void on_module_clicked();
+
+    void on_line_edit_editingFinished(); // line edit完成更改时触发
+
+    void on_combobox_current_index_changed(int index); // combobox 更改选项时触发
 
     void on_actionLog_triggered();
 
@@ -52,6 +63,8 @@ private slots:
     void on_actionAbout_triggered();
 
     void on_actionOpen_triggered();
+    
+    void on_actionProject_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -64,8 +77,14 @@ private:
 
     QPoint calculate_pos(int source_x, int source_height, double paragraph); // 计算相对位置
 
+    void set_property_interface(int type, int port_number); // 设置属性栏界面
+
     QPoint source_mouse_point;
     QPoint source_widget_point;
+
+    int property_type_number;
+
+    int temp_port_number;
 
 protected:
     void mouseMoveEvent(QMouseEvent *event);

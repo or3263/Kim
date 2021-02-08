@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->setTabsClosable(true);
 
     ui->textEdit->setTextColor(QColor(100, 200, 100));
-    ui->textEdit->setText("Time:\t\tOUTPUT:\n");
+    ui->textEdit->setText("Time:"+getSysDate()+"\t\tOUTPUT:\n");
 
 //    //测试代码编辑器
 //    QWidget *a = new QWidget(ui->tab_code);
@@ -88,7 +88,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     tab->setObjectName(name + "_tab"); // 设置module table object名字
     qDebug() << "tab1 " << tab->width() << tab->height();
     ui->tabWidget->addTab(tab, name);
-    ui->textEdit->append(getSysTime()+"新建了"+name+"模块\n");//发送log消息
+    ui->textEdit->append(getSysTime()+"\t新建了\""+name+"\"模块\n");//发送log消息
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
 
@@ -169,7 +169,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
     widget_2->setAutoFillBackground(true); // 填充背景
     widget_2->setStyleSheet("background-color: rgb(170, 0, 0);"); // 设置背景颜色
-    QLabel *nameLable = new QLabel;
+    QLabel *nameLable = new QLabel;//module的name标签
     nameLable->setGeometry(200,200,100,100);
     nameLable->setObjectName(name + "_nameLable");
     nameLable->setText(name);
@@ -177,7 +177,17 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     nameLable->show();
     widget_2->setParent(tab_module);
     widget_2->show();
-
+    QPushButton *on_widget_2 = new QPushButton;//创建透明按钮叠加在widget_2上
+    on_widget_2->setGeometry(QRect(0,0,widget_2_width,widget_2_height));
+    on_widget_2->setObjectName(name + "on_widget_2_button");
+    on_widget_2->setFlat(true);
+    on_widget_2->setAutoFillBackground(true);
+    QPalette palette = on_widget_2->palette();
+    palette.setColor(QPalette::Button,QColor(255,0,0,100));
+    on_widget_2->setPalette(palette);
+    on_widget_2->setParent(widget_2);
+    on_widget_2->show();
+    connect(on_widget_2, SIGNAL(clicked()), this, SLOT(on_module_clicked()));//连接按钮的点击信号
 //    QPushButton *port1 = new QPushButton(tab_module);
 //    port1->setGeometry(QRect(50, 50, 50, 50));
 //    port1->show();
@@ -199,7 +209,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
         // 设置名称
         port->setObjectName(name + "_p_" + QString::number(port_number));
-        port->setText("P" + QString::number(port_number));
+        port->setText(tab->getModuleObject().getSelectedPort(port_number).getName());
+
+
 
         // 设置大小，位置
         port->resize(50, 50);
@@ -208,6 +220,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
         // 设置背景颜色
         widget_2->setAutoFillBackground(true);
         port->setStyleSheet("background-color: rgb(100, 100, 10);");
+
+        // 连接click事件
+        connect(port, SIGNAL(clicked()), this, SLOT(on_port_clicked()));
 
         // 显示
         port->setParent(tab_module);
@@ -228,7 +243,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
         // 设置名称
         port->setObjectName(name + "_p_" + QString::number(port_number));
-        port->setText("P" + QString::number(port_number));
+        port->setText(tab->getModuleObject().getSelectedPort(port_number).getName());
 
         // 设置大小，位置
         port->resize(50, 50);
@@ -244,6 +259,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
         {
             port->setStyleSheet("background-color: rgb(75, 75, 75);");
         }
+
+        // 连接click事件
+        connect(port, SIGNAL(clicked()), this, SLOT(on_port_clicked()));
 
         // 显示
         port->setParent(tab_module);
@@ -306,14 +324,20 @@ void MainWindow::on_tabWidget_tabCloseRequested(int index)
 
 void MainWindow::on_actionCode_Generate_triggered()//代码生成的选项
 {
-    //仅为测试代码
-    Module module;
-    module = Module("TestModule",2,3,4);
-    module.saveCodeFile(module.generateCode("UserCode"));
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveCodeFile(m.generateCode(m.getCode())));
 }
 
-void MainWindow::on_actionCode_Viver_triggered()
+void MainWindow::on_actionCode_View_triggered()
 {
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    code_editor_dialog *d = new code_editor_dialog();
+    d->get_tab(tab);
+    d->init_text_edit();
+    d->set_type(code_editor_dialog::view);
+    d->show();
 
 }
 
@@ -383,7 +407,7 @@ void MainWindow::on_code_Editor_clicked()
 
 void MainWindow::on_code_View_clicked()
 {
-    // 打开code editor窗口
+    // 打开code view窗口
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
 //    qDebug() << clickedButton->parent()->objectName();
     code_editor_dialog *d = new code_editor_dialog();
@@ -406,6 +430,13 @@ void MainWindow::on_module_Save_clicked()
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
     Module m = ((tabs *)clickedButton->parent())->getModuleObject();
     ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveModuleFile());
+}
+
+QString MainWindow::getSysDate()
+{
+    QDateTime d = QDateTime::currentDateTime();//获取系统现在的时间
+    QString SysDate = d.toString("yyyy-MM-dd"); //设置显示格式
+    return SysDate;
 }
 
 QString MainWindow::getSysTime()
@@ -432,7 +463,7 @@ void MainWindow::on_actionLog_triggered()
 
 void MainWindow::on_actionClear_Log_triggered()
 {
-    ui->textEdit->setText("Time:\t\tOUTPUT:\n");
+    ui->textEdit->setText("Time:"+getSysDate()+"\t\tOUTPUT:\n");
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -496,4 +527,231 @@ void MainWindow::on_actionOpen_triggered()
             }
        }
 
+void MainWindow::on_port_clicked()
+{
+    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+    // 获取button控件object名，切割字符串
+    QString button_object_name = clickedButton->objectName();
+    QStringList name_list = button_object_name.split("_");
+
+    int port_number = name_list.last().toInt();
+
+    this->property_type_number = MainWindow::port; // 设置全局点击控件类型
+
+    this->set_property_interface(MainWindow::port, port_number);
+}
+
+void MainWindow::on_module_clicked()
+{
+    //tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    qDebug() << "111111";
+    this->set_property_interface(MainWindow::module, 0);
+}
+void MainWindow::set_property_interface(int type, int port_number)
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+
+    if (type == MainWindow::port)
+    {
+        ui->toolBox_right->setCurrentIndex(1);
+        Port port = tab->getModuleObject().getSelectedPort(port_number);
+        this->temp_port_number = port_number;
+
+        // 加载Label
+
+        QStringList property_text;
+        property_text << "Name" << "Inout" << "DataType" << "DataSize" << "Function" << "Color";
+
+        for (int row = 1; row < property_text.length() + 1; row++)
+        {
+            QLabel *label_name = new QLabel(ui->toolbox_property);
+            label_name->setText(property_text.at(row - 1));
+            ui->gridLayout_2->addWidget(label_name, row, 0);
+        }
+
+
+        // 加载line edit
+        //
+        QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(port.getName());
+        line_edit->setObjectName("p_name");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_2->addWidget(line_edit, 1, 1);
+
+        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(QString::number(port.getDataSize()));
+        line_edit->setObjectName("datasize");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_2->addWidget(line_edit, 4, 1);
+
+        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(port.getAnnotation());
+        line_edit->setObjectName("function");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_2->addWidget(line_edit, 5, 1);
+
+
+        // 加载ComboBox
+        //
+        QComboBox *combobox = new QComboBox(ui->toolbox_property);
+        QStringList port_type_list;
+        port_type_list << "input" << "output" << "inout";
+        combobox->addItems(port_type_list);
+        combobox->setCurrentIndex(port.getPortType());
+        combobox->setObjectName("porttype");
+        connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(on_combobox_current_index_changed(int)));
+        ui->gridLayout_2->addWidget(combobox, 2, 1);
+
+        combobox = new QComboBox(ui->toolbox_property);
+        QStringList data_type_list;
+        data_type_list << "wire" << "reg";
+        combobox->addItems(data_type_list);
+        combobox->setCurrentIndex(port.getDataType());
+        combobox->setObjectName("datatype");
+        connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(on_combobox_current_index_changed(int)));
+        ui->gridLayout_2->addWidget(combobox, 3, 1);
+
+        combobox = new QComboBox(ui->toolbox_property);
+        ui->gridLayout_2->addWidget(combobox, 6, 1);
+    }
+
+    if (type == MainWindow::module)
+    {
+        ui->toolBox_right->setCurrentIndex(2);
+        Module module = tab->getModuleObject();
+
+        QStringList property_text;
+
+        property_text << "Name" << "Annotation";
+
+        for (int row = 1; row < property_text.length() + 1; row++)
+        {
+            QLabel *label_name = new QLabel(ui->toolbox_property);
+            label_name->setText(property_text.at(row - 1));
+            ui->gridLayout_3->addWidget(label_name, row, 0);
+        }
+
+        QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(module.getName());
+        line_edit->setObjectName("m_name");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_3->addWidget(line_edit, 1, 1);
+
+        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(module.getAnnotation());
+        line_edit->setObjectName("annotation");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_3->addWidget(line_edit, 2, 1);
+
+    }
+}
+void MainWindow::on_line_edit_editingFinished()
+{
+    QLineEdit *line_edit = qobject_cast<QLineEdit *>(sender());
+//    qDebug() << line_edit->objectName() << "Finish";
+    QString object_name = line_edit->objectName();
+
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    if (object_name == "p_name")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(line_edit->text());
+
+       // setText(tab->getModuleObject().getSelectedPort(this->temp_port_number).getName());
+    }
+    else if (object_name == "datasize")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataSize(line_edit->text().toInt());
+    }
+    else if (object_name == "function")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setAnnotation(line_edit->text());
+    }
+    else if (object_name == "m_name")
+    {
+        tab->getModuleObject().setName(line_edit->text());
+    }
+    else if (object_name == "annotation")
+    {
+        tab->getModuleObject().setAnnotation(line_edit->text());
+    }
+}
+
+void MainWindow::on_combobox_current_index_changed(int index)
+{
+    qDebug() << index << "change";
+
+    QComboBox *combobox = qobject_cast<QComboBox *>(sender());
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+
+    QString object_name = combobox->objectName();
+
+    if (object_name == "porttype")
+    {
+        switch (index) {
+        case INPUT:
+            tab->getModuleObject().getSelectedPort(this->temp_port_number).setPortType(INPUT);
+            break;
+        case OUTPUT:
+            tab->getModuleObject().getSelectedPort(this->temp_port_number).setPortType(OUTPUT);
+            break;
+        case INOUT:
+            tab->getModuleObject().getSelectedPort(this->temp_port_number).setPortType(INOUT);
+            break;
+        }
+
+    }
+    else if (object_name == "datatype")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataType(index);
+    }
+}
+
+void MainWindow::on_actionProject_triggered()
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    //m.exportProject();
+    QString filePath = QFileDialog::getSaveFileName(NULL, QStringLiteral("导出工程目录"),QStringLiteral("C:/"),QStringLiteral("目录(*)"));
+    QDir *folder = new QDir;
+    bool exist = folder->exists(filePath);
+    if (exist)
+    {
+        ui->textEdit->append("目录已存在\n");
+    }else{
+        folder->mkdir(filePath);
+    }
+    filePath = filePath + "/";
+    QString codeFile = filePath + (m.getName()) + ".v";
+    QFile file1(codeFile);
+    if(!file1.open(QIODevice::WriteOnly)){
+        ui->textEdit->append("保存code文件出错\n");
+    }
+    QByteArray geneCodesArr = (m.generateCode(m.getCode())).toUtf8();
+    file1.write(geneCodesArr);
+    file1.close();
+
+    QString moduleFile = filePath + (m.getName() + ".mod");
+    QFile file2(moduleFile);
+    if(!file2.open(QIODevice::WriteOnly)){
+        ui->textEdit->append ("保存module文件出错\n");
+    }
+    file2.close();
+    QDomDocument doc = m.module_relay();
+    if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            ui->textEdit->append ("保存module文件出错\n");
+        }
+    QTextStream out(&file2);
+    doc.save(out, 4);
+    file2.close();
+
+    QString logFile = filePath + (m.getName() + ".log");
+    QFile file3(logFile);
+    if(!file3.open(QIODevice::WriteOnly)){
+        ui->textEdit->append ("保存log文件出错\n");
+    }
+    QString log = ui->textEdit->toPlainText();
+    QByteArray logArr = log.toUtf8();//将qstring转换为qbytearray
+    file3.write(logArr);
+    file3.close();
 }
