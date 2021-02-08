@@ -526,6 +526,7 @@ void MainWindow::on_actionOpen_triggered()
                 }
             }
        }
+}
 
 void MainWindow::on_port_clicked()
 {
