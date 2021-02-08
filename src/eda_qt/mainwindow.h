@@ -18,6 +18,9 @@ public:
     QString getSysTime();
     QString getSysDate();
 
+    void change_tab_index(int index);
+    int get_tab_index();
+
 
     enum property_type {port, module};
 private slots:
@@ -52,8 +55,6 @@ private slots:
 
     void on_module_clicked();
 
-    void on_line_edit_editingFinished(); // line edit完成更改时触发
-
     void on_combobox_current_index_changed(int index); // combobox 更改选项时触发
 
     void on_actionLog_triggered();
@@ -63,6 +64,10 @@ private slots:
     void on_actionAbout_triggered();
 
     void on_actionProject_triggered();
+
+    void on_tabWidget_tabBarClicked(int index);
+
+    void on_lineEdit_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

@@ -92,6 +92,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
 
+    // 切换到新加入的标签
+    change_tab_index(get_tab_index() - 1);
+
     // 新建Code Editor按钮
     QPushButton *codeEditor_button = new QPushButton(tab);
     codeEditor_button->setGeometry(QRect(0, tab->height() - 85, 50, 50));
@@ -520,19 +523,19 @@ void MainWindow::set_property_interface(int type, int port_number)
         QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(port.getName());
         line_edit->setObjectName("p_name");
-        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_lineEdit_textChanged(QString)));
         ui->gridLayout_2->addWidget(line_edit, 1, 1);
 
         line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(QString::number(port.getDataSize()));
         line_edit->setObjectName("datasize");
-        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
         ui->gridLayout_2->addWidget(line_edit, 4, 1);
 
         line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(port.getAnnotation());
         line_edit->setObjectName("function");
-        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
         ui->gridLayout_2->addWidget(line_edit, 5, 1);
 
 
@@ -579,45 +582,15 @@ void MainWindow::set_property_interface(int type, int port_number)
         QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(module.getName());
         line_edit->setObjectName("m_name");
-        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
         ui->gridLayout_3->addWidget(line_edit, 1, 1);
 
         line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(module.getAnnotation());
         line_edit->setObjectName("annotation");
-        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
         ui->gridLayout_3->addWidget(line_edit, 2, 1);
 
-    }
-}
-void MainWindow::on_line_edit_editingFinished()
-{
-    QLineEdit *line_edit = qobject_cast<QLineEdit *>(sender());
-//    qDebug() << line_edit->objectName() << "Finish";
-    QString object_name = line_edit->objectName();
-
-    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
-    if (object_name == "p_name")
-    {
-        tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(line_edit->text());
-
-       // setText(tab->getModuleObject().getSelectedPort(this->temp_port_number).getName());
-    }
-    else if (object_name == "datasize")
-    {
-        tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataSize(line_edit->text().toInt());
-    }
-    else if (object_name == "function")
-    {
-        tab->getModuleObject().getSelectedPort(this->temp_port_number).setAnnotation(line_edit->text());
-    }
-    else if (object_name == "m_name")
-    {
-        tab->getModuleObject().setName(line_edit->text());
-    }
-    else if (object_name == "annotation")
-    {
-        tab->getModuleObject().setAnnotation(line_edit->text());
     }
 }
 
@@ -699,4 +672,56 @@ void MainWindow::on_actionProject_triggered()
     QByteArray logArr = log.toUtf8();//将qstring转换为qbytearray
     file3.write(logArr);
     file3.close();
+}
+
+void MainWindow::on_tabWidget_tabBarClicked(int index)
+{
+    qDebug() << "clicked";
+    QLayoutItem *item;
+    while ((item = ui->gridLayout_2->takeAt(0)))
+    {
+        ui->gridLayout_2->removeItem(item);
+        delete item->widget();
+    }
+}
+
+void MainWindow::on_lineEdit_textChanged(const QString &arg1)
+{
+    QLineEdit *line_edit = qobject_cast<QLineEdit *>(sender());
+//    qDebug() << line_edit->objectName() << "Finish";
+    QString object_name = line_edit->objectName();
+
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    if (object_name == "p_name")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(arg1);
+
+       // setText(tab->getModuleObject().getSelectedPort(this->temp_port_number).getName());
+    }
+    else if (object_name == "datasize")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataSize(arg1.toInt());
+    }
+    else if (object_name == "function")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setAnnotation(arg1);
+    }
+    else if (object_name == "m_name")
+    {
+        tab->getModuleObject().setName(arg1);
+    }
+    else if (object_name == "annotation")
+    {
+        tab->getModuleObject().setAnnotation(arg1);
+    }
+}
+
+void MainWindow::change_tab_index(int index)
+{
+    ui->tabWidget->setCurrentIndex(index);
+}
+
+int MainWindow::get_tab_index()
+{
+    return ui->tabWidget->count();
 }

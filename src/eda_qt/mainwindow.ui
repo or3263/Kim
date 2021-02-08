@@ -145,7 +145,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>312</height>
             </rect>
            </property>
            <attribute name="label">
@@ -158,7 +158,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>312</height>
             </rect>
            </property>
            <attribute name="label">
@@ -204,6 +204,16 @@
            <attribute name="title">
             <string/>
            </attribute>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>190</y>
+              <width>113</width>
+              <height>23</height>
+             </rect>
+            </property>
+           </widget>
           </widget>
          </widget>
         </item>
@@ -230,7 +240,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>304</height>
+             <height>282</height>
             </rect>
            </property>
            <attribute name="label">
@@ -243,7 +253,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>304</height>
+             <height>282</height>
             </rect>
            </property>
            <attribute name="label">
@@ -267,7 +277,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>304</height>
+             <height>282</height>
             </rect>
            </property>
            <attribute name="label">
@@ -331,7 +341,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>1056</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
