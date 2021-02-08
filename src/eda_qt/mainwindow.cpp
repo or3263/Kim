@@ -4,7 +4,7 @@
 #include "ui_mainwindow.h"
 
 #include "project_head.h"
-
+#include "QMessageBox"
 #include "code_editor_dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -439,4 +439,61 @@ void MainWindow::on_actionAbout_triggered()
 {
     about_Dialog *s = new about_Dialog(this);
     s->show();
+}
+
+void MainWindow::on_actionOpen_triggered()
+{
+
+    QString tempPath = QFileDialog::getOpenFileName(this, QStringLiteral("打开"),QCoreApplication::applicationDirPath(),"yangnai files(*.mod;*.const;*vcd;*test)");
+       if(!tempPath.isEmpty())
+       {
+            QFile file(tempPath);
+            if(!file.open(QFile::ReadOnly | QFile::Text))
+            {
+                QMessageBox::information(NULL, QString("title"), QString("open error!"));
+                return;
+            }
+            QDomDocument document;
+            QString error;
+            int row = 0, column = 0;
+            if(!document.setContent(&file, false, &error, &row, &column))
+            {
+                QMessageBox::information(NULL, QString("title"), QString("parse file failed at line row and column") + QString::number(row, 10) + QString(",") + QString::number(column, 10));
+                return;
+            }
+            if(document.isNull())
+            {
+                QMessageBox::information(NULL, QString("title"), QString("document is null!"));
+                return;
+            }
+            QDomElement root = document.documentElement();
+            if(root.tagName()=="module"){
+                QString moduleName =  root.firstChildElement().text();
+                QDomNodeList moduleNodeList = root.childNodes();
+                QString moduleCode = moduleNodeList.at(1).toElement().text();
+                QDomElement modulePortsDom = moduleNodeList.at(2).toElement();
+                QDomNodeList modulePortsNodeList = root.childNodes();
+                int input=0,output=0,inout =0;
+                for(int i = 0;i<modulePortsNodeList.count();++i){
+                    if(modulePortsNodeList.at(i).toElement().firstChildElement().text()=="INPUT"){
+                        input++;
+                    }else if(modulePortsNodeList.at(i).toElement().firstChildElement().text()=="OUTPUT"){
+                        output++;
+                    }else{
+                        inout++;
+                    }
+                }
+                MainWindow::init_tab_widget(moduleName,input,output,inout);
+                tabs* tempTab = (tabs*) ui->tabWidget->currentWidget();
+                for(int i = 0;i<modulePortsNodeList.count();++i){
+                    QDomElement tempDomElement = modulePortsNodeList.at(i).toElement();
+                    tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.tagName());
+                    QDomNodeList tempDomNodeList =  tempDomElement.childNodes();
+                    tempTab->getModuleObject().getSelectedPort(i).setDataType(tempDomNodeList.at(1).toElement().text()=="wire"?0:1);
+                    tempTab->getModuleObject().getSelectedPort(i).setDataSize(tempDomNodeList.at(2).toElement().text().toInt());
+                    tempTab->getModuleObject().getSelectedPort(i).setAnnotation(tempDomNodeList.at(2).toElement().text());
+                }
+            }
+       }
+
 }
