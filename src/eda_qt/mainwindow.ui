@@ -262,6 +262,14 @@
            </widget>
           </widget>
           <widget class="QWidget" name="toolbox_m_property">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>200</width>
+             <height>304</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>Module Property</string>
            </attribute>
@@ -349,6 +357,7 @@ p, li { white-space: pre-wrap; }
       <string>Export…</string>
      </property>
      <addaction name="actionLog"/>
+     <addaction name="actionProject"/>
     </widget>
     <addaction name="menuNew"/>
     <addaction name="actionOpen"/>
@@ -441,6 +450,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionClear_Log">
    <property name="text">
     <string>Clear Log</string>
+   </property>
+  </action>
+  <action name="actionProject">
+   <property name="text">
+    <string>Project</string>
    </property>
   </action>
  </widget>

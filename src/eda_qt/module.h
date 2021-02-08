@@ -6,7 +6,7 @@
 #include "port.h"
 #include <QApplication>
 #include <QFileDialog>
-
+#include <QtXml>
 class Module
 {
 private:
@@ -33,6 +33,7 @@ public:
     QString generateCode(QString);
     QString saveCodeFile(QString geneCodes);
     QString saveModuleFile();
+    QDomDocument module_relay();
     int getLatestNum();
 };
 

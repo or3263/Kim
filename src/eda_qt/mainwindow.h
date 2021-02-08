@@ -62,6 +62,8 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void on_actionProject_triggered();
+
 private:
     Ui::MainWindow *ui;
 

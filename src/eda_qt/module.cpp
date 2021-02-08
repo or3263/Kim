@@ -139,17 +139,9 @@ QString Module::saveCodeFile(QString geneCodes)
     file.close();
     return ("代码文件已保存至路径： "+fileName+"\n");
 }
-QString Module::saveModuleFile()
+QDomDocument Module::module_relay()
 {
-    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
-    QFile file(fileName);
-    if(!file.open(QIODevice::WriteOnly)){
-        return("文件保存出错，请检查权限。\n");
-    }
     QDomDocument doc;
-
-    file.close();
-
     QDomProcessingInstruction instruction;  //添加处理指令（声明）
     QString data;
     data = "version=\" encoding=\"" "\" standalone=\"" "\"";
@@ -191,13 +183,29 @@ QString Module::saveModuleFile()
     elementRoot.appendChild(element_Code);
     elementRoot.appendChild(element_Ports);
     doc.appendChild(elementRoot);
+    return doc;
+
+}
+QString Module::saveModuleFile()
+{
+
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){
+        return("文件保存出错，请检查权限。\n");
+    }
+    file.close();
+
+    QDomDocument doc;
+
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         {
             qDebug() << "open for add error!!";
         }
-
+    doc = Module::module_relay();
     QTextStream out(&file);
     doc.save(out, 4);
     file.close();
     return ("模块文件已保存至路径： "+fileName+"\n");
+
 }

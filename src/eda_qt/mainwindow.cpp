@@ -463,7 +463,7 @@ void MainWindow::on_actionLog_triggered()
 
 void MainWindow::on_actionClear_Log_triggered()
 {
-    ui->textEdit->setText("Time:\t\tOUTPUT:\n");
+    ui->textEdit->setText("Time:"+getSysDate()+"\t\tOUTPUT:\n");
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -649,4 +649,54 @@ void MainWindow::on_combobox_current_index_changed(int index)
     {
         tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataType(index);
     }
+}
+
+void MainWindow::on_actionProject_triggered()
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    //m.exportProject();
+    QString filePath = QFileDialog::getSaveFileName(NULL, QStringLiteral("导出工程目录"),QStringLiteral("C:/"),QStringLiteral("目录(*)"));
+    QDir *folder = new QDir;
+    bool exist = folder->exists(filePath);
+    if (exist)
+    {
+        ui->textEdit->append("目录已存在\n");
+    }else{
+        folder->mkdir(filePath);
+    }
+    filePath = filePath + "/";
+    QString codeFile = filePath + (m.getName()) + ".v";
+    QFile file1(codeFile);
+    if(!file1.open(QIODevice::WriteOnly)){
+        ui->textEdit->append("保存code文件出错\n");
+    }
+    QByteArray geneCodesArr = (m.generateCode(m.getCode())).toUtf8();
+    file1.write(geneCodesArr);
+    file1.close();
+
+    QString moduleFile = filePath + (m.getName() + ".mod");
+    QFile file2(moduleFile);
+    if(!file2.open(QIODevice::WriteOnly)){
+        ui->textEdit->append ("保存module文件出错\n");
+    }
+    file2.close();
+    QDomDocument doc = m.module_relay();
+    if (!file2.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            ui->textEdit->append ("保存module文件出错\n");
+        }
+    QTextStream out(&file2);
+    doc.save(out, 4);
+    file2.close();
+
+    QString logFile = filePath + (m.getName() + ".log");
+    QFile file3(logFile);
+    if(!file3.open(QIODevice::WriteOnly)){
+        ui->textEdit->append ("保存log文件出错\n");
+    }
+    QString log = ui->textEdit->toPlainText();
+    QByteArray logArr = log.toUtf8();//将qstring转换为qbytearray
+    file3.write(logArr);
+    file3.close();
 }
