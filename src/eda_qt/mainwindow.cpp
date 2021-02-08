@@ -209,6 +209,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
         widget_2->setAutoFillBackground(true);
         port->setStyleSheet("background-color: rgb(100, 100, 10);");
 
+        // 连接click事件
+        connect(port, SIGNAL(clicked()), this, SLOT(on_port_clicked()));
+
         // 显示
         port->setParent(tab_module);
         port->show();
@@ -244,6 +247,9 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
         {
             port->setStyleSheet("background-color: rgb(75, 75, 75);");
         }
+
+        // 连接click事件
+        connect(port, SIGNAL(clicked()), this, SLOT(on_port_clicked()));
 
         // 显示
         port->setParent(tab_module);
@@ -439,4 +445,139 @@ void MainWindow::on_actionAbout_triggered()
 {
     about_Dialog *s = new about_Dialog(this);
     s->show();
+}
+
+void MainWindow::on_port_clicked()
+{
+    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+    // 获取button控件object名，切割字符串
+    QString button_object_name = clickedButton->objectName();
+    QStringList name_list = button_object_name.split("_");
+
+    int port_number = name_list.last().toInt();
+
+    this->property_type_number = MainWindow::port; // 设置全局点击控件类型
+
+    this->set_property_interface(MainWindow::port, port_number);
+}
+
+void MainWindow::set_property_interface(int type, int port_number)
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+
+    if (type == MainWindow::port)
+    {
+        Port port = tab->getModuleObject().getSelectedPort(port_number);
+        this->temp_port_number = port_number;
+
+        // 加载Label
+        //
+        QStringList property_text;
+        property_text << "Name" << "Inout" << "DataType" << "DataSize" << "Function" << "Color";
+
+        for (int row = 1; row < property_text.length() + 1; row++)
+        {
+            QLabel *label_name = new QLabel(ui->toolbox_property);
+            label_name->setText(property_text.at(row - 1));
+            ui->gridLayout_2->addWidget(label_name, row, 0);
+        }
+
+
+        // 加载line edit
+        //
+        QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(port.getName());
+        line_edit->setObjectName("name");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_2->addWidget(line_edit, 1, 1);
+
+        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(QString::number(port.getDataSize()));
+        line_edit->setObjectName("datasize");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_2->addWidget(line_edit, 4, 1);
+
+        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(port.getAnnotation());
+        line_edit->setObjectName("function");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_2->addWidget(line_edit, 5, 1);
+
+
+        // 加载ComboBox
+        //
+        QComboBox *combobox = new QComboBox(ui->toolbox_property);
+        QStringList port_type_list;
+        port_type_list << "input" << "output" << "inout";
+        combobox->addItems(port_type_list);
+        combobox->setCurrentIndex(port.getPortType());
+        combobox->setObjectName("porttype");
+        connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(on_combobox_current_index_changed(int)));
+        ui->gridLayout_2->addWidget(combobox, 2, 1);
+
+        combobox = new QComboBox(ui->toolbox_property);
+        QStringList data_type_list;
+        data_type_list << "wire" << "reg";
+        combobox->addItems(data_type_list);
+        combobox->setCurrentIndex(port.getDataType());
+        combobox->setObjectName("datatype");
+        connect(combobox, SIGNAL(currentIndexChanged(int)), this, SLOT(on_combobox_current_index_changed(int)));
+        ui->gridLayout_2->addWidget(combobox, 3, 1);
+
+        combobox = new QComboBox(ui->toolbox_property);
+        ui->gridLayout_2->addWidget(combobox, 6, 1);
+    }
+
+}
+
+void MainWindow::on_line_edit_editingFinished()
+{
+    QLineEdit *line_edit = qobject_cast<QLineEdit *>(sender());
+//    qDebug() << line_edit->objectName() << "Finish";
+    QString object_name = line_edit->objectName();
+
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+
+    if (object_name == "name")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(line_edit->text());
+    }
+    else if (object_name == "datasize")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataSize(line_edit->text().toInt());
+    }
+    else if (object_name == "function")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setAnnotation(line_edit->text());
+    }
+}
+
+void MainWindow::on_combobox_current_index_changed(int index)
+{
+    qDebug() << index << "change";
+
+    QComboBox *combobox = qobject_cast<QComboBox *>(sender());
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+
+    QString object_name = combobox->objectName();
+
+    if (object_name == "porttype")
+    {
+        switch (index) {
+        case INPUT:
+            tab->getModuleObject().getSelectedPort(this->temp_port_number).setPortType(INPUT);
+            break;
+        case OUTPUT:
+            tab->getModuleObject().getSelectedPort(this->temp_port_number).setPortType(OUTPUT);
+            break;
+        case INOUT:
+            tab->getModuleObject().getSelectedPort(this->temp_port_number).setPortType(INOUT);
+            break;
+        }
+
+    }
+    else if (object_name == "datatype")
+    {
+        tab->getModuleObject().getSelectedPort(this->temp_port_number).setDataType(index);
+    }
 }

@@ -40,6 +40,10 @@
 #include <QFile>
 #include <iostream>
 #include <vector>
+#include <QComboBox>
+#include <QAbstractItemView>
+#include <QHeaderView>
+#include <QLineEdit>
 
 #include <QDebug>
 #include <QtXml>
