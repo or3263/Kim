@@ -7,6 +7,9 @@ new_testbench::new_testbench(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setModal(true);
+    this->setMinimumSize(447, 513);this->setMaximumSize(447, 513);//固定对话框大小
+    this->setWindowTitle("新建测试文件");
+    this->setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);//去掉对话框的问号
 }
 
 new_testbench::~new_testbench()

@@ -7,7 +7,9 @@ new_module::new_module(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setModal(true); // 设置模态
-
+    this->setMinimumSize(447, 513);this->setMaximumSize(447, 513);//固定对话框大小
+    this->setWindowTitle("新建模块文件");
+    this->setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);//去掉对话框的问号
     // 限制为 int 格式，范围两位数
     QIntValidator *int_v = new QIntValidator;
     int_v->setRange(0, 50);
