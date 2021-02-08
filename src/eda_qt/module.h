@@ -24,6 +24,7 @@ public:
     Port & getSelectedPort(int);  //返回选中的Port 参数为port对象标识默认从0开始
     void addPort();     //添加Port
     void deletePort(int);   //删除Port
+    void setName(QString);
     QString getName();
     void setCode(QString);
     QString getCode();

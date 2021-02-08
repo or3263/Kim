@@ -222,7 +222,7 @@
            </size>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="toolbox_search">
            <property name="geometry">
@@ -230,7 +230,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>304</height>
             </rect>
            </property>
            <attribute name="label">
@@ -243,11 +243,11 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>330</height>
+             <height>304</height>
             </rect>
            </property>
            <attribute name="label">
-            <string>Property</string>
+            <string>Port Property</string>
            </attribute>
            <widget class="QWidget" name="gridLayoutWidget">
             <property name="geometry">
@@ -259,6 +259,22 @@
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_2"/>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="toolbox_m_property">
+           <attribute name="label">
+            <string>Module Property</string>
+           </attribute>
+           <widget class="QWidget" name="gridLayoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>191</width>
+              <height>301</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3"/>
            </widget>
           </widget>
          </widget>

@@ -63,6 +63,11 @@ QString Module::getCode()
     return this->code;
 }
 
+void Module::setName(QString name)
+{
+    this->name = name;
+}
+
 QString Module::getName()
 {
     return this->name;
@@ -152,6 +157,7 @@ QString Module::saveModuleFile()
     doc.appendChild(instruction);
     QDomElement elementRoot = doc.createElement("module");
     QDomElement element_M_Name = doc.createElement("m_name");
+    QDomElement element_M_Annotation = doc.createElement("m_annotation");
     QDomElement element_Code = doc.createElement("code");
     QDomElement element_Ports = doc.createElement("Ports");
     for(unsigned long i = 0;i<this->ports.size();i++){  //循环生成每个端口的节点
@@ -178,8 +184,10 @@ QString Module::saveModuleFile()
     }
 
     element_M_Name.appendChild(doc.createTextNode(this->name));
+    element_M_Annotation.appendChild(doc.createTextNode(this->getAnnotation()));
     element_Code.appendChild(doc.createTextNode(this->getCode()));
     elementRoot.appendChild(element_M_Name);
+    elementRoot.appendChild(element_M_Annotation);
     elementRoot.appendChild(element_Code);
     elementRoot.appendChild(element_Ports);
     doc.appendChild(elementRoot);

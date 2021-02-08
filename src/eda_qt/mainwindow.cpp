@@ -169,7 +169,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
 
     widget_2->setAutoFillBackground(true); // 填充背景
     widget_2->setStyleSheet("background-color: rgb(170, 0, 0);"); // 设置背景颜色
-    QLabel *nameLable = new QLabel;
+    QLabel *nameLable = new QLabel;//module的name标签
     nameLable->setGeometry(200,200,100,100);
     nameLable->setObjectName(name + "_nameLable");
     nameLable->setText(name);
@@ -177,7 +177,17 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     nameLable->show();
     widget_2->setParent(tab_module);
     widget_2->show();
-
+    QPushButton *on_widget_2 = new QPushButton;//创建透明按钮叠加在widget_2上
+    on_widget_2->setGeometry(QRect(0,0,widget_2_width,widget_2_height));
+    on_widget_2->setObjectName(name + "on_widget_2_button");
+    on_widget_2->setFlat(true);
+    on_widget_2->setAutoFillBackground(true);
+    QPalette palette = on_widget_2->palette();
+    palette.setColor(QPalette::Button,QColor(255,0,0,100));
+    on_widget_2->setPalette(palette);
+    on_widget_2->setParent(widget_2);
+    on_widget_2->show();
+    connect(on_widget_2, SIGNAL(clicked()), this, SLOT(on_module_clicked()));//连接按钮的点击信号
 //    QPushButton *port1 = new QPushButton(tab_module);
 //    port1->setGeometry(QRect(50, 50, 50, 50));
 //    port1->show();
@@ -476,17 +486,24 @@ void MainWindow::on_port_clicked()
     this->set_property_interface(MainWindow::port, port_number);
 }
 
+void MainWindow::on_module_clicked()
+{
+    //tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    qDebug() << "111111";
+    this->set_property_interface(MainWindow::module, 0);
+}
 void MainWindow::set_property_interface(int type, int port_number)
 {
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
 
     if (type == MainWindow::port)
     {
+        ui->toolBox_right->setCurrentIndex(1);
         Port port = tab->getModuleObject().getSelectedPort(port_number);
         this->temp_port_number = port_number;
 
         // 加载Label
-        //
+
         QStringList property_text;
         property_text << "Name" << "Inout" << "DataType" << "DataSize" << "Function" << "Color";
 
@@ -502,7 +519,7 @@ void MainWindow::set_property_interface(int type, int port_number)
         //
         QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(port.getName());
-        line_edit->setObjectName("name");
+        line_edit->setObjectName("p_name");
         connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
         ui->gridLayout_2->addWidget(line_edit, 1, 1);
 
@@ -543,6 +560,35 @@ void MainWindow::set_property_interface(int type, int port_number)
         ui->gridLayout_2->addWidget(combobox, 6, 1);
     }
 
+    if (type == MainWindow::module)
+    {
+        ui->toolBox_right->setCurrentIndex(2);
+        Module module = tab->getModuleObject();
+
+        QStringList property_text;
+
+        property_text << "Name" << "Annotation";
+
+        for (int row = 1; row < property_text.length() + 1; row++)
+        {
+            QLabel *label_name = new QLabel(ui->toolbox_property);
+            label_name->setText(property_text.at(row - 1));
+            ui->gridLayout_3->addWidget(label_name, row, 0);
+        }
+
+        QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(module.getName());
+        line_edit->setObjectName("m_name");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_3->addWidget(line_edit, 1, 1);
+
+        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit->setText(module.getAnnotation());
+        line_edit->setObjectName("annotation");
+        connect(line_edit, SIGNAL(editingFinished()), this, SLOT(on_line_edit_editingFinished()));
+        ui->gridLayout_3->addWidget(line_edit, 2, 1);
+
+    }
 }
 void MainWindow::on_line_edit_editingFinished()
 {
@@ -551,7 +597,7 @@ void MainWindow::on_line_edit_editingFinished()
     QString object_name = line_edit->objectName();
 
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
-    if (object_name == "name")
+    if (object_name == "p_name")
     {
         tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(line_edit->text());
 
@@ -564,6 +610,14 @@ void MainWindow::on_line_edit_editingFinished()
     else if (object_name == "function")
     {
         tab->getModuleObject().getSelectedPort(this->temp_port_number).setAnnotation(line_edit->text());
+    }
+    else if (object_name == "m_name")
+    {
+        tab->getModuleObject().setName(line_edit->text());
+    }
+    else if (object_name == "annotation")
+    {
+        tab->getModuleObject().setAnnotation(line_edit->text());
     }
 }
 

@@ -50,6 +50,8 @@ private slots:
 
     void on_port_clicked(); // port点击事件，显示右边属性栏
 
+    void on_module_clicked();
+
     void on_line_edit_editingFinished(); // line edit完成更改时触发
 
     void on_combobox_current_index_changed(int index); // combobox 更改选项时触发
