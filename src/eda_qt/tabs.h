@@ -9,6 +9,8 @@ public:
     explicit tabs(QWidget *parent = nullptr);
     void setModuleObject(const Module &);
     Module & getModuleObject();
+    int flag;//1：打开的文件；0：新建的文件或另存为的标志
+    QString filePath;
 signals:
 
 private:

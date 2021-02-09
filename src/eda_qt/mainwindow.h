@@ -25,7 +25,7 @@ public:
     enum property_type {port, module};
 private slots:
 
-    void recv_new_module(QString, int, int, int);
+    void recv_new_module(QString, int, int, int, int);
 
     void on_actionExit_triggered();
 
@@ -47,9 +47,9 @@ private slots:
 
     void on_code_View_clicked();
 
-    void on_code_Save_clicked();
+//    void on_code_Save_clicked();
 
-    void on_module_Save_clicked();
+//    void on_module_Save_clicked();
 
     void on_port_clicked(); // port点击事件，显示右边属性栏
 
@@ -73,6 +73,10 @@ private slots:
 
     void on_load();
 
+    void on_actionSave_triggered();
+
+    void on_actionSave_As_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -80,7 +84,7 @@ private:
 
     void init_list();
 
-    void init_tab_widget(QString, int, int, int);
+    void init_tab_widget(QString, int, int, int, int);
 
     QPoint calculate_pos(int source_x, int source_height, double paragraph); // 计算相对位置
 

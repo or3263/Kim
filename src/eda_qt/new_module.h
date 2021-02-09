@@ -26,7 +26,7 @@ private slots:
     void on_pushButton_ok_clicked();
 
 signals:
-    void send_data(QString, int ,int ,int);
+    void send_data(QString, int ,int ,int,int);
 
 private:
     Ui::new_module *ui;

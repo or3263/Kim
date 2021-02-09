@@ -44,16 +44,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::recv_new_module(QString name, int inp1, int out, int inp2) //接收新建module窗口发送来的Module类
+void MainWindow::recv_new_module(QString name, int inp1, int out, int inp2, int flag ) //接收新建module窗口发送来的Module类
 {
-    this->init_tab_widget(name, inp1, out, inp2);
+    this->init_tab_widget(name, inp1, out, inp2, flag);
 }
 
 
 void MainWindow::dailog_new_module() //弹出新建module窗口
 {
     new_module *s = new new_module(this);
-    connect(s, SIGNAL(send_data(QString, int, int, int)), this, SLOT(recv_new_module(QString, int, int, int)));
+    connect(s, SIGNAL(send_data(QString, int, int, int,int)), this, SLOT(recv_new_module(QString, int, int, int,int)));
     s->show();
 }
 
@@ -81,15 +81,21 @@ void MainWindow::init_list()
     ui->listView_left->setModel(itemModel);
 }
 
-void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // inp1 = input， out = output, inp2 = input and output
+void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2, int flag) // inp1 = input， out = output, inp2 = input and output
 {
-
+    //flag==0:新建；flag==1:打开
     // 新建标签
     tabs *tab = new tabs();
     tab->setObjectName(name + "_tab"); // 设置module table object名字
+    tab->flag = 0;
+    tab->filePath = "";
     qDebug() << "tab1 " << tab->width() << tab->height();
     ui->tabWidget->addTab(tab, name);
-    ui->textEdit->append(getSysTime()+"\t新建了\""+name+"\"模块\n");//发送log消息
+    if (flag == 0){
+    ui->textEdit->append(getSysTime()+"新建了\""+name+"\"模块\n");//发送log消息
+    }else if(flag == 1){
+    ;;
+    }
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
 
@@ -114,23 +120,23 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2) // i
     codeView_button->show();
     codeView_button->parent();
 
-    //新建Save Code
-    QPushButton *codeSave_button = new QPushButton(tab);
-    codeSave_button->setGeometry(QRect(tab->width()-55, tab->height() - 85 - 100 , 50, 50));
-    codeSave_button->setObjectName(name + "_codeSave");
-    codeSave_button->setText("Save\nCode");
-    connect(codeSave_button, SIGNAL(clicked()), this, SLOT(on_code_Save_clicked()));
-    codeSave_button->show();
-    codeSave_button->parent();
+//    //新建Save Code
+//    QPushButton *codeSave_button = new QPushButton(tab);
+//    codeSave_button->setGeometry(QRect(tab->width()-55, tab->height() - 85 - 100 , 50, 50));
+//    codeSave_button->setObjectName(name + "_codeSave");
+//    codeSave_button->setText("Save\nCode");
+//    connect(codeSave_button, SIGNAL(clicked()), this, SLOT(on_code_Save_clicked()));
+//    codeSave_button->show();
+//    codeSave_button->parent();
 
-    //新建Save Module
-    QPushButton *moduleSave_button = new QPushButton(tab);
-    moduleSave_button->setGeometry(QRect(tab->width()-55, tab->height() - 85 , 50, 50));
-    moduleSave_button->setObjectName(name + "_codeModule");
-    moduleSave_button->setText("Save\nModule");
-    connect(moduleSave_button, SIGNAL(clicked()), this, SLOT(on_module_Save_clicked()));
-    moduleSave_button->show();
-    moduleSave_button->parent();
+//    //新建Save Module
+//    QPushButton *moduleSave_button = new QPushButton(tab);
+//    moduleSave_button->setGeometry(QRect(tab->width()-55, tab->height() - 85 , 50, 50));
+//    moduleSave_button->setObjectName(name + "_codeModule");
+//    moduleSave_button->setText("Save\nModule");
+//    connect(moduleSave_button, SIGNAL(clicked()), this, SLOT(on_module_Save_clicked()));
+//    moduleSave_button->show();
+//    moduleSave_button->parent();
 
     // 新建module
     QWidget *tab_module = new QWidget(tab);
@@ -421,20 +427,20 @@ void MainWindow::on_code_View_clicked()
     d->show();
 }
 
-void MainWindow::on_code_Save_clicked()
-{
-    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
-    Module m = ((tabs *)clickedButton->parent())->getModuleObject();
-    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveCodeFile(m.generateCode(m.getCode())));
+//void MainWindow::on_code_Save_clicked()
+//{
+//    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+//    Module m = ((tabs *)clickedButton->parent())->getModuleObject();
+//    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveCodeFile(m.generateCode(m.getCode())));
 
-}
+//}
 
-void MainWindow::on_module_Save_clicked()
-{
-    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
-    Module m = ((tabs *)clickedButton->parent())->getModuleObject();
-    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveModuleFile());
-}
+//void MainWindow::on_module_Save_clicked()
+//{
+//    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+//    Module m = ((tabs *)clickedButton->parent())->getModuleObject();
+//    ui->textEdit->append(getSysTime()+"模块\'"+m.getName()+"\'的"+m.saveModuleFile());
+//}
 
 QString MainWindow::getSysDate()
 {
@@ -447,7 +453,7 @@ QString MainWindow::getSysTime()
 {
     QTime t=QTime::currentTime();
     QString SysTime=t.toString("HH:mm:ss");
-    SysTime = SysTime + "\t";
+    SysTime = SysTime + "\t\t";
     return  SysTime;
 }
 
@@ -519,10 +525,12 @@ void MainWindow::on_actionOpen_triggered()
                         inout++;
                     }
                 }
-                MainWindow::init_tab_widget(moduleName,input,output,inout);
+                MainWindow::init_tab_widget(moduleName,input,output,inout,1 );
                 tabs* tempTab = (tabs*) ui->tabWidget->currentWidget();
                 tempTab->getModuleObject().setAnnotation(moduleAnnotation);
                 tempTab->getModuleObject().setCode(moduleCode);
+                tempTab->flag = 1;
+                tempTab->filePath = tempPath;
                 for(int i = 0;i<modulePortsNodeList.count();++i){
                     QDomElement tempDomElement = modulePortsNodeList.at(i).toElement();
                     tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.text());
@@ -531,6 +539,7 @@ void MainWindow::on_actionOpen_triggered()
                     tempTab->getModuleObject().getSelectedPort(i).setDataSize(tempDomNodeList.at(2).toElement().text().toInt());
                     tempTab->getModuleObject().getSelectedPort(i).setAnnotation(tempDomNodeList.at(3).toElement().text());
                 }
+                ui->textEdit->append(getSysTime()+"打开了路径为"+tempPath +"的\""+ moduleName+"\"模块\n");//发送log消息
             }
        }
 }
@@ -737,6 +746,7 @@ void MainWindow::on_actionProject_triggered()
     QByteArray logArr = log.toUtf8();//将qstring转换为qbytearray
     file3.write(logArr);
     file3.close();
+    ui->textEdit->append(getSysTime()+m.getName()+"的工程文件集已导出至："+filePath+"目录\n");//发送log消息
 }
 
 void MainWindow::on_tabWidget_tabBarClicked(int index)
@@ -809,5 +819,78 @@ int MainWindow::get_tab_index()
 
 void MainWindow::on_load()
 {
-    this->init_tab_widget("module", 0, 0, 0);
+    this->init_tab_widget("module", 0, 0, 0,2);
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    if(tab->flag == 0){
+        QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
+        QFile file(fileName);
+        if(!file.open(QIODevice::WriteOnly)){
+            ui->textEdit->append(getSysTime()+"保存文件失败\n");//发送log消息
+        }
+        file.close();
+
+        QDomDocument doc;
+
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+            {
+                qDebug() << "open for add error!!";
+            }
+        doc = m.module_relay();
+        QTextStream out(&file);
+        doc.save(out, 4);
+        file.close();
+        ui->textEdit->append(getSysTime()+m.getName()+"的模块文件已保存至路径： "+fileName+"\n");//发送log消息
+        tab->filePath = fileName;
+    }else if (tab->flag == 1){
+        QString fileName = tab->filePath;
+        QFile file(fileName);
+        if(!file.open(QIODevice::WriteOnly)){
+            ui->textEdit->append(getSysTime()+"保存文件失败\n");//发送log消息
+        }
+        file.close();
+
+        QDomDocument doc;
+
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+            {
+                qDebug() << "open for add error!!";
+            }
+        doc = m.module_relay();
+        QTextStream out(&file);
+        doc.save(out, 4);
+        file.close();
+        ui->textEdit->append(getSysTime()+m.getName()+"的模块文件已保存至路径： "+fileName+"\n");//发送log消息
+    }
+    tab->flag = 1;
+}
+
+void MainWindow::on_actionSave_As_triggered()
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
+    QFile file(fileName);
+    if(!file.open(QIODevice::WriteOnly)){
+        ;;//return("文件保存出错，请检查权限。\n");
+    }
+    file.close();
+
+    QDomDocument doc;
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            qDebug() << "open for add error!!";
+        }
+    doc = m.module_relay();
+    QTextStream out(&file);
+    doc.save(out, 4);
+    file.close();
+    ui->textEdit->append(getSysTime()+m.getName()+"的模块文件已另存为至路径： "+fileName+"\n");//发送log消息
+    tab->filePath = fileName;
+    tab->flag = 1;
 }

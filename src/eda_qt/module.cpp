@@ -137,7 +137,7 @@ QString Module::saveCodeFile(QString geneCodes)
     QByteArray geneCodesArr = geneCodes.toUtf8();//将qstring转换为qbytearray
     file.write(geneCodesArr);
     file.close();
-    return ("代码文件已保存至路径： "+fileName+"\n");
+    return ("代码文件已导出至路径： "+fileName+"\n");
 }
 QDomDocument Module::module_relay()
 {

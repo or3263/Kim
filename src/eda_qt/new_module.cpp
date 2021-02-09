@@ -35,8 +35,8 @@ void new_module::on_pushButton_ok_clicked()
     QString out_t = ui->lineEdit_out->text();
     QString p2_t = ui->lineEdit_input_2->text();
 
-    int p1, p2, out;
-
+    int p1, p2, out,flag;
+    flag = 0;
     if (p1_t == "")
     {
         p1 = 0;
@@ -56,6 +56,6 @@ void new_module::on_pushButton_ok_clicked()
         out = out_t.toInt();
     }
 
-    emit send_data(name, p1, out, p2); // 发送数据至Main Window
+    emit send_data(name, p1, out, p2,flag); // 发送数据至Main Window
     this->~new_module();
 }
