@@ -71,6 +71,8 @@ private slots:
 
     void on_lineEdit_textChanged(const QString &arg1);
 
+    void on_load();
+
 private:
     Ui::MainWindow *ui;
 
@@ -90,6 +92,8 @@ private:
     int property_type_number;
 
     int temp_port_number;
+
+    int click_send_type;
 
 protected:
     void mouseMoveEvent(QMouseEvent *event);

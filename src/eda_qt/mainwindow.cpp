@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     // 初始化左边list表
     this->init_list();
 
+    QTimer::singleShot(2, this, SLOT(on_load()));
 }
 
 MainWindow::~MainWindow()
@@ -506,7 +507,7 @@ void MainWindow::on_actionOpen_triggered()
                 QDomNodeList moduleNodeList = root.childNodes();
                 QString moduleCode = moduleNodeList.at(1).toElement().text();
                 QDomElement modulePortsDom = moduleNodeList.at(2).toElement();
-                QDomNodeList modulePortsNodeList = root.childNodes();
+                QDomNodeList modulePortsNodeList = modulePortsDom.childNodes();
                 int input=0,output=0,inout =0;
                 for(int i = 0;i<modulePortsNodeList.count();++i){
                     if(modulePortsNodeList.at(i).toElement().firstChildElement().text()=="INPUT"){
@@ -521,7 +522,7 @@ void MainWindow::on_actionOpen_triggered()
                 tabs* tempTab = (tabs*) ui->tabWidget->currentWidget();
                 for(int i = 0;i<modulePortsNodeList.count();++i){
                     QDomElement tempDomElement = modulePortsNodeList.at(i).toElement();
-                    tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.tagName());
+                    tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.text());
                     QDomNodeList tempDomNodeList =  tempDomElement.childNodes();
                     tempTab->getModuleObject().getSelectedPort(i).setDataType(tempDomNodeList.at(1).toElement().text()=="wire"?0:1);
                     tempTab->getModuleObject().getSelectedPort(i).setDataSize(tempDomNodeList.at(2).toElement().text().toInt());
@@ -540,6 +541,8 @@ void MainWindow::on_port_clicked()
 
     int port_number = name_list.last().toInt();
 
+    this->click_send_type = MainWindow::port;
+
     this->property_type_number = MainWindow::port; // 设置全局点击控件类型
 
     this->set_property_interface(MainWindow::port, port_number);
@@ -548,9 +551,12 @@ void MainWindow::on_port_clicked()
 void MainWindow::on_module_clicked()
 {
     //tabs *tab = (tabs *)ui->tabWidget->currentWidget();
-    qDebug() << "111111";
+
+    this->click_send_type = MainWindow::module;
+
     this->set_property_interface(MainWindow::module, 0);
 }
+
 void MainWindow::set_property_interface(int type, int port_number)
 {
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
@@ -630,21 +636,21 @@ void MainWindow::set_property_interface(int type, int port_number)
 
         for (int row = 1; row < property_text.length() + 1; row++)
         {
-            QLabel *label_name = new QLabel(ui->toolbox_property);
+            QLabel *label_name = new QLabel(ui->toolbox_m_property);
             label_name->setText(property_text.at(row - 1));
             ui->gridLayout_3->addWidget(label_name, row, 0);
         }
 
-        QLineEdit *line_edit = new QLineEdit(ui->toolbox_property);
+        QLineEdit *line_edit = new QLineEdit(ui->toolbox_m_property);
         line_edit->setText(module.getName());
         line_edit->setObjectName("m_name");
-        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_lineEdit_textChanged(QString)));
         ui->gridLayout_3->addWidget(line_edit, 1, 1);
 
-        line_edit = new QLineEdit(ui->toolbox_property);
+        line_edit = new QLineEdit(ui->toolbox_m_property);
         line_edit->setText(module.getAnnotation());
         line_edit->setObjectName("annotation");
-        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_lineEdit_textChanged(QString)));
         ui->gridLayout_3->addWidget(line_edit, 2, 1);
 
     }
@@ -748,9 +754,19 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
     QString object_name = line_edit->objectName();
 
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    QString tab_name = tab->objectName().split("_")[0];
+
     if (object_name == "p_name")
     {
         tab->getModuleObject().getSelectedPort(this->temp_port_number).setName(arg1);
+
+
+
+        if (click_send_type == MainWindow::port) // 当点击是按钮时
+        {
+            QPushButton *button = tab->findChild<QPushButton *>(tab_name + "_p_" + QString::number(this->temp_port_number));
+            button->setText(arg1);
+        }
 
        // setText(tab->getModuleObject().getSelectedPort(this->temp_port_number).getName());
     }
@@ -765,6 +781,12 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
     else if (object_name == "m_name")
     {
         tab->getModuleObject().setName(arg1);
+        if (click_send_type == MainWindow::module)
+        {
+            QLabel *label = tab->findChild<QLabel *>(tab_name + "_nameLable");
+            label->setText(arg1);
+        }
+
     }
     else if (object_name == "annotation")
     {
@@ -780,4 +802,9 @@ void MainWindow::change_tab_index(int index)
 int MainWindow::get_tab_index()
 {
     return ui->tabWidget->count();
+}
+
+void MainWindow::on_load()
+{
+    this->init_tab_widget("module", 0, 0, 0);
 }
