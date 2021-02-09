@@ -29,6 +29,7 @@ SOURCES += \
     constrain.cpp \
     new_module.cpp \
     port.cpp \
+    savedialog.cpp \
     tabs.cpp \
     testbench.cpp \
     new_testbench.cpp
@@ -44,6 +45,7 @@ HEADERS += \
     new_module.h \
     port.h \
     project_head.h \
+    savedialog.h \
     tabs.h \
     testbench.h \
     new_testbench.h \
@@ -64,7 +66,8 @@ FORMS += \
     mainwindow.ui \
     new_constrain.ui \
     new_module.ui \
-    new_testbench.ui
+    new_testbench.ui \
+    savedialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
