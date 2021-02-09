@@ -505,8 +505,9 @@ void MainWindow::on_actionOpen_triggered()
             if(root.tagName()=="module"){
                 QString moduleName =  root.firstChildElement().text();
                 QDomNodeList moduleNodeList = root.childNodes();
-                QString moduleCode = moduleNodeList.at(1).toElement().text();
-                QDomElement modulePortsDom = moduleNodeList.at(2).toElement();
+                QString moduleAnnotation = moduleNodeList.at(1).toElement().text();
+                QString moduleCode = moduleNodeList.at(2).toElement().text();
+                QDomElement modulePortsDom = moduleNodeList.at(3).toElement();
                 QDomNodeList modulePortsNodeList = modulePortsDom.childNodes();
                 int input=0,output=0,inout =0;
                 for(int i = 0;i<modulePortsNodeList.count();++i){
@@ -520,13 +521,15 @@ void MainWindow::on_actionOpen_triggered()
                 }
                 MainWindow::init_tab_widget(moduleName,input,output,inout);
                 tabs* tempTab = (tabs*) ui->tabWidget->currentWidget();
+                tempTab->getModuleObject().setAnnotation(moduleAnnotation);
+                tempTab->getModuleObject().setCode(moduleCode);
                 for(int i = 0;i<modulePortsNodeList.count();++i){
                     QDomElement tempDomElement = modulePortsNodeList.at(i).toElement();
                     tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.text());
                     QDomNodeList tempDomNodeList =  tempDomElement.childNodes();
                     tempTab->getModuleObject().getSelectedPort(i).setDataType(tempDomNodeList.at(1).toElement().text()=="wire"?0:1);
                     tempTab->getModuleObject().getSelectedPort(i).setDataSize(tempDomNodeList.at(2).toElement().text().toInt());
-                    tempTab->getModuleObject().getSelectedPort(i).setAnnotation(tempDomNodeList.at(2).toElement().text());
+                    tempTab->getModuleObject().getSelectedPort(i).setAnnotation(tempDomNodeList.at(3).toElement().text());
                 }
             }
        }
