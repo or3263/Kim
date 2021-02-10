@@ -11,6 +11,7 @@ public:
     Module & getModuleObject();
     int flag;//1：打开的文件；0：新建的文件或另存为的标志
     QString filePath;
+    int isPopular;//1：已被添加；0：未被添加
 signals:
 
 private:

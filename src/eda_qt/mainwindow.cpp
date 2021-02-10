@@ -20,6 +20,24 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textEdit->setTextColor(QColor(100, 200, 100));
     ui->textEdit->setText("Time:"+getSysDate()+"\t\tOUTPUT:\n");
 
+    QFileInfo fileInfo("./config.ini");//第一次运行程序时在当前目录下新建config.ini
+    if(!fileInfo.isFile()){
+        QFile file("./config.ini");
+        if(!file.open(QIODevice::WriteOnly)){
+            ;;
+        }
+        QDomDocument doc;
+        QDomProcessingInstruction instruction;  //添加处理指令（声明）
+        QString data;
+        data = "version=\"1.0\" encoding=\"UTF-8\"";
+        instruction = doc.createProcessingInstruction("xml", data);
+        doc.appendChild(instruction);
+        QTextStream out(&file);
+        doc.save(out, 4);
+        file.close();
+    }
+
+
 //    //测试代码编辑器
 //    QWidget *a = new QWidget(ui->tab_code);
 //    QsciLexerVerilog *textLexer =new QsciLexerVerilog;
@@ -62,15 +80,15 @@ void MainWindow::init_list()
     QStandardItemModel *itemModel = new QStandardItemModel(this);
 
     QStringList list;
-    list.append("_74HC138");
-    list.append("_74HC151");
-    list.append("_74HC181");
-    list.append("_74HC182");
-    list.append("_74HC190");
-    list.append("_74HC194");
-    list.append("_74HC238");
-    list.append("AD0809");
-    list.append("add");
+//    list.append("_74HC138");
+//    list.append("_74HC151");
+//    list.append("_74HC181");
+//    list.append("_74HC182");
+//    list.append("_74HC190");
+//    list.append("_74HC194");
+//    list.append("_74HC238");
+//    list.append("AD0809");
+//    list.append("add");
 
     for (int i = 0; i < list.size(); i++)
     {
@@ -918,4 +936,52 @@ void MainWindow::on_actionSave_As_triggered()
     ui->textEdit->append(getSysTime()+m.getName()+"的模块文件已另存为至路径： "+fileName+"\n");//发送log消息
     tab->filePath = fileName;
     tab->flag = 1;
+}
+
+void MainWindow::on_actionAdd_to_popular_triggered()
+{
+    tabs *tab = (tabs *)ui->tabWidget->currentWidget();
+    Module m = tab->getModuleObject();
+    if (tab->flag == 0){
+        MainWindow::on_actionSave_triggered();
+        QString tempPath = tab->filePath;
+        QDomDocument doc;
+        QDomElement elementRoot = doc.createElement("module");
+        QDomElement elementName = doc.createElement("name");
+        QDomElement elementPath = doc.createElement("path");
+        elementPath.appendChild(doc.createTextNode(tab->filePath));
+        elementName.appendChild(doc.createTextNode(m.getName()));
+        elementRoot.appendChild(elementName);
+        elementRoot.appendChild(elementPath);
+        doc.appendChild(elementRoot);
+        QFile file("./config.ini");
+        while(!file.open(QIODevice::ReadWrite | QIODevice::Append));//以读写切追加写入的方式操作文本
+        QTextStream out(&file);
+        doc.save(out, 4);
+        file.close();
+        ui->textEdit->append(getSysTime()+m.getName()+"模块已加入常用区\n");
+        tab->isPopular = 1;
+    }else if(tab->flag == 1){
+        if(tab->isPopular == 1){
+            ui->textEdit->append(getSysTime()+"该模块已在常用区\n");
+        }else{
+            QString tempPath = tab->filePath;
+            QDomDocument doc;
+            QDomElement elementRoot = doc.createElement("module");
+            QDomElement elementName = doc.createElement("name");
+            QDomElement elementPath = doc.createElement("path");
+            elementPath.appendChild(doc.createTextNode(tab->filePath));
+            elementName.appendChild(doc.createTextNode(m.getName()));
+            elementRoot.appendChild(elementName);
+            elementRoot.appendChild(elementPath);
+            doc.appendChild(elementRoot);
+            QFile file("./config.ini");
+            while(!file.open(QIODevice::ReadWrite | QIODevice::Append));//以读写切追加写入的方式操作文本
+            QTextStream out(&file);
+            doc.save(out, 4);
+            file.close();
+            ui->textEdit->append(getSysTime()+m.getName()+"模块已加入常用区\n");
+            tab->isPopular = 1;
+        }
+    }
 }

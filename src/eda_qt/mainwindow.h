@@ -77,6 +77,8 @@ private slots:
 
     void on_actionSave_As_triggered();
 
+    void on_actionAdd_to_popular_triggered();
+
 private:
     Ui::MainWindow *ui;
 

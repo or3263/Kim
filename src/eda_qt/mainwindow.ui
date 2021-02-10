@@ -145,7 +145,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>312</height>
+             <height>330</height>
             </rect>
            </property>
            <attribute name="label">
@@ -158,7 +158,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>312</height>
+             <height>330</height>
             </rect>
            </property>
            <attribute name="label">
@@ -225,7 +225,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>282</height>
+             <height>304</height>
             </rect>
            </property>
            <attribute name="label">
@@ -238,7 +238,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>282</height>
+             <height>304</height>
             </rect>
            </property>
            <attribute name="label">
@@ -262,7 +262,7 @@
              <x>0</x>
              <y>0</y>
              <width>200</width>
-             <height>282</height>
+             <height>304</height>
             </rect>
            </property>
            <attribute name="label">
@@ -326,7 +326,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>1056</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
@@ -362,6 +362,7 @@ p, li { white-space: pre-wrap; }
     <addaction name="menuExport"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
+    <addaction name="actionAdd_to_popular"/>
    </widget>
    <widget class="QMenu" name="menuCode">
     <property name="title">
@@ -450,6 +451,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionProject">
    <property name="text">
     <string>Project</string>
+   </property>
+  </action>
+  <action name="actionAdd_to_popular">
+   <property name="text">
+    <string>Add to popular</string>
    </property>
   </action>
  </widget>
