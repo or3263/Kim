@@ -99,9 +99,10 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2, int 
     }
     tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
     qDebug() << "tab2 " << tab->width() << tab->height();
-
+    qDebug()<<"666"<<ui->tabWidget->count();
     // 切换到新加入的标签
     change_tab_index(get_tab_index() - 1);
+    qDebug()<<"777"<<ui->tabWidget->count();
 
     // 新建Code Editor按钮
     QPushButton *codeEditor_button = new QPushButton(tab);
@@ -760,6 +761,11 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
     while ((item = ui->gridLayout_2->takeAt(0)))
     {
         ui->gridLayout_2->removeItem(item);
+        delete item->widget();
+    }
+    while ((item = ui->gridLayout_3->takeAt(0)))
+    {
+        ui->gridLayout_3->removeItem(item);
         delete item->widget();
     }
 }
