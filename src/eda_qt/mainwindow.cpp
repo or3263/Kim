@@ -101,7 +101,17 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2, int 
 
     // 切换到新加入的标签
     change_tab_index(get_tab_index() - 1);
-
+    QLayoutItem *item;
+    while ((item = ui->gridLayout_2->takeAt(0)))
+    {
+        ui->gridLayout_2->removeItem(item);
+        delete item->widget();
+    }
+    while ((item = ui->gridLayout_3->takeAt(0)))
+    {
+        ui->gridLayout_3->removeItem(item);
+        delete item->widget();
+    }
 
     // 新建Code Editor按钮
     QPushButton *codeEditor_button = new QPushButton(tab);
@@ -768,6 +778,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
         delete item->widget();
     }
     qDebug()<<"666"<<ui->tabWidget->count();
+
 }
 
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
@@ -808,6 +819,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
         {
             QLabel *label = tab->findChild<QLabel *>(tab_name + "_nameLable");
             label->setText(arg1);
+            ui->tabWidget->setTabText(ui->tabWidget->currentIndex(), arg1);
         }
 
     }
@@ -837,7 +849,7 @@ void MainWindow::on_actionSave_triggered()
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
     Module m = tab->getModuleObject();
     if(tab->flag == 0){
-        QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
+        QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),m.getName(),QStringLiteral("Module(*.mod)"));
         QFile file(fileName);
         if(!file.open(QIODevice::WriteOnly)){
             ui->textEdit->append(getSysTime()+"保存文件失败\n");//发送log消息
@@ -885,7 +897,7 @@ void MainWindow::on_actionSave_As_triggered()
 {
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
     Module m = tab->getModuleObject();
-    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
+    QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),m.getName(),QStringLiteral("Module(*.mod)"));
     QFile file(fileName);
     if(!file.open(QIODevice::WriteOnly)){
         ui->textEdit->append(getSysTime()+"另存为文件失败\n");//发送log消息
