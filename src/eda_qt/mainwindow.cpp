@@ -604,13 +604,13 @@ void MainWindow::set_property_interface(int type, int port_number)
         line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(QString::number(port.getDataSize()));
         line_edit->setObjectName("datasize");
-        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_lineEdit_textChanged(QString)));
         ui->gridLayout_2->addWidget(line_edit, 4, 1);
 
         line_edit = new QLineEdit(ui->toolbox_property);
         line_edit->setText(port.getAnnotation());
         line_edit->setObjectName("function");
-        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_line_edit_textChanged(QString)));
+        connect(line_edit, SIGNAL(textChanged(QString)), this, SLOT(on_lineEdit_textChanged(QString)));
         ui->gridLayout_2->addWidget(line_edit, 5, 1);
 
 
@@ -704,7 +704,10 @@ void MainWindow::on_actionProject_triggered()
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
     Module m = tab->getModuleObject();
     //m.exportProject();
+//    QUrl test = QFileDialog::getSaveFileUrl(NULL,QStringLiteral("导出工程目录"),QStringLiteral("C:/"),QStringLiteral("目录(*)"));
+//    qDebug()<<test;
     QString filePath = QFileDialog::getSaveFileName(NULL, QStringLiteral("导出工程目录"),QStringLiteral("C:/"),QStringLiteral("目录(*)"));
+
     QDir *folder = new QDir;
     bool exist = folder->exists(filePath);
     if (exist)
@@ -832,6 +835,7 @@ void MainWindow::on_actionSave_triggered()
         QFile file(fileName);
         if(!file.open(QIODevice::WriteOnly)){
             ui->textEdit->append(getSysTime()+"保存文件失败\n");//发送log消息
+            return;
         }
         file.close();
 
@@ -852,6 +856,7 @@ void MainWindow::on_actionSave_triggered()
         QFile file(fileName);
         if(!file.open(QIODevice::WriteOnly)){
             ui->textEdit->append(getSysTime()+"保存文件失败\n");//发送log消息
+            return;
         }
         file.close();
 
@@ -877,7 +882,8 @@ void MainWindow::on_actionSave_As_triggered()
     QString fileName = QFileDialog::getSaveFileName(NULL, QStringLiteral("生成Module文件"),QStringLiteral("C:/"),QStringLiteral("Module(*.mod)"));
     QFile file(fileName);
     if(!file.open(QIODevice::WriteOnly)){
-        ;;//return("文件保存出错，请检查权限。\n");
+        ui->textEdit->append(getSysTime()+"另存为文件失败\n");//发送log消息
+        return;
     }
     file.close();
 
