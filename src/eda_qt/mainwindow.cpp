@@ -19,13 +19,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->textEdit->setTextColor(QColor(100, 200, 100));
     ui->textEdit->setText("Time:"+getSysDate()+"\t\tOUTPUT:\n");
-
-    QFileInfo fileInfo("./config.ini");//第一次运行程序时在当前目录下新建config.ini
+    QString configPath = QCoreApplication::applicationDirPath();
+    QFileInfo fileInfo(configPath+"/config.ini");//第一次运行程序时在当前目录下新建config.ini
     if(!fileInfo.isFile()){
-        QFile file("./config.ini");
+        QFile file(configPath+"/config.ini");
         if(!file.open(QIODevice::WriteOnly)){
             ;;
         }
+        //qDebug()<<configPath;
         QDomDocument doc;
         QDomProcessingInstruction instruction;  //添加处理指令（声明）
         QString data;
@@ -1063,6 +1064,7 @@ void MainWindow::on_actionSave_As_triggered()
 
 void MainWindow::on_actionAdd_to_popular_triggered()
 {
+    QString configPath = QCoreApplication::applicationDirPath();
     tabs *tab = (tabs *)ui->tabWidget->currentWidget();
     Module m = tab->getModuleObject();
     if (tab->flag == 0){
@@ -1077,7 +1079,7 @@ void MainWindow::on_actionAdd_to_popular_triggered()
         elementRoot.appendChild(elementName);
         elementRoot.appendChild(elementPath);
         doc.appendChild(elementRoot);
-        QFile file("./config.ini");
+        QFile file(configPath+"/config.ini");
         while(!file.open(QIODevice::ReadWrite | QIODevice::Append));//以读写切追加写入的方式操作文本
         QTextStream out(&file);
         doc.save(out, 4);
@@ -1098,7 +1100,7 @@ void MainWindow::on_actionAdd_to_popular_triggered()
             elementRoot.appendChild(elementName);
             elementRoot.appendChild(elementPath);
             doc.appendChild(elementRoot);
-            QFile file("./config.ini");
+            QFile file(configPath+"/config.ini");
             while(!file.open(QIODevice::ReadWrite | QIODevice::Append));//以读写切追加写入的方式操作文本
             QTextStream out(&file);
             doc.save(out, 4);

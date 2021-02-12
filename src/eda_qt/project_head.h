@@ -44,7 +44,7 @@
 #include <QAbstractItemView>
 #include <QHeaderView>
 #include <QLineEdit>
-
+#include <QCoreApplication>
 #include <QDebug>
 #include <QtXml>
 #endif // PROJECT_HEAD_H

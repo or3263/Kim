@@ -27,13 +27,13 @@ private slots:
 
     void recv_new_module(QString, int, int, int, int);
 
-    void recv_new_constrain(QString, int, int, int, int);
+    //void recv_new_constrain(QString, int, int, int, int);
 
     void on_actionExit_triggered();
 
     void on_actionNew_Module_triggered();
 
-    void on_actionNew_Constrain_triggered();
+    //void on_actionNew_Constrain_triggered();
 
     void on_actionNew_Testbench_triggered();
 
