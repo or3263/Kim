@@ -5,7 +5,7 @@
 #include<port.h>
 #include <QApplication>
 
-#include "project_head.h"
+//#include "project_head.h"
 
 class constrain
 {

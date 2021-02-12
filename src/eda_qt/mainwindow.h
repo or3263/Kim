@@ -27,6 +27,8 @@ private slots:
 
     void recv_new_module(QString, int, int, int, int);
 
+    void recv_new_constrain(QString, int, int, int, int);
+
     void on_actionExit_triggered();
 
     void on_actionNew_Module_triggered();
@@ -82,11 +84,15 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    void dailog_new_module();
+    void dialog_new_module();
+
+    void dialog_new_constrain();
 
     void init_list();
 
     void init_tab_widget(QString, int, int, int, int);
+
+    void init_tab_constrain(QString, int, int, int, int);
 
     QPoint calculate_pos(int source_x, int source_height, double paragraph); // 计算相对位置
 

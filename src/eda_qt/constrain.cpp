@@ -1,6 +1,7 @@
 #include "constrain.h"
 #include <QFile>
-
+#include <QtXml>
+#include <QFileDialog>
 constrain::constrain()
 {
 

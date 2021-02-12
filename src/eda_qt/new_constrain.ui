@@ -43,6 +43,13 @@
       </property>
      </spacer>
     </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_cancel">
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -60,7 +67,7 @@
     </font>
    </property>
    <property name="text">
-    <string>New Constrian</string>
+    <string>New Constrain</string>
    </property>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget">
@@ -86,7 +93,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_module_name"/>
+       <widget class="QLineEdit" name="lineEdit_constrain_name"/>
       </item>
      </layout>
     </item>

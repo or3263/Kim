@@ -68,10 +68,10 @@ void MainWindow::recv_new_module(QString name, int inp1, int out, int inp2, int 
 }
 
 
-void MainWindow::dailog_new_module() //弹出新建module窗口
+void MainWindow::dialog_new_module() //弹出新建module窗口
 {
     new_module *s = new new_module(this);
-    connect(s, SIGNAL(send_data(QString, int, int, int,int)), this, SLOT(recv_new_module(QString, int, int, int,int)));
+    connect(s, SIGNAL(m_send_data(QString, int, int, int,int)), this, SLOT(recv_new_module(QString, int, int, int,int)));
     s->show();
 }
 
@@ -107,6 +107,7 @@ void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2, int 
     tab->setObjectName(name + "_tab"); // 设置module table object名字
     tab->flag = 0;
     tab->filePath = "";
+    tab->setTabType(MODULE);
     qDebug() << "tab1 " << tab->width() << tab->height();
     ui->tabWidget->addTab(tab, name);
     if (flag == 0){
@@ -339,14 +340,136 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionNew_Module_triggered()//菜单栏new module弹出的对话框
 {
-    this->dailog_new_module();
+    this->dialog_new_module();
 }
 
-void MainWindow::on_actionNew_Constrain_triggered()
-{
-    new_constrain *s = new new_constrain(this);
-    s->show();
-}
+//void MainWindow::on_actionNew_Constrain_triggered()
+//{
+//    this->dialog_new_constrain();
+
+//}
+
+//void MainWindow::dialog_new_constrain()
+//{
+//    new_constrain *s = new new_constrain(this);
+//    connect(s, SIGNAL(c_send_data(QString, int, int, int,int)), this, SLOT(recv_new_constrain(QString, int, int, int,int)));
+//    s->show();
+//}
+
+//void MainWindow::recv_new_constrain(QString name, int inp1, int out, int inp2, int flag ) //接收新建module窗口发送来的Module类
+//{
+//    this->init_tab_constrain(name, inp1, out, inp2, flag);
+//}
+
+//void MainWindow::init_tab_constrain(QString name, int inp1, int out, int inp2, int flag)
+//{
+//    //qDebug()<<"shoudao";
+//    tabs *tab = new tabs();
+//    tab->setObjectName(name + "_c_tab"); // 设置module table object名字
+//    tab->flag = 0;
+//    tab->filePath = "";
+//    tab->setTabType(CONSTRAIN);
+//    ui->tabWidget->addTab(tab, name);
+//    if (flag == 0){
+//    ui->textEdit->append(getSysTime()+"新建了\""+name+"\"约束文件\n");//发送log消息
+//    }else if(flag == 1){
+//    ;;
+//    }
+//    tab->resize(ui->tabWidget->width(), ui->tabWidget->height());
+//    change_tab_index(get_tab_index() - 1);
+
+
+//    QPushButton *codeView_button = new QPushButton(tab);
+//    codeView_button->setGeometry(QRect(0, tab->height() - 85 - 100 , 50, 50));
+//    codeView_button->setObjectName(name + "_c_codeView");
+//    codeView_button->setText("Code\nView");
+//    connect(codeView_button, SIGNAL(clicked()), this, SLOT(on_code_View_clicked()));
+//    codeView_button->show();
+//    codeView_button->parent();
+
+//    QWidget *tab_constrain = new QWidget(tab);
+//    tab_constrain->setObjectName(name +"_constrain");
+
+//    tab_constrain->setAutoFillBackground(true);
+//    tab_constrain->setStyleSheet("background-color: rgb(0, 0, 0);");
+//    int module_width = tab->width() / 3 * 2;
+//    int module_height = tab->height() - 80;
+//    tab_constrain->setGeometry(QRect((tab->width() - module_width) / 2, (tab->height() - module_height) / 2, module_width, module_height));
+//    tab_constrain->show();
+//    int widget_2_width = module_width - 100;
+//    int widget_2_height = module_height - 100;
+
+//    QWidget *widget_2 = new QWidget();
+//    widget_2->setGeometry(QRect(50, 50, widget_2_width, widget_2_height));
+//    widget_2->setObjectName(name + "_c_2");
+//    widget_2->setAutoFillBackground(true); // 填充背景
+//    widget_2->setStyleSheet("background-color: rgb(170, 0, 0);"); // 设置背景颜色
+//    QLabel *nameLable = new QLabel;//module的name标签
+//    nameLable->setGeometry(200,200,100,100);
+//    nameLable->setObjectName(name + "_c_nameLable");
+//    nameLable->setText(name);
+//    nameLable->setParent(widget_2);
+//    nameLable->show();
+//    widget_2->setParent(tab_constrain);
+//    widget_2->show();
+//    QPushButton *on_widget_2 = new QPushButton;//创建透明按钮叠加在widget_2上
+//    on_widget_2->setGeometry(QRect(0,0,widget_2_width,widget_2_height));
+//    on_widget_2->setObjectName(name + "c_on_widget_2_button");
+//    on_widget_2->setFlat(true);
+//    on_widget_2->setAutoFillBackground(true);
+//    QPalette palette = on_widget_2->palette();
+//    palette.setColor(QPalette::Button,QColor(255,0,0,100));
+//    on_widget_2->setPalette(palette);
+//    on_widget_2->setParent(widget_2);
+//    on_widget_2->show();
+//    connect(on_widget_2, SIGNAL(clicked()), this, SLOT(on_module_clicked()));//连接按钮的点击信号
+
+//    tab->setConstrainObject(constrain(name, inp1, out, inp2));
+//    double paragraph; // 分段变量
+//    int port_number = 0;
+//    QPoint widget_2_pos = widget_2->pos();
+//    paragraph = 1.0 / (inp1 + 1);
+//    for (int cycle = 1; cycle <= inp1; cycle++) {
+//        QPushButton *port = new QPushButton();
+//        port->setObjectName(name + "_c_p_" + QString::number(port_number));
+//        port->setText(tab->getModuleObject().getSelectedPort(port_number).getName());
+//        port->resize(50, 50);
+//        port->move(this->calculate_pos(widget_2_pos.x() - port->width() / 2, widget_2_height, paragraph * cycle));
+//        widget_2->setAutoFillBackground(true);
+//        port->setStyleSheet("background-color: rgb(100, 100, 10);");
+//        connect(port, SIGNAL(clicked()), this, SLOT(on_port_clicked()));
+//        port->setParent(tab_constrain);
+//        port->show();
+//        port_number++;
+//    }
+//    int right_port_num = out + inp2;
+//    paragraph = 1.0 / (right_port_num + 1);
+//    for (int cycle = 1; cycle <= right_port_num; cycle++) {
+//        QPushButton *port = new QPushButton();
+//        port->setObjectName(name + "_c_p_" + QString::number(port_number));
+//        port->setText(tab->getModuleObject().getSelectedPort(port_number).getName());
+//        port->resize(50, 50);
+//        port->move(this->calculate_pos(widget_2_pos.x() + widget_2_width - port->width() / 2, widget_2_height, paragraph * cycle));
+//        widget_2->setAutoFillBackground(true);
+//        if (cycle > out) // in out
+//        {
+//            port->setStyleSheet("background-color: rgb(200, 200, 200);");
+//        }
+//        else
+//        {
+//            port->setStyleSheet("background-color: rgb(75, 75, 75);");
+//        }
+
+//        // 连接click事件
+//        connect(port, SIGNAL(clicked()), this, SLOT(on_port_clicked()));
+
+//        // 显示
+//        port->setParent(tab_constrain);
+//        port->show();
+
+//        port_number++;
+//    }
+//}
 void MainWindow::on_actionNew_Testbench_triggered()
 {
     new_testbench *s = new new_testbench(this);
@@ -382,7 +505,7 @@ void MainWindow::on_actionCode_View_triggered()
 
 void MainWindow::on_pushButton_new_module_clicked()
 {
-    this->dailog_new_module();
+    this->dialog_new_module();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event) //当鼠标拖动时

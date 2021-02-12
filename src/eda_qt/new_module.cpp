@@ -56,6 +56,6 @@ void new_module::on_pushButton_ok_clicked()
         out = out_t.toInt();
     }
 
-    emit send_data(name, p1, out, p2,flag); // 发送数据至Main Window
+    emit m_send_data(name, p1, out, p2,flag); // 发送数据至Main Window
     this->~new_module();
 }
