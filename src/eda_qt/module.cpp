@@ -86,7 +86,7 @@ QString Module::getAnnotation()
 QString Module::generateCode(QString code)
 {
     QString generateCodes;
-    generateCodes = "Module "+this->name+"(\n";
+    generateCodes = "module "+this->name+"(\n";
     for(unsigned long i = 0;i<this->ports.size();i++){
         if(i ==this->ports.size()-1){
             generateCodes =generateCodes + "\t" + this->ports.at(i).getName();
