@@ -97,7 +97,7 @@ void MainWindow::init_list()
         QStandardItem *item = new QStandardItem(s);
         itemModel->appendRow(item);
     }
-    ui->listView_left->setModel(itemModel);
+    ui->listView_popular->setModel(itemModel);
 }
 
 void MainWindow::init_tab_widget(QString name, int inp1, int out, int inp2, int flag) // inp1 = input， out = output, inp2 = input and output

@@ -151,6 +151,16 @@
            <attribute name="label">
             <string>Popular</string>
            </attribute>
+           <widget class="QListView" name="listView_popular">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>191</width>
+              <height>781</height>
+             </rect>
+            </property>
+           </widget>
           </widget>
           <widget class="QWidget" name="toolbox_system">
            <property name="geometry">
@@ -164,7 +174,7 @@
            <attribute name="label">
             <string>Examples</string>
            </attribute>
-           <widget class="QListView" name="listView_left">
+           <widget class="QListView" name="listView_examples">
             <property name="geometry">
              <rect>
               <x>0</x>
@@ -360,9 +370,9 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
     <addaction name="menuExport"/>
+    <addaction name="actionAdd_to_popular"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
-    <addaction name="actionAdd_to_popular"/>
    </widget>
    <widget class="QMenu" name="menuCode">
     <property name="title">
