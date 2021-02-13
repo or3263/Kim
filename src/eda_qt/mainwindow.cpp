@@ -1110,3 +1110,23 @@ void MainWindow::on_actionAdd_to_popular_triggered()
         }
     }
 }
+
+
+
+void MainWindow::on_actionChinese_triggered()
+{
+    QTranslator m;
+    QString currentPath = QCoreApplication::applicationDirPath();
+    m.load(currentPath+"/lang/Chinese.qm");
+    qApp->installTranslator(&m);
+    this->ui->retranslateUi(this);
+}
+
+void MainWindow::on_actionEnglish_triggered()
+{
+    QString currentPath = QCoreApplication::applicationDirPath();
+    QTranslator m;
+    m.load(currentPath+"/lang/English.qm");
+    qApp->installTranslator(&m);
+    this->ui->retranslateUi(this);
+}

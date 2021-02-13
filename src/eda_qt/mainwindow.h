@@ -81,6 +81,10 @@ private slots:
 
     void on_actionAdd_to_popular_triggered();
 
+    void on_actionChinese_triggered();
+
+    void on_actionEnglish_triggered();
+
 private:
     Ui::MainWindow *ui;
 

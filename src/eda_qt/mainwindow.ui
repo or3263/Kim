@@ -137,7 +137,7 @@
            </size>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
@@ -149,7 +149,7 @@
             </rect>
            </property>
            <attribute name="label">
-            <string>Page 1</string>
+            <string>Popular</string>
            </attribute>
           </widget>
           <widget class="QWidget" name="toolbox_system">
@@ -162,7 +162,7 @@
             </rect>
            </property>
            <attribute name="label">
-            <string>System</string>
+            <string>Examples</string>
            </attribute>
            <widget class="QListView" name="listView_left">
             <property name="geometry">
@@ -377,9 +377,29 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuPreferences">
+     <property name="title">
+      <string>Preferences</string>
+     </property>
+     <widget class="QMenu" name="menuLanguage">
+      <property name="title">
+       <string>Language</string>
+      </property>
+      <addaction name="actionChinese"/>
+      <addaction name="actionEnglish"/>
+     </widget>
+     <addaction name="menuLanguage"/>
+    </widget>
+    <addaction name="menuPreferences"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuCode"/>
+   <addaction name="menuTools"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -456,6 +476,16 @@ p, li { white-space: pre-wrap; }
   <action name="actionAdd_to_popular">
    <property name="text">
     <string>Add to popular</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="text">
+    <string>Chinese</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
    </property>
   </action>
  </widget>
