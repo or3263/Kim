@@ -56,7 +56,7 @@ assign out = a & b;
 
 关闭代码编辑器后代码将会自动保存，此时可点击Code View查看生成的完整代码
 
-![image-20210214215303249](pics/image-20210214215303249.png)
+![image-20210215021916023](pics/image-20210215021916023.png)
 
 最后在菜单栏中Code->CodeGenerate可以将verilog代码保存至.v文件
 
@@ -68,7 +68,7 @@ assign out = a & b;
 
 这是保存的.v文件，与Code View中的完整代码一致
 
-![image-20210214215901778](pics/image-20210214215901778.png)
+![image-20210215021949830](pics/image-20210215021949830.png)
 
 模块文件的保存则是在菜单栏中File->Save中进行
 
