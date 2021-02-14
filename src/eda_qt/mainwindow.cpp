@@ -686,7 +686,7 @@ void MainWindow::on_actionOpen_triggered()
                 tempTab->filePath = tempPath;
                 for(int i = 0;i<modulePortsNodeList.count();++i){
                     QDomElement tempDomElement = modulePortsNodeList.at(i).toElement();
-                    tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.text());
+                    tempTab->getModuleObject().getSelectedPort(i).setName(tempDomElement.tagName());
                     QDomNodeList tempDomNodeList =  tempDomElement.childNodes();
                     tempTab->getModuleObject().getSelectedPort(i).setDataType(tempDomNodeList.at(1).toElement().text()=="wire"?0:1);
                     tempTab->getModuleObject().getSelectedPort(i).setDataSize(tempDomNodeList.at(2).toElement().text().toInt());
