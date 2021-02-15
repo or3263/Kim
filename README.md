@@ -36,7 +36,7 @@ As shown in the figure above, the whole software is divided into:
 
 5. Information output area: used to record some working information and display errors and warnings.
 
-## 示例
+## 示例 	Example
 
 创建一个功能为两输入的与门，输入输出信号的数据长度均为2 bits
 
