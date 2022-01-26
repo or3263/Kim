@@ -11,7 +11,10 @@ CONFIG += c++11
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
-LIBS += -L$$PWD -lqscintilla2_qt5
+#Windows
+#LIBS += -L$$PWD -lqscintilla2_qt5
+#Macos
+LIBS+= "$$PWD/../../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
 RC_ICONS = icon.ico
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
