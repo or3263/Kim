@@ -20,7 +20,10 @@ LIBS += -L$$PWD -lqscintilla2_qt5
 macx {
 LIBS+= "$$PWD/../../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
 }
-
+#-------Linux-------------
+unix {
+LIBS+= "$$PWD/../../libs/linux/libqscintilla2_qt5.so"
+}
 RC_ICONS = icon.ico
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
