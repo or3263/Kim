@@ -1,4 +1,8 @@
 ## 禁止商用
+## 可执行文件请在右侧“发行版”中下载
+## 支持Windows、Macos、Linux(X86)平台
+
+
 ## 简介	Introduction
 
 ![DX-20220118@2x](pics/DX-20220118@2x.png)
