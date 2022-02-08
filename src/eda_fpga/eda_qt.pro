@@ -22,7 +22,11 @@ LIBS+= "$$PWD/../../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
 }
 #-------Linux-------------
 unix {
+contains(QT_ARCH, arm64){#arm64
+LIBS+= "$$PWD/../../libs/linux/libqscintilla2_qt5_arm.so"
+}else{#x86
 LIBS+= "$$PWD/../../libs/linux/libqscintilla2_qt5.so"
+}
 }
 RC_ICONS = icon.ico
 # You can also make your code fail to compile if it uses deprecated APIs.
