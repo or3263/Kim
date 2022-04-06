@@ -1,17 +1,17 @@
 stages:
   - deploy
 
-deploy-build_on_ubuntu_x86:
+deploy-build_ubuntu_x86:
   stage: deploy
   only:
     - tg
   tags:
-    - build_on_ubuntu_x86
+    - build_ubuntu_x86
   script:
     - echo '开始在ubuntu_x86上编译'
     - cd src/eda_fpga
     - pwd
-    - /home/chen-ubuntu/Qt5.14.2/5.14.2/gcc_64/bin/qmake
+    - qmake
     - make
     - echo 'ubuntu_x86上编译完成'
 deploy-build_on_uos_x86:
