@@ -6,6 +6,6 @@ publish-branch:
   only:
     - tg
   tags:
-    - build_on_uos_x86
+    - build_on_ubuntu_x86
   script:
     - echo '功能测试'
