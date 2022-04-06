@@ -9,3 +9,4 @@ publish-branch:
     - build_on_ubuntu_x86
   script:
     - echo '功能测试'
+    - pwd
