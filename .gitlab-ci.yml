@@ -11,5 +11,5 @@ publish-branch:
     - echo '功能测试'
     - cd src/eda_fpga
     - pwd
-    - qmake
+    - /home/chen-ubuntu/Qt5.14.2/5.14.2/gcc_64/bin/qmake
     - make
