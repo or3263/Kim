@@ -1,8 +1,8 @@
 stages:
-  - publish
+  - deploy
 
-publish-branch:
-  stage: publish
+deploy-build_on_ubuntu_x86:
+  stage: deploy
   only:
     - tg
   tags:
@@ -13,3 +13,15 @@ publish-branch:
     - pwd
     - /home/chen-ubuntu/Qt5.14.2/5.14.2/gcc_64/bin/qmake
     - make
+deploy-build_on_uos_x86:
+  stage: deploy
+  only:
+    - tg
+  tags:
+    - build_on_uos_x86
+  script:
+    - echo '功能测试222'
+    - cd src/eda_fpga
+    - pwd
+   # - /home/chen-ubuntu/Qt5.14.2/5.14.2/gcc_64/bin/qmake
+    #- make
