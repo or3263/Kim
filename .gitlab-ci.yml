@@ -25,4 +25,12 @@ deploy-build_on_uos_x86:
     - cd src/eda_fpga
     - pwd
     - echo 'uos_x86上编译完成'
+test:
+  stage: deploy
+  only:
+    - new
+  tags:
+    - test
+  script:
+    - echo '测试'
     
