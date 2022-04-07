@@ -6,7 +6,7 @@ deploy-build_ubuntu_x86:
   only:
     - tg
   tags:
-    - aaa
+    - build_ubuntu_x86
   script:
     - echo '开始在ubuntu_x86上编译'
     - cd src/
