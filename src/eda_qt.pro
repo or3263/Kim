@@ -18,7 +18,7 @@ LIBS += -L$$PWD -lqscintilla2_qt5
 }
 #-------Macos-------------
 macx {
-LIBS+= "$$PWD/../../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
+LIBS+= "$$PWD/../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
 }
 #-------Linux-------------
 unix {
