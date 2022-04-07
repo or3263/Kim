@@ -9,7 +9,7 @@ deploy-build_ubuntu_x86:
     - build_ubuntu_x86
   script:
     - echo '开始在ubuntu_x86上编译'
-    - cd src/eda_fpga
+    - cd src/
     - pwd
     - qmake
     - make
