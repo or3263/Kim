@@ -25,6 +25,7 @@ deploy-build_ubuntu_x86:
 #     - cd src/eda_fpga
 #     - pwd
 #     - echo 'uos_x86上编译完成'
+
 test:
   stage: deploy
   only:
