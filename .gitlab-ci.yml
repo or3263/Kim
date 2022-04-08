@@ -14,7 +14,8 @@ deploy-build_ubuntu_x86:
     - qmake
     - make
     - echo 'ubuntu_x86上编译完成'
-    - scp eda_qt root@101.43.50.254:/var/www/html/
+#    - scp eda_qt root@101.43.50.254:/var/www/html/
+    - who
     - echo "传输完成"
 # deploy-build_uos_x86:
 #   stage: deploy
