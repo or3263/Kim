@@ -27,6 +27,8 @@ deploy-build_centos_x86:
   script:
     - echo '开始在centos_x86上编译'
     - cd src/
+    - qmake
+    - make
     - pwd
     - echo 'centos_x86上编译完成'
 
