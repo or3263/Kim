@@ -25,8 +25,8 @@ deploy-build_centos_x86:
   tags:
     - build_centos_x86
   script:
-    - echo '开始在centis_x86上编译'
-    - cd src/eda_fpga
+    - echo '开始在centos_x86上编译'
+    - cd src/
     - pwd
     - echo 'centos_x86上编译完成'
 
