@@ -18,19 +18,19 @@ deploy-build_ubuntu_x86:
 #     - cd ~
 #     - pwd
 #     - echo "传输完成"
-# deploy-build_centos_x86:
-#   stage: deploy
-#   only:
-#     - tg
-#   tags:
-#     - build_centos_x86
-#   script:
-#     - echo '开始在centos_x86上编译'
-#     - cd src/
-#     - qmake
-#     - make
-#     - pwd
-#     - echo 'centos_x86上编译完成'
+deploy-build_macos_x86:
+  stage: deploy
+  only:
+    - tg
+  tags:
+    - build_macos_x86
+  script:
+    - echo '开始在macos_x86上编译'
+    - cd src/
+    - /Users/chen/Qt/6.2.2/macos/bin/qmake
+    - make
+    - pwd
+    - echo 'macos_x86上编译完成'
 
 test:
   stage: deploy
