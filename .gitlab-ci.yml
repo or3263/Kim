@@ -32,6 +32,20 @@ deploy-build_macos_x86:
     - pwd
     - echo 'macos_x86上编译完成'
 
+deploy-build_centos_x86:
+  stage: deploy
+  only:
+    - tg
+  tags:
+    - build_centos_x86
+  script:
+    - echo '开始在centos_x86上编译'
+    - cd src/
+    - qmake
+    - make
+    - pwd
+    - echo 'centos_x86上编译完成'
+
 test:
   stage: deploy
   only:
