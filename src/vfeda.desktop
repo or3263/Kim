@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Utility;Calculator;
+Comment=vfeda
+Exec=eda_qt
+GenericName=vfeda
+Icon=/usr/share/icons/icon.ico
+Name=Visual FEDA
+StartupNotify=true
+Type=Application

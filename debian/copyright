@@ -1,0 +1,1976 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vfeda
+Source: <url://example.com>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     .gitignore
+           README.md
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/NEWS
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/README
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/config-tests/cfgtest_Qsci.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/pyproject-qt5.toml
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/pyproject-qt6.toml
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/designer/designer.pro
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/designer/qscintillaplugin.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/designer/qscintillaplugin.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/Lexer.txt
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/SciBreak.jpg
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/SciRest.jpg
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/SciTEIco.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/SciWord.jpg
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/annotations.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/styledmargin.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/bc_s.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/bdwn.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/closed.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/doc.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/doxygen.css
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/folderclosed.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/folderopen.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/nav_f.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/nav_g.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/nav_h.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/open.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/splitbar.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/sync_off.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/sync_on.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/tab_a.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/tab_b.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/tab_h.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/tab_s.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/tabs.css
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/qscintilla.dxy
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/application.pro
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/images/copy.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/images/cut.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/images/new.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/images/open.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/images/paste.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/images/save.png
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-2.4.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-2.5.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-2.6.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-2.7.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.1.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.2.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.3.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.4.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.5.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.6.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.7.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.8.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/qsci/api/python/Python-3.9.api
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexASY.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAbaqus.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexBullant.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCOBOL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexEDIFACT.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexErlang.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexHaskell.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexIndent.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexInno.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexJSON.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexLua.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMSSQL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMarkdown.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexModula.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexOScript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexOpal.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPS.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPascal.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexRegistry.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSTTXT.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexScriptol.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSorcus.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTACL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTAL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTCMD.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTxt2tags.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/RESearch.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/RESearch.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/SciTE.properties
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/.qmake.stash
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Accessor.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/AutoComplete.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CallTip.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CaseConvert.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CaseFolder.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Catalogue.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CellBuffer.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CharClassify.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CharacterCategory.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/CharacterSet.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ContractionState.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/DBCS.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Decoration.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/DefaultLexer.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Document.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/EditModel.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/EditView.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Editor.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ExternalLexer.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Indicator.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/InputMethod.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/KeyMap.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexA68k.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAPDL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexASY.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAU3.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAVE.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAVS.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAbaqus.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAda.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAsm.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexAsn1.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexBaan.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexBash.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexBasic.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexBatch.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexBibTeX.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexBullant.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCLW.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCOBOL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCPP.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCSS.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCaml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCmake.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCoffeeScript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexConf.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCrontab.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexCsound.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexD.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexDMAP.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexDMIS.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexDiff.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexECL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexEDIFACT.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexEScript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexEiffel.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexErlang.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexErrorList.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexFlagship.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexForth.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexFortran.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexGAP.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexGui4Cli.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexHTML.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexHaskell.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexHex.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexIndent.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexInno.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexJSON.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexKVIrc.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexKix.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexLaTeX.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexLisp.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexLout.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexLua.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMMIXAL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMPT.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMSSQL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMagik.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMake.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMarkdown.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMatlab.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMaxima.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMetapost.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexModula.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexMySQL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexNimrod.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexNsis.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexNull.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexOScript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexOpal.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPB.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPLM.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPO.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPOV.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPS.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPascal.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPerl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPowerPro.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPowerShell.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexProgress.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexProps.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexPython.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexR.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexRebol.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexRegistry.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexRuby.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexRust.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSAS.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSML.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSQL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSTTXT.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexScriptol.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSmalltalk.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSorcus.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSpecman.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexSpice.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexStata.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTACL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTADS3.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTAL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTCL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTCMD.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTeX.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexTxt2tags.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexVB.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexVHDL.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexVerilog.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexVisualProlog.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexYAML.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexerBase.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexerModule.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexerNoExceptions.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LexerSimple.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/LineMarker.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ListBoxQt.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/MacPasteboardMime.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Makefile
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/MarginView.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/PerLine.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/PlatQt.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/PositionCache.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/PropSetSimple.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/RESearch.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/RunStyles.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/SciAccessibility.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/SciClasses.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ScintillaBase.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ScintillaQt.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Selection.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Style.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/StyleContext.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/UniConversion.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ViewStyle.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/WordList.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/XPM.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/features/qscintilla2.prf
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/features_staticlib/qscintilla2.prf
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_SciClasses.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_SciClasses.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_ScintillaQt.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_ScintillaQt.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_predefs.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciabstractapis.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciabstractapis.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciapis.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciapis.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexer.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexer.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeravs.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeravs.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerbash.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerbash.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerbatch.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerbatch.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercmake.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercmake.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercoffeescript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercoffeescript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercpp.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercpp.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercsharp.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercsharp.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercss.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercss.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercustom.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexercustom.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerd.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerd.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerdiff.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerdiff.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeredifact.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeredifact.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerfortran.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerfortran.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerfortran77.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerfortran77.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerhtml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerhtml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeridl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeridl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerjava.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerjava.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerjavascript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerjavascript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerjson.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerjson.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerlua.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerlua.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexermakefile.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexermakefile.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexermarkdown.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexermarkdown.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexermatlab.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexermatlab.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeroctave.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeroctave.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpascal.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpascal.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerperl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerperl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpo.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpo.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpostscript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpostscript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpov.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpov.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerproperties.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerproperties.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpython.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerpython.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerruby.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerruby.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerspice.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerspice.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexersql.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexersql.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexertcl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexertcl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexertex.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexertex.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerverilog.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerverilog.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexervhdl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexervhdl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerxml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexerxml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeryaml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscilexeryaml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscimacro.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qscimacro.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciscintilla.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciscintilla.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciscintillabase.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/moc_qsciscintillabase.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciabstractapis.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciapis.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscicommand.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscicommandset.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscidocument.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexer.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeravs.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerbash.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerbatch.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercmake.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercoffeescript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercpp.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercsharp.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercss.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercustom.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerd.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerdiff.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeredifact.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerfortran.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerfortran77.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerhtml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeridl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerjava.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerjavascript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerjson.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerlua.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexermakefile.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexermarkdown.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexermatlab.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeroctave.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpascal.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerperl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpo.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpostscript.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpov.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerproperties.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpython.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerruby.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerspice.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexersql.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexertcl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexertex.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerverilog.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexervhdl.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerxml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeryaml.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscimacro.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciprinter.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciscintilla.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciscintillabase.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscistyle.o
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscistyledtext.o
+           pics/.DS_Store
+           pics/icon.png
+           pics/icon/矩形.png
+           pics/icon/箭头(input或output).png
+           pics/icon/长方形（inout）.png
+           pics/image-20210214213005184.png
+           pics/image-20210214213219086.png
+           pics/image-20210214214031903.png
+           pics/image-20210214214206653.png
+           pics/image-20210214214312177.png
+           pics/image-20210214214627832.png
+           pics/image-20210214214705402.png
+           pics/image-20210214215105141.png
+           pics/image-20210214215303249.png
+           pics/image-20210214215401838.png
+           pics/image-20210214215421023.png
+           pics/image-20210214215520178.png
+           pics/image-20210214215604370.png
+           pics/image-20210214215715142.png
+           pics/image-20210214215739450.png
+           pics/image-20210214215901778.png
+           pics/image-20210214220042606.png
+           pics/image-20210214220127145.png
+           pics/image-20210214220251371.png
+           pics/image-20210214220412076.png
+           pics/image-20210214220540866.png
+           pics/image-20210214220606964.png
+           pics/image-20210214220727743.png
+           pics/image-20210214221353054.png
+           pics/image-20210214222136046.png
+           pics/image-20210214222457488.png
+           pics/image-20210214222745369.png
+           pics/image-20210215021916023.png
+           pics/image-20210215021949830.png
+           pics/矩形.png
+           release/Qt5PrintSupport.dll
+           release/Qt5Xml.dll
+           release/eda_qt_V1.1.exe
+           release/iconengines/qsvgicon.dll
+           release/libgcc_s_seh-1.dll
+           release/libwinpthread-1.dll
+           release/styles/qwindowsvistastyle.dll
+           src/.DS_Store
+           src/.qmake.stash
+           src/Makefile
+           src/Qt5PrintSupport.dll
+           src/about_dialog.cpp
+           src/about_dialog.h
+           src/code_editor_dialog.cpp
+           src/code_editor_dialog.h
+           src/constrain.cpp
+           src/constrain.h
+           src/eda_qt.pro
+           src/icon.ico
+           src/main.cpp
+           src/mainwindow.cpp
+           src/mainwindow.h
+           src/module.cpp
+           src/module.h
+           src/moduleqwidget.cpp
+           src/moduleqwidget.h
+           src/new_constrain.cpp
+           src/new_constrain.h
+           src/new_module.cpp
+           src/new_module.h
+           src/new_testbench.cpp
+           src/new_testbench.h
+           src/port.cpp
+           src/port.h
+           src/project_head.h
+           src/tabs.cpp
+           src/tabs.h
+           src/testbench.cpp
+           src/testbench.h
+           src/矩形.png
+           tools/Graphviz/Uninstall.exe
+           tools/Graphviz/bin/acyclic.exe
+           tools/Graphviz/bin/bcomps.exe
+           tools/Graphviz/bin/ccomps.exe
+           tools/Graphviz/bin/cdt.dll
+           tools/Graphviz/bin/cgraph++.dll
+           tools/Graphviz/bin/cgraph.dll
+           tools/Graphviz/bin/circo.exe
+           tools/Graphviz/bin/concrt140.dll
+           tools/Graphviz/bin/config6
+           tools/Graphviz/bin/dijkstra.exe
+           tools/Graphviz/bin/dot.exe
+           tools/Graphviz/bin/expat.dll
+           tools/Graphviz/bin/fdp.exe
+           tools/Graphviz/bin/fontconfig.dll
+           tools/Graphviz/bin/gc.exe
+           tools/Graphviz/bin/getopt.dll
+           tools/Graphviz/bin/gml2gv.exe
+           tools/Graphviz/bin/gobject-2.dll
+           tools/Graphviz/bin/graphml2gv.exe
+           tools/Graphviz/bin/gv2gml.exe
+           tools/Graphviz/bin/gvc++.dll
+           tools/Graphviz/bin/gvc.dll
+           tools/Graphviz/bin/gvcolor.exe
+           tools/Graphviz/bin/gvgen.exe
+           tools/Graphviz/bin/gvpack.exe
+           tools/Graphviz/bin/gvplugin_core.dll
+           tools/Graphviz/bin/gvplugin_dot_layout.dll
+           tools/Graphviz/bin/gvplugin_gdiplus.dll
+           tools/Graphviz/bin/gvplugin_neato_layout.dll
+           tools/Graphviz/bin/gvplugin_pango.dll
+           tools/Graphviz/bin/gvpr.exe
+           tools/Graphviz/bin/gxl2gv.exe
+           tools/Graphviz/bin/libharfbuzz-0.dll
+           tools/Graphviz/bin/mm2gv.exe
+           tools/Graphviz/bin/msvcp140.dll
+           tools/Graphviz/bin/msvcp140_1.dll
+           tools/Graphviz/bin/msvcp140_2.dll
+           tools/Graphviz/bin/msvcp140_codecvt_ids.dll
+           tools/Graphviz/bin/neato.exe
+           tools/Graphviz/bin/nop.exe
+           tools/Graphviz/bin/osage.exe
+           tools/Graphviz/bin/pango-1.dll
+           tools/Graphviz/bin/pangocairo-1.dll
+           tools/Graphviz/bin/pangoft2-1.dll
+           tools/Graphviz/bin/pangowin32-1.dll
+           tools/Graphviz/bin/patchwork.exe
+           tools/Graphviz/bin/pathplan.dll
+           tools/Graphviz/bin/pixman-1.dll
+           tools/Graphviz/bin/sccmap.exe
+           tools/Graphviz/bin/sfdp.exe
+           tools/Graphviz/bin/tred.exe
+           tools/Graphviz/bin/twopi.exe
+           tools/Graphviz/bin/unflatten.exe
+           tools/Graphviz/bin/vcruntime140.dll
+           tools/Graphviz/bin/vcruntime140_1.dll
+           tools/Graphviz/bin/xdot.dll
+           tools/Graphviz/include/graphviz/AGraph.h
+           tools/Graphviz/include/graphviz/GVContext.h
+           tools/Graphviz/include/graphviz/GVLayout.h
+           tools/Graphviz/include/graphviz/GVRenderData.h
+           tools/Graphviz/include/graphviz/cdt.h
+           tools/Graphviz/include/graphviz/graphviz_version.h
+           tools/Graphviz/lib/pkgconfig/libcdt.pc
+           tools/Graphviz/lib/pkgconfig/libcgraph.pc
+           tools/Graphviz/lib/pkgconfig/libgvc.pc
+           tools/Graphviz/lib/pkgconfig/libgvpr.pc
+           tools/Graphviz/lib/pkgconfig/liblab_gamut.pc
+           tools/Graphviz/lib/pkgconfig/libpathplan.pc
+           tools/Graphviz/lib/pkgconfig/libxdot.pc
+           tools/Graphviz/share/man/man1/acyclic.1
+           tools/Graphviz/share/man/man1/bcomps.1
+           tools/Graphviz/share/man/man1/ccomps.1
+           tools/Graphviz/share/man/man1/dijkstra.1
+           tools/Graphviz/share/man/man1/dot.1
+           tools/Graphviz/share/man/man1/gc.1
+           tools/Graphviz/share/man/man1/gml2gv.1
+           tools/Graphviz/share/man/man1/graphml2gv.1
+           tools/Graphviz/share/man/man1/gvcolor.1
+           tools/Graphviz/share/man/man1/gvgen.1
+           tools/Graphviz/share/man/man1/gvpack.1
+           tools/Graphviz/share/man/man1/gvpr.1
+           tools/Graphviz/share/man/man1/gxl2gv.1
+           tools/Graphviz/share/man/man1/mm2gv.1
+           tools/Graphviz/share/man/man1/nop.1
+           tools/Graphviz/share/man/man1/osage.1
+           tools/Graphviz/share/man/man1/patchwork.1
+           tools/Graphviz/share/man/man1/sccmap.1
+           tools/Graphviz/share/man/man1/tred.1
+           tools/Graphviz/share/man/man1/unflatten.1
+           tools/Graphviz/share/man/man3/cdt.3
+           tools/Graphviz/share/man/man3/cgraph.3
+           tools/Graphviz/share/man/man3/gvc.3
+           tools/Graphviz/share/man/man3/pack.3
+           tools/Graphviz/share/man/man3/pathplan.3
+           tools/Graphviz/share/man/man3/xdot.3
+           tools/yosys/pthreadVC2.dll
+           tools/yosys/readme.txt
+           tools/yosys/share/adff2dff.v
+           tools/yosys/share/anlogic/cells_map.v
+           tools/yosys/share/anlogic/cells_sim.v
+           tools/yosys/share/anlogic/dram_init_16x4.vh
+           tools/yosys/share/anlogic/drams.txt
+           tools/yosys/share/anlogic/drams_map.v
+           tools/yosys/share/anlogic/eagle_bb.v
+           tools/yosys/share/cmp2lut.v
+           tools/yosys/share/coolrunner2/cells_latch.v
+           tools/yosys/share/coolrunner2/cells_sim.v
+           tools/yosys/share/coolrunner2/tff_extract.v
+           tools/yosys/share/dff2ff.v
+           tools/yosys/share/ecp5/bram.txt
+           tools/yosys/share/ecp5/bram_conn_1.vh
+           tools/yosys/share/ecp5/bram_conn_18.vh
+           tools/yosys/share/ecp5/bram_conn_2.vh
+           tools/yosys/share/ecp5/bram_conn_4.vh
+           tools/yosys/share/ecp5/bram_conn_9.vh
+           tools/yosys/share/ecp5/bram_init_1_2_4.vh
+           tools/yosys/share/ecp5/bram_init_9_18_36.vh
+           tools/yosys/share/ecp5/brams_map.v
+           tools/yosys/share/ecp5/cells_bb.v
+           tools/yosys/share/ecp5/cells_map.v
+           tools/yosys/share/ecp5/cells_sim.v
+           tools/yosys/share/ecp5/dram.txt
+           tools/yosys/share/ecp5/drams_map.v
+           tools/yosys/share/ecp5/latches_map.v
+           tools/yosys/share/gate2lut.v
+           tools/yosys/share/gowin/bram.txt
+           tools/yosys/share/gowin/brams_init3.vh
+           tools/yosys/share/gowin/brams_map.v
+           tools/yosys/share/gowin/cells_map.v
+           tools/yosys/share/gowin/cells_sim.v
+           tools/yosys/share/gowin/dram.txt
+           tools/yosys/share/gowin/drams_map.v
+           tools/yosys/share/greenpak4/cells_blackbox.v
+           tools/yosys/share/greenpak4/cells_latch.v
+           tools/yosys/share/greenpak4/cells_map.v
+           tools/yosys/share/greenpak4/cells_sim.v
+           tools/yosys/share/greenpak4/cells_sim_ams.v
+           tools/yosys/share/greenpak4/cells_sim_digital.v
+           tools/yosys/share/greenpak4/cells_sim_wip.v
+           tools/yosys/share/ice40/brams.txt
+           tools/yosys/share/ice40/brams_init1.vh
+           tools/yosys/share/ice40/brams_init2.vh
+           tools/yosys/share/ice40/brams_init3.vh
+           tools/yosys/share/ice40/brams_map.v
+           tools/yosys/share/ice40/cells_map.v
+           tools/yosys/share/ice40/cells_sim.v
+           tools/yosys/share/ice40/latches_map.v
+           tools/yosys/share/include/kernel/hashlib.h
+           tools/yosys/share/include/libs/sha1/sha1.h
+           tools/yosys/share/intel/common/brams.txt
+           tools/yosys/share/intel/common/brams_map.v
+           tools/yosys/share/pmux2mux.v
+           tools/yosys/share/sf2/cells_map.v
+           tools/yosys/share/sf2/cells_sim.v
+           tools/yosys/share/xilinx/brams.txt
+           tools/yosys/share/xilinx/brams_bb.v
+           tools/yosys/share/xilinx/brams_init_16.vh
+           tools/yosys/share/xilinx/brams_init_18.vh
+           tools/yosys/share/xilinx/brams_init_32.vh
+           tools/yosys/share/xilinx/brams_init_36.vh
+           tools/yosys/share/xilinx/brams_map.v
+           tools/yosys/share/xilinx/cells_xtra.v
+           tools/yosys/share/xilinx/drams.txt
+           tools/yosys/share/xilinx/drams_map.v
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   __NO_COPYRIGHT_NOR_LICENSE__
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/project.py
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qsciabstractapis.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qsciapis.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscicommand.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscicommandset.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscidocument.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexer.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexeravs.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerbash.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerbatch.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexercmake.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexercoffeescript.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexercpp.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexercsharp.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexercss.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexercustom.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerd.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerdiff.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexeredifact.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerfortran.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerfortran77.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerhtml.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexeridl.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerjava.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerjavascript.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerjson.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerlua.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexermakefile.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexermarkdown.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexermatlab.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexeroctave.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerpascal.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerperl.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerpo.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerpostscript.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerpov.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerproperties.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerpython.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerruby.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerspice.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexersql.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexertcl.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexertex.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerverilog.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexervhdl.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexerxml.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscilexeryaml.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscimacro.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscimod5.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscimod6.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscimodcommon.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qsciprinter.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qsciscintilla.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qsciscintillabase.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscistyle.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/Python/sip/qscistyledtext.sip
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ListBoxQt.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ListBoxQt.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/MacPasteboardMime.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/PlatQt.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qsciabstractapis.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qsciapis.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscicommand.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscicommandset.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscidocument.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qsciglobal.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexer.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexeravs.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerbash.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerbatch.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexercmake.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexercoffeescript.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexercpp.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexercsharp.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexercss.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexercustom.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerd.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerdiff.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexeredifact.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerfortran.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerfortran77.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerhtml.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexeridl.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerjava.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerjavascript.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerjson.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerlua.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexermakefile.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexermarkdown.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexermatlab.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexeroctave.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerpascal.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerperl.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerpo.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerpostscript.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerpov.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerproperties.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerpython.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerruby.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerspice.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexersql.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexertcl.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexertex.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerverilog.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexervhdl.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexerxml.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscilexeryaml.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscimacro.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qsciprinter.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qsciscintilla.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qsciscintillabase.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscistyle.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/Qsci/qscistyledtext.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/SciAccessibility.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/SciAccessibility.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/SciClasses.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/SciClasses.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ScintillaQt.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/ScintillaQt.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciabstractapis.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciapis.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscicommand.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscicommandset.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscidocument.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexer.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeravs.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerbash.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerbatch.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercmake.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercoffeescript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercpp.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercsharp.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercss.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexercustom.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerd.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerdiff.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeredifact.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerfortran.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerfortran77.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerhtml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeridl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerjava.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerjavascript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerjson.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerlua.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexermakefile.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexermarkdown.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexermatlab.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeroctave.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpascal.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerperl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpo.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpostscript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpov.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerproperties.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerpython.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerruby.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerspice.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexersql.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexertcl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexertex.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerverilog.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexervhdl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexerxml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscilexeryaml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscimacro.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla.pro
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciprinter.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciscintilla.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qsciscintillabase.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscistyle.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscistyledtext.cpp
+           src/Qsci/qsciabstractapis.h
+           src/Qsci/qsciapis.h
+           src/Qsci/qscicommand.h
+           src/Qsci/qscicommandset.h
+           src/Qsci/qscidocument.h
+           src/Qsci/qsciglobal.h
+           src/Qsci/qscilexer.h
+           src/Qsci/qscilexeravs.h
+           src/Qsci/qscilexerbash.h
+           src/Qsci/qscilexerbatch.h
+           src/Qsci/qscilexercmake.h
+           src/Qsci/qscilexercoffeescript.h
+           src/Qsci/qscilexercpp.h
+           src/Qsci/qscilexercsharp.h
+           src/Qsci/qscilexercss.h
+           src/Qsci/qscilexercustom.h
+           src/Qsci/qscilexerd.h
+           src/Qsci/qscilexerdiff.h
+           src/Qsci/qscilexeredifact.h
+           src/Qsci/qscilexerfortran.h
+           src/Qsci/qscilexerfortran77.h
+           src/Qsci/qscilexerhtml.h
+           src/Qsci/qscilexeridl.h
+           src/Qsci/qscilexerjava.h
+           src/Qsci/qscilexerjavascript.h
+           src/Qsci/qscilexerjson.h
+           src/Qsci/qscilexerlua.h
+           src/Qsci/qscilexermakefile.h
+           src/Qsci/qscilexermarkdown.h
+           src/Qsci/qscilexermatlab.h
+           src/Qsci/qscilexeroctave.h
+           src/Qsci/qscilexerpascal.h
+           src/Qsci/qscilexerperl.h
+           src/Qsci/qscilexerpo.h
+           src/Qsci/qscilexerpostscript.h
+           src/Qsci/qscilexerpov.h
+           src/Qsci/qscilexerproperties.h
+           src/Qsci/qscilexerpython.h
+           src/Qsci/qscilexerruby.h
+           src/Qsci/qscilexerspice.h
+           src/Qsci/qscilexersql.h
+           src/Qsci/qscilexertcl.h
+           src/Qsci/qscilexertex.h
+           src/Qsci/qscilexerverilog.h
+           src/Qsci/qscilexervhdl.h
+           src/Qsci/qscilexerxml.h
+           src/Qsci/qscilexeryaml.h
+           src/Qsci/qscimacro.h
+           src/Qsci/qsciprinter.h
+           src/Qsci/qsciscintilla.h
+           src/Qsci/qsciscintillabase.h
+           src/Qsci/qscistyle.h
+           src/Qsci/qscistyledtext.h
+Copyright: 2020-2021 Riverbank Computing Limited <info@riverbankcomputing.com>
+License:   GPL-3.0
+ This file is part of QScintilla.
+ .
+ This file may be used under the terms of the GNU General Public License
+ version 3.0 as published by the Free Software Foundation and appearing in
+ the file LICENSE included in the packaging of this file.  Please review the
+ following information to ensure the GNU General Public License version 3.0
+ requirements will be met: http://www.gnu.org/copyleft/gpl.html.
+ .
+ If you do not wish to use this file under the terms of the GPL version 3.0
+ then you may purchase a commercial license.  For more information contact
+ info@riverbankcomputing.com.
+ .
+ This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ Version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/jquery.js
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/ILexer.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/ILoader.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/Platform.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/Sci_Position.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/ScintillaWidget.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexA68k.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAPDL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAU3.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAVE.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAVS.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAda.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAsm.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexAsn1.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexBash.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexBatch.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCLW.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCPP.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCaml.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCmake.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCoffeeScript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexConf.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCrontab.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCsound.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexD.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexDMAP.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexDMIS.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexDiff.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexECL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexEScript.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexEiffel.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexErrorList.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexFlagship.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexForth.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexFortran.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexGAP.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexHTML.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexKix.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexLisp.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexLout.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMMIXAL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMPT.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMagik.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMake.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMatlab.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMaxima.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMySQL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexNimrod.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexNsis.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexNull.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPB.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPLM.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPerl.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPowerPro.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPowerShell.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexProps.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPython.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexR.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexRebol.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexRuby.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexRust.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSML.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSQL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSmalltalk.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSpecman.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSpice.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTCL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexVB.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexVHDL.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexVerilog.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexYAML.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/Accessor.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/Accessor.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/CharacterCategory.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/CharacterCategory.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/CharacterSet.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/CharacterSet.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/DefaultLexer.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/DefaultLexer.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexAccessor.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerBase.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerBase.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerModule.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerModule.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerNoExceptions.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerNoExceptions.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerSimple.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/LexerSimple.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/OptionSet.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/PropSetSimple.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/SparseState.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/StringCopy.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/SubStyles.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/WordList.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/WordList.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/AutoComplete.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/AutoComplete.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CallTip.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CallTip.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CaseConvert.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CaseConvert.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CaseFolder.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CaseFolder.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Catalogue.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Catalogue.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CellBuffer.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CellBuffer.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CharClassify.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/CharClassify.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ContractionState.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ContractionState.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/DBCS.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/DBCS.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Decoration.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Decoration.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Document.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Document.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/EditModel.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/EditModel.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/EditView.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/EditView.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Editor.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Editor.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ElapsedPeriod.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ExternalLexer.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ExternalLexer.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/FontQuality.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Indicator.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Indicator.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/IntegerRectangle.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/KeyMap.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/KeyMap.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/LineMarker.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/LineMarker.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/MarginView.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/MarginView.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Partitioning.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/PerLine.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/PerLine.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Position.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/PositionCache.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/PositionCache.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/RunStyles.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ScintillaBase.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ScintillaBase.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Selection.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Selection.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/SparseVector.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/SplitVector.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Style.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/Style.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/UniConversion.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/UniConversion.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/UniqueString.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ViewStyle.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/ViewStyle.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/XPM.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/XPM.h
+           pics/DX-20220118@2x.png
+Copyright: 1990-2007 Scientific Toolworks, Inc.
+           1998-2001 Andre Arpin <arpin@kingston.net> The License.txt file describes the conditions under which this software may be distributed.
+           1998-2005 Neil Hodgson <neilh@scintilla.org>
+           1998-2008 Neil Hodgson <neilh@scintilla.org> Lexical analysis fixes  Kein-Hong Man <mkh@pl.jaring.my> The License.txt file describes the conditions under which this software may be distributed.
+           1998-2011 Neil Hodgson <neilh@scintilla.org> Based on the Scintilla C++ Lexer  Eric Promislow <ericp@activestate.com> in 2011 for the Komodo IDE The License.txt file describes the conditions under which this software may be distributed.
+           1998-2018 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+           2001 Clemens Wyss <wys@helbling.ch> The License.txt file describes the conditions under which this software may be distributed.
+           2001 Simon Steele <ss@pnotepad.org>, portions copyright Neil Hodgson. The License.txt file describes the conditions under which this software may be distributed.
+           2002 Sergey Koshcheyev <sergey.k@seznam.cz> The License.txt file describes the conditions under which this software may be distributed.
+           2003 Kein-Hong Man <mkh@pl.jaring.my> The License.txt file describes the conditions under which this software may be distributed.
+           2003 Marius Gheorghe <mgheorghe@cabletest.com> The License.txt file describes the conditions under which this software may be distributed.
+           2003 Patrizio Bekerle (patrizio@bekerle.com)
+           2003 Sean O'Dell <sean@celsoft.com> The License.txt file describes the conditions under which this software may be distributed.
+           2003-2004 Ron Schofield <ron@schofieldcomputer.com> The License.txt file describes the conditions under which this software may be distributed.
+           2003-2005 Angelo Mandato <angelo [at] spaceblue [dot] com> Last Updated: 03/13/2005 The License.txt file describes the conditions under which this software may be distributed.
+           2004 Herr Pfarrer rpfarrer <at> yahoo <dot> de Last Updated: 20/07/2004 The License.txt file describes the conditions under which this software may be distributed.
+           2004 Manfred Becker <manfred@becker-trdf.de> The License.txt file describes the conditions under which this software may be distributed. Edited  Lee Wilmott (24-Jun-2014) added support for block comments
+           2004-2012 Neil Hodgson <neilh@scintilla.org> Adapted from LexPerl  Kein-Hong Man 2004 The License.txt file describes the conditions under which this software may be distributed.
+           2005 Pascal Hurni <pascal_hurni@fastmail.fm> The License.txt file describes the conditions under which this software may be distributed.
+           2005 Randy Butler
+           2005-2009 Robert Roessler <robertr@rftp.com> The License.txt file describes the conditions under which this software may be distributed. Release History
+           2006 Fabien Proriol The License.txt file describes the conditions under which this software may be distributed.
+           2006 Waldemar Augustyn <waldemar@wdmsys.com> Converted to lexer object and added further folding features/properties  "Udo Lechner" <dlchnr(at)gmx(dot)net>
+           2007 Cristian Adam <cristian [dot] adam [at] gmx [dot] net> based on the NSIS lexer The License.txt file describes the conditions under which this software may be distributed.
+           2007 Istvan Szollosi ( szteven <at> gmail <dot> com ) The License.txt file describes the conditions under which this software may be distributed.
+           2008 Tim Gerundt <tim@gerundt.de> The License.txt file describes the conditions under which this software may be distributed.
+           2009 Andreas Rumpf @file LexNimrod.cxx Lexer for Nimrod.
+           2009 James Moffatt and Yuzhou Xin Modified from LexCaml.cxx  Robert Roessler <robertr@rftp.com> Copyright 2005 The License.txt file describes the conditions under which this software may be distributed.
+           2010 Martial Demolins <mdemolins(a)gmail.com> The License.txt file describes the conditions under which this software may be distributed.
+           2010 Xavi <jarabal/at/gmail.com> (Harbour)
+           2012 Bruno Barbieri <brunorex@gmail.com> Heavily based on LexPOV  Neil Hodgson The License.txt file describes the conditions under which this software may be distributed.
+           2013 SiegeLord <slabode@aim.com> Converted to lexer object and added further folding features/properties  "Udo Lechner" <dlchnr(at)gmx(dot)net>
+           2013-2014 Andreas Tscharner <andy@vis.ethz.ch> The License.txt file describes the conditions under which this software may be distributed.
+           2018 Gunter Königsmann <wxMaxima@physikbuch.de> The License.txt file describes the conditions under which this software may be distributed.
+           :wR/ï~V
+           for Scintilla: 1998-2001  Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+           for Scintilla: 1998-2001  Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed. Scintilla source code edit control
+           jQuery Foundation and other contributors; Licensed MIT
+           9999-20050204 Initial release.
+           9999-20050205 Quick compiler standards/"cleanliness" adjustment.
+           9999-20050206 Added cast for IsLeadte().
+           9999-20050209 Changes to "external" build support.
+           9999-20050306 Fix for 1st-char-in-doc "corner" case.
+           9999-20050502 Fix for [harmless] one-past-the-end coloring.
+           9999-20050515 Refined numeric token recognition logic.
+           9999-20051125 Added 2nd "optional" keywords class.
+           9999-20051129 Support "magic" (read-only) comments for RCaml.
+           9999-20051204 Swtich to using StyleContext infrastructure.
+           9999-20090629 Add full Standard ML '97 support.
+License:   __NO_LICENSE__
+
+Files:     tools/yosys/share/anlogic/arith_map.v
+           tools/yosys/share/ecp5/arith_map.v
+           tools/yosys/share/gowin/arith_map.v
+           tools/yosys/share/ice40/arith_map.v
+           tools/yosys/share/include/backends/ilang/ilang_backend.h
+           tools/yosys/share/include/frontends/ast/ast.h
+           tools/yosys/share/include/kernel/celledges.h
+           tools/yosys/share/include/kernel/celltypes.h
+           tools/yosys/share/include/kernel/consteval.h
+           tools/yosys/share/include/kernel/log.h
+           tools/yosys/share/include/kernel/macc.h
+           tools/yosys/share/include/kernel/modtools.h
+           tools/yosys/share/include/kernel/register.h
+           tools/yosys/share/include/kernel/rtlil.h
+           tools/yosys/share/include/kernel/satgen.h
+           tools/yosys/share/include/kernel/sigtools.h
+           tools/yosys/share/include/libs/ezsat/ezminisat.h
+           tools/yosys/share/include/libs/ezsat/ezsat.h
+           tools/yosys/share/include/passes/fsm/fsmdata.h
+           tools/yosys/share/intel/a10gx/cells_sim.v
+           tools/yosys/share/intel/common/m9k_bb.v
+           tools/yosys/share/intel/cyclone10/cells_sim.v
+           tools/yosys/share/intel/cycloneiv/cells_sim.v
+           tools/yosys/share/intel/cycloneive/cells_sim.v
+           tools/yosys/share/intel/cyclonev/cells_sim.v
+           tools/yosys/share/intel/max10/cells_sim.v
+           tools/yosys/share/simcells.v
+           tools/yosys/share/simlib.v
+           tools/yosys/share/techmap.v
+           tools/yosys/share/xilinx/arith_map.v
+           tools/yosys/share/xilinx/ff_map.v
+           tools/yosys/share/xilinx/lut_map.v
+Copyright: 2012-2013 Clifford Wolf <clifford@clifford.at>
+           2018 David Shah <dave@ds0.me>
+           2018 Miodrag Milanovic <miodrag@symbioticeda.com>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files:     tools/Graphviz/include/graphviz/cgraph.h
+           tools/Graphviz/include/graphviz/color.h
+           tools/Graphviz/include/graphviz/gvc.h
+           tools/Graphviz/include/graphviz/gvcommon.h
+           tools/Graphviz/include/graphviz/gvplugin_device.h
+           tools/Graphviz/include/graphviz/gvplugin_layout.h
+           tools/Graphviz/include/graphviz/gvplugin_loadimage.h
+           tools/Graphviz/include/graphviz/gvplugin_render.h
+           tools/Graphviz/include/graphviz/gvplugin_textlayout.h
+           tools/Graphviz/include/graphviz/pack.h
+           tools/Graphviz/include/graphviz/pathgeom.h
+           tools/Graphviz/include/graphviz/pathplan.h
+           tools/Graphviz/include/graphviz/textspan.h
+           tools/Graphviz/include/graphviz/types.h
+           tools/Graphviz/include/graphviz/usershape.h
+           tools/Graphviz/include/graphviz/xdot.h
+Copyright: 2011 AT&T Intellectual Property
+License:   __UNKNOWN__
+ This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ .
+ Contributors: Details at https://graphviz.org
+
+Files:     tools/yosys/share/intel/cyclone10/cells_map.v
+           tools/yosys/share/intel/cycloneiv/cells_map.v
+           tools/yosys/share/intel/cycloneive/cells_map.v
+           tools/yosys/share/intel/cyclonev/cells_map.v
+           tools/yosys/share/intel/max10/cells_map.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ > c60k28 (Viacheslav, VT) [at] yandex [dot] com
+ > Intel FPGA technology mapping. User must first simulate the generated \
+ > netlist before going to test it on board.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/License.txt
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/License.txt
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/License.txt
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/License.txt
+Copyright: 1998-2003 Neil Hodgson <neilh@scintilla.org>
+License:   ISC
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted,
+ provided that the above copyright notice appear in all copies and that
+ both that copyright notice and this permission notice appear in
+ supporting documentation.
+ .
+ NEIL HODGSON DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS, IN NO EVENT SHALL NEIL HODGSON BE LIABLE FOR ANY
+ SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+ OR PERFORMANCE OF THIS SOFTWARE.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/dynsections.js
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/menu.js
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/menudata.js
+Copyright: 1997-2020 Dimitri van Heesch
+License:   Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ .
+ @licend  The above is the entire license notice for the JavaScript code in this file
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/main.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/mainwindow.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/mainwindow.h
+Copyright: 2016 The Qt Company Ltd. Contact: https://www.qt.io/licensing/
+           2020 Riverbank Computing Limited
+License:   __UNKNOWN__
+ This file is part of the examples of the Qt Toolkit.
+
+Files:     tools/Graphviz/include/graphviz/gvcext.h
+           tools/Graphviz/include/graphviz/gvcjob.h
+Copyright: 2011 AT&T Intellectual Property
+License:   __UNKNOWN__
+ This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ .
+ Contributors: Details at https://graphviz.org
+ .
+ Common header used by both clients and plugins
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/SciLexer.h
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/Scintilla.h
+Copyright: 1998-2003 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ Most of this file is automatically generated from the Scintilla.iface interface definition
+ file which contains any comments about the definitions. HFacer.py does the generation.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexKVIrc.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/InputMethod.cpp
+Copyright: 1990-2011 Scientific Toolworks, Inc.
+           2011 Archaeopteryx Software, Inc.
+           2013 OmegaPhil <OmegaPhil+scintilla@gmail.com>, based in part from LexPython Copyright 1998-2002  Neil Hodgson <neilh@scintilla.org> and LexCmake Copyright 2007  Cristian Adam <cristian [dot] adam [at] gmx [dot] net>
+           2021 Riverbank Computing Limited
+License:   __UNKNOWN__
+ The License.txt file describes the conditions under which this software may
+ be distributed.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSAS.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexStata.cpp
+Copyright: __NO_COPYRIGHT__ in: libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexSAS.cpp
+           __NO_COPYRIGHT__ in: libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexStata.cpp
+License:   __UNKNOWN__
+ The License.txt file describes the conditions under which this software may
+ be distributed.
+ .
+ Developed as part of the StatTag project at Northwestern University Feinberg
+ School of Medicine with funding from Northwestern University Clinical and
+ Translational Sciences Institute through CTSA grant UL1TR001422.  This work
+ has not been reviewed or endorsed by NCATS or the NIH.
+
+Files:     tools/Graphviz/include/graphviz/gvconfig.h
+           tools/Graphviz/include/graphviz/gvplugin.h
+Copyright: 2011 AT&T Intellectual Property
+License:   __UNKNOWN__
+ This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ .
+ Contributors: Details at https://graphviz.org
+ .
+ Header used by plugins
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/StyleContext.cpp
+           libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/StyleContext.h
+Copyright: 1998-2004 Neil Hodgson <neilh@scintilla.org>
+License:   Public domain
+ This file is in the public domain.
+
+Files:     tools/yosys/share/include/kernel/utils.h
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ This file contains various c++ utility routines and helper classes that
+
+Files:     tools/yosys/share/include/kernel/yosys.h
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ *** NOTE TO THE READER ***
+ .
+ Maybe you have just opened this file in the hope to learn more about the
+ Yosys API. Let me congratulate you on this great decision!  ;)
+ .
+ If you want to know how the design is represented by Yosys in the memory,
+ you should read "kernel/rtlil.h".
+ .
+ If you want to know how to register a command with Yosys, you could read
+ "kernel/register.h", but it would be easier to just look at a simple
+ example instead. A simple one would be "passes/cmds/log.cc".
+ .
+ This header is very boring. It just defines some general things that
+ belong nowhere else and includes the interesting headers.
+ .
+ Find more information in the "CodingReadme" file.
+
+Files:     tools/yosys/share/achronix/speedster22i/cells_sim.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ > c60k28 (Viacheslav, VT) [at] yandex [dot] com
+ > Achronix eFPGA technology sim models. User must first simulate the generated \
+ > netlist before going to test it on board/custom chip.
+ > Changelog: 1) Removed unused VCC/GND modules
+
+Files:     tools/yosys/share/achronix/speedster22i/cells_map.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ > c60k28 (Viacheslav, VT) [at] yandex [dot] com
+ > Achronix eFPGA technology mapping. User must first simulate the generated \
+ > netlist before going to test it on board/custom chip.
+ .
+ > Input/Output buffers <
+ Input buffer map
+
+Files:     tools/yosys/share/intel/common/altpll_bb.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ No clearbox model
+
+Files:     tools/yosys/share/intel/a10gx/cells_map.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ Input buffer map
+
+Files:     tools/yosys/share/xilinx/cells_map.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ Convert negative-polarity reset to positive-polarity
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/README.doc
+Copyright: 1998-2003 Neil Hodgson <neilh@scintilla.org>
+License:   ISC
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted,
+ provided that the above copyright notice appear in all copies and that
+ both that copyright notice and this permission notice appear in
+ supporting documentation.
+ .
+ NEIL HODGSON DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS, IN NO EVENT SHALL NEIL HODGSON BE LIABLE FOR ANY
+ SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
+ OR PERFORMANCE OF THIS SOFTWARE.
+ </pre>
+ .
+ <h2>Installation</h2>
+ .
+ As supplied QScintilla will be built as a shared library/DLL and installed in
+ the same directories as the Qt libraries and include files.
+ .
+ If you wish to build a static version of the library then pass
+
+Files:     tools/yosys/share/xilinx/cells_sim.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ See Xilinx UG953 and UG474 for a description of the cell types below.
+
+Files:     tools/yosys/share/sf2/arith_map.v
+Copyright: 2012 Clifford Wolf <clifford@clifford.at>
+License:   ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ nothing here yet
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/include/Scintilla.iface
+Copyright: 2000-2003 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __HEADER___
+ A line starting with ## is a pure comment and should be stripped by readers.
+ A line starting with #! is for future shbang use
+ A line starting with # followed by a space is a documentation comment and refers
+ to the next feature definition.
+ .
+ Each feature is defined by a line starting with fun, get, set, val or evt.
+ cat -> start a category
+ fun -> a function
+ get -> a property get function
+ set -> a property set function
+ val -> definition of a constant
+ evt -> an event
+ enu -> associate an enumeration with a set of vals with a prefix
+ lex -> associate a lexer with the lexical classes it produces
+ .
+ All other feature names should be ignored. They may be defined in the future.
+ A property may have a set function, a get function or both. Each will have
+ "Get" or "Set" in their names and the corresponding name will have the obvious switch.
+ A property may be subscripted, in which case the first parameter is the subscript.
+ fun, get, and set features have a strict syntax:
+
+Files:     tools/Graphviz/include/graphviz/arith.h
+Copyright: 2011 AT&T Intellectual Property
+License:   __UNKNOWN__
+ This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ .
+ Contributors: Details at https://graphviz.org
+ .
+ geometric functions (e.g. on points and boxes) with application to, but
+ no specific dependence on graphs
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexVisualProlog.cpp
+Copyright: 1998-2005 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ The line state contains:
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexGui4Cli.cpp
+Copyright: 1998-2002 Neil Hodgson <neilh@scintilla.org>
+License:   __UNKNOWN__
+ This is the Lexer for Gui4Cli, included in SciLexer.dll
+ - by d. Keletsekis, 2/10/2003
+ .
+ To add to SciLexer.dll:
+ 1. Add the values below to INCLUDE\Scintilla.iface
+ 2. Run the scripts/HFacer.py script
+ 3. Run the scripts/LexGen.py script
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexlib/PropSetSimple.cpp
+Copyright: 1998-2010 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ Maintain a dictionary of properties
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexLaTeX.cpp
+Copyright: 1998-2001 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ Modified by G. HU in 2013. Added folding, syntax highting inside math environments, and changed some minor behaviors.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPO.cpp
+Copyright: 2012 Colomban Wendling <ban@herbesfolles.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ see https://www.gnu.org/software/gettext/manual/gettext.html#PO-Files for the syntax reference
+ some details are taken from the GNU msgfmt behavior (like that indent is allows in front of lines)
+ .
+ TODO:
+ * add keywords for flags (fuzzy, c-format, ...)
+ * highlight formats inside c-format strings (%s, %d, etc.)
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexPOV.cpp
+Copyright: 1998-2005 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ Some points that distinguish from a simple C lexer:
+ Identifiers start only by a character.
+ No line continuation character.
+ Strings are limited to 256 characters.
+ Directives are similar to preprocessor commands,
+ but we match directive keywords and colorize incorrect ones.
+ Block comments can be nested (code stolen from my code in LexLua).
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTADS3.cpp
+Copyright: 1998-2006 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ TADS3 is a language designed by Michael J. Roberts for the writing of text
+ based games.  TADS comes from Text Adventure Development System.  It has good
+ support for the processing and outputting of formatted text and much of a
+ TADS program listing consists of strings.
+ .
+ TADS has two types of strings, those enclosed in single quotes (') and those
+ enclosed in double quotes (").  These strings have different symantics and
+ can be given different highlighting if desired.
+ .
+ There can be embedded within both types of strings html tags
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexLPeg.cpp
+Copyright: 2006-2018 Mitchell mitchell.att.foicica.com. See License.txt.
+License:   __UNKNOWN__
+ Lua-powered dynamic language lexer for Scintilla.
+ .
+ For documentation on writing lexers, see *../doc/LPegLexer.html*.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexCSS.cpp
+Copyright: 1998-2002 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ TODO: handle SCSS nested properties like font: { weight: bold; size: 1em; }
+ TODO: handle SCSS interpolation: #{}
+ TODO: add features for Less if somebody feels like contributing; http://lesscss.org/
+ TODO: refactor this monster so that the next poor slob can read it!
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexBasic.cpp
+Copyright: 1998-2003 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ This tries to be a unified Lexer/Folder for all the BlitzBasic/BlitzMax/PurBasic basics
+ and derivatives. Once they diverge enough, might want to split it into multiple
+ lexers for more code clearity.
+ .
+ Mail me (elias <at> users <dot> sf <dot> net) for any bugs.
+ .
+ Folding only works for simple things like functions or types.
+ .
+ You may want to have a look at my ctags lexer as well, if you additionally to coloring
+ and folding need to extract things like label tags in your editor.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexMetapost.cpp
+Copyright: : 1998-2003  Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ This lexer is derived from the one written for the texwork environment (1999++) which in
+ turn is inspired on texedit (1991++) which finds its roots in wdt (1986).
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexBibTeX.cpp
+Copyright: 2008-2010 Sergiu Dotenco. The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ @brief General BibTeX coloring scheme.
+ @author Sergiu Dotenco
+ @date April 18, 2009
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexTeX.cpp
+Copyright: : 1998-2003  Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ This lexer is derived from the one written for the texwork environment (1999++) which in
+ turn is inspired on texedit (1991++) which finds its roots in wdt (1986).
+ .
+ If you run into strange boundary cases, just tell me and I'll look into it.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexBaan.cpp
+Copyright: 2001 Vamsi Potluru <vamsi@who.net> & Praveen Ambekar <ambekarpraveen@yahoo.com>
+License:   __UNKNOWN__
+ C standard library
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexProgress.cpp
+Copyright: 2006-2016 Yuval Papish <Yuval@YuvCom.com> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ TODO:
+ .
+ SpeedScript support in html lexer
+ Differentiate between labels and variables
+ Option 1: By symbols table
+ Option 2: As a single unidentified symbol in a sytactical line
+
+Files:     tools/Graphviz/include/graphviz/geom.h
+Copyright: 2011 AT&T Intellectual Property
+License:   __UNKNOWN__
+ This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ .
+ Contributors: Details at https://graphviz.org
+ .
+ geometric types and macros (e.g. points and boxes) with application to, but
+ no specific dependence on graphs
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/src/RunStyles.h
+Copyright: 1998-2007 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ Styling buffer using one element for each run rather than using
+ a filled buffer.
+
+Files:     libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/scintilla/lexers/LexHex.cpp
+Copyright: 1998-2001 Neil Hodgson <neilh@scintilla.org> The License.txt file describes the conditions under which this software may be distributed.
+License:   __UNKNOWN__
+ Motorola S-Record
+
+#----------------------------------------------------------------------------
+# xml and html files (skipped):
+#         lang/Chinese.qm
+#         lang/English.qm
+#         release/config.ini
+#         release/lang/Chinese.qm
+#         release/lang/English.qm
+#         src/new_constrain.ui
+#         src/new_testbench.ui
+#         src/new_module.ui
+#         src/mainwindow.ui
+#         src/Chinese.qm
+#         src/English.qm
+#         src/eda_qt.pro.user
+#         src/about_dialog.ui
+#         src/English.ts
+#         src/code_editor_dialog.ui
+#         src/Chinese.ts
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/example/application.qrc
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/StyleMetadata.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/LPegLexer.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/Steps.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/ScintillaUsage.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/ScintillaDoc.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/ScintillaHistory.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/Icons.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/Design.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/ScintillaToDo.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/ScintillaRelated.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/ScintillaDownload.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/Privacy.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/SciCoding.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/Scintilla/index.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerMarkdown.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_b.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciScintillaBase-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPO.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_j.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerTeX.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciAPIs.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_z.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerHTML-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_i.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciAbstractAPIs-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_j.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_k.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_k.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerProperties-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerVHDL-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_q.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerJSON-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciStyledText-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_d.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_g.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_m.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerBatch.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_u.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerBash-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerBatch-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCSharp.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_t.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_e.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCoffeeScript.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_b.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPascal.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_r.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerSpice.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerJavaScript-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classes.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_f.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_h.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_w.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciStyle.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerFortran.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_f.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_i.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciDocument-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/doxygen.svg
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCSS.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerMatlab.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_l.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciScintillaBase.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_r.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerHTML.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPython-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_d.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerJavaScript.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciAPIs-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerDiff-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_o.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCustom.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciCommand-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_b.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_m.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_p.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_m.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_h.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciDocument.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerYAML.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPerl.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerEDIFACT-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPO-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerOctave-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_x.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerMakefile-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerFortran77.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_n.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciAbstractAPIs.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_x.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerFortran77-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerXML-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerOctave.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciCommand.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerTeX-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_h.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerJava-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciStyle-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciCommandSet.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCMake.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/dir_e7e7b0b6fe362def31d601fa026bbeed.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_c.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerIDL.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciStyledText.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCSS-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerEDIFACT.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_w.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCustom-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_p.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexer.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerD-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerYAML-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_z.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/hierarchy.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPOV-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciMacro.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerVHDL.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_o.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPOV.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerMakefile.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_c.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerSQL-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_l.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_n.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_u.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerJava.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerLua.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_q.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerVerilog-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_l.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerMatlab-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_u.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_t.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_i.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerRuby.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerSpice-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerTCL-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciScintilla-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPascal-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerProperties.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_q.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciScintilla.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciPrinter-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerVerilog.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_v.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_r.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerLua-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_v.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPython.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerXML.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_p.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerAVS-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerSQL.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerD.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPostScript.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_t.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerIDL-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerBash.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCMake-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPostScript-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_c.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerFortran-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_e.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_e.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCSharp-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_z.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciPrinter.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_~.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_~.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCPP.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/index.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_enum.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerRuby-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_v.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/annotated.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerPerl-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerAVS.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_s.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerTCL.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerMarkdown-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_g.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_o.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_s.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexer-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_w.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCoffeeScript-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciMacro-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerDiff.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_s.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_d.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciCommandSet-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_func_g.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerJSON.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_f.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/functions_eval_k.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/doc/html/classQsciLexerCPP-members.html
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_de.qm
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_fr.ts
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_es.qm
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_cs.ts
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_pt_br.qm
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_pt_br.ts
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_de.ts
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_cs.qm
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_fr.qm
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/qscintilla_es.ts
+
+#----------------------------------------------------------------------------
+# huge files   (skipped):
+#         release/eda_qt_V1.1_boxed.exe
+#         release/Qt5Core.dll
+#         release/Qt5Widgets.dll
+#         release/libstdc++-6.dll
+#         release/qscintilla2_qt5.dll
+#         release/Qt5Gui.dll
+#         release/platforms/qwindows.dll
+#         tools/yosys/yosys-abc.exe
+#         tools/yosys/yosys.exe
+#         tools/Graphviz/bin/glib-2.dll
+#         tools/Graphviz/bin/cairo.dll
+#         src/eda_qt
+#         src/qscintilla2_qt5.dll
+#         libs/QScintilla_src-2.13.0.tar.gz
+#         libs/QScintilla_src-2.13.0/QScintilla_src-2.13.0/src/libqscintilla2_qt5.so.15.1.0
+#         libs/macos/libqscintilla2_qt6.15.1.0.dylib
+#         libs/arm64/libqscintilla2_qt5_arm64.so
+#         libs/linux/libqscintilla2_qt5.so
+#         libs/linux/libqscintilla2_qt5.so1
+#         libs/windows/qscintilla2_qt5.dll
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
+
+#----------------------------------------------------------------------------
+# License file: LICENSE
+ MIT License
+ .
+ Copyright (c) 2021 alainchen
+ .
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.

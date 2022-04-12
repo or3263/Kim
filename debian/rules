@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+#export JOBS= $(shell cat /proc/cpuinfo | grep 'process' | wc -l)
+#export PKG=ca.littlesvr.www.isomaster
+
+%:
+	dh $@  
+ 
+override_dh_auto_clean:
+	#rm -r $(CURDIR)/debian/build/
+	
+	
+override_dh_auto_configure:
+	mkdir -p $(CURDIR)/debian/build
+	cd $(CURDIR)/debian/build && qmake $(CURDIR)/src
+
+override_dh_auto_build:
+	cd $(CURDIR)/debian/build && make -j4
+
+override_dh_auto_install:
+	cd $(CURDIR)/debian/build && make install INSTALL_ROOT=$(CURDIR)/debian/vfeda
+ 
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info	
+    
+
+
