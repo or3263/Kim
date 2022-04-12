@@ -9,10 +9,11 @@ deploy-build_ubuntu_x86:
     - build_ubuntu_x86
   script:
     - echo '开始在ubuntu_x86上编译'
-    - cd src/
+#    - cd src/
     - pwd
-    - qmake
-    - make
+#    - qmake
+#    - make
+    - debuild -b
     - echo 'ubuntu_x86上编译完成'
 # #    - scp eda_qt root@101.43.50.254:/var/www/html/
 #     - cd ~
