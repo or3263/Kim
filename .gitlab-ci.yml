@@ -43,11 +43,11 @@ deploy-build_ubuntu_arm64:
     - build_ubuntu_arm64
   script:
     - echo '开始在ubuntu_arm64上编译'
-    - cd src/
+#    - cd src/
     - pwd
-    - qmake
-    - make
-#    - debuild -b
+#    - qmake
+#    - make
+    - debuild -b
     - echo 'ubuntu_arm64上编译完成'
 # deploy-build_centos_x86:
 #   stage: deploy
