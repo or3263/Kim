@@ -23,7 +23,7 @@ LIBS+= "$$PWD/../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
 #-------Linux-------------
 unix {
 contains(QT_ARCH, arm64){#arm64
-LIBS+= "$$PWD/../libs/arm64/libqscintilla2_qt5_arm64.so"
+LIBS+= "$$PWD/../libs/arm64/libqscintilla2_qt5.so"
 target.path = /usr/bin
 lib.files = $$PWD/../libs/arm64/*
 lib.path = $$PREFIX/usr/lib
