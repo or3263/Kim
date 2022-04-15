@@ -28,17 +28,17 @@ deploy-build_macos_x86:
     - pwd
     - echo 'macos_x86上编译完成'
 
-deploy-build_ubuntu_arm64:
+deploy-build_raspi_arm64:
   stage: deploy
   only:
     - tg
   tags:
-    - build_ubuntu_arm64
+    - build_raspi_arm64
   script:
-    - echo '开始在ubuntu_arm64上编译'
+    - echo '开始在raspi_arm64上编译'
     - pwd
     - debuild -b
-    - echo 'ubuntu_arm64上编译完成'
+    - echo 'raspi_arm64上编译完成'
 
 deploy-build_ubuntu_arm64_kp:
   stage: deploy
