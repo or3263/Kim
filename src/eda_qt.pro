@@ -42,7 +42,7 @@ INSTALLS += target desktop icon lib translations
 
 equals(QT_MAJOR_VERSION,5){
 equals(QT_MINOR_VERSION,15){
-equals(QT_PATCH_VERSION,3){#---5.15.3
+#---5.15.
 LIBS+= "$$PWD/../libs/arm64/5.15.3/libqscintilla2_qt5.so"
 target.path = /usr/bin
 lib.files = $$PWD/../libs/arm64/5.15.3/*
@@ -55,7 +55,7 @@ translations.files = $$PWD/../lang
 translations.path = $$PREFIX/usr/bin/
 
 INSTALLS += target desktop icon lib translations
-}}}
+}}
 
 }
 
