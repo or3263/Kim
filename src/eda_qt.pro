@@ -23,9 +23,12 @@ LIBS+= "$$PWD/../libs/macos/libqscintilla2_qt6.15.1.0.dylib"
 #-------Linux-------------
 unix {
 contains(QT_ARCH, arm64){#arm64
-LIBS+= "$$PWD/../libs/arm64/libqscintilla2_qt5.so"
+equals(QT_MAJOR_VERSION,5){
+equals(QT_MINOR_VERSION,11){
+equals(QT_PATCH_VERSION,3){#---5.11.3
+LIBS+= "$$PWD/../libs/arm64/5.11.3/libqscintilla2_qt5.so"
 target.path = /usr/bin
-lib.files = $$PWD/../libs/arm64/*
+lib.files = $$PWD/../libs/arm64/5.11.3/*
 lib.path = $$PREFIX/usr/lib
 desktop.files = $$PWD/vfeda.desktop
 desktop.path = $$PREFIX/usr/share/applications
@@ -35,7 +38,28 @@ translations.files = $$PWD/../lang
 translations.path = $$PREFIX/usr/bin/
 
 INSTALLS += target desktop icon lib translations
-}else{#x86
+}}}
+
+equals(QT_MAJOR_VERSION,5){
+equals(QT_MINOR_VERSION,15){
+equals(QT_PATCH_VERSION,3){#---5.15.3
+LIBS+= "$$PWD/../libs/arm64/5.15.3/libqscintilla2_qt5.so"
+target.path = /usr/bin
+lib.files = $$PWD/../libs/arm64/5.15.3/*
+lib.path = $$PREFIX/usr/lib
+desktop.files = $$PWD/vfeda.desktop
+desktop.path = $$PREFIX/usr/share/applications
+icon.files = $$PWD/icon.ico
+icon.path = $$PREFIX/usr/share/icons
+translations.files = $$PWD/../lang
+translations.path = $$PREFIX/usr/bin/
+
+INSTALLS += target desktop icon lib translations
+}}}
+
+}
+
+else{#x86
 LIBS+= "$$PWD/../libs/linux/libqscintilla2_qt5.so"
 target.path = /usr/bin
 lib.files = $$PWD/../libs/linux/*
