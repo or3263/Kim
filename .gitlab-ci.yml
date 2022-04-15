@@ -9,16 +9,9 @@ deploy-build_ubuntu_x86:
     - build_ubuntu_x86
   script:
     - echo '开始在ubuntu_x86上编译'
-#    - cd src/
     - pwd
-#    - qmake
-#    - make
     - debuild -b
     - echo 'ubuntu_x86上编译完成'
-# #    - scp eda_qt root@101.43.50.254:/var/www/html/
-#     - cd ~
-#     - pwd
-#     - echo "传输完成"
 deploy-build_macos_x86:
   stage: deploy
   only:
@@ -43,10 +36,7 @@ deploy-build_ubuntu_arm64:
     - build_ubuntu_arm64
   script:
     - echo '开始在ubuntu_arm64上编译'
-#    - cd src/
     - pwd
-#    - qmake
-#    - make
     - debuild -b
     - echo 'ubuntu_arm64上编译完成'
 
@@ -58,12 +48,25 @@ deploy-build_ubuntu_arm64_kp:
     - build_ubuntu_arm64_kp
   script:
     - echo '开始在ubuntu_arm64_kp上编译'
-#    - cd src/
     - pwd
-#    - qmake
-#    - make
     - debuild -b
     - echo 'ubuntu_arm64_kp上编译完成'
+
+deploy-build_uos_arm64_kp:
+  stage: deploy
+  only:
+    - tg
+  tags:
+    - build_uos_arm64_kp
+  script:
+    - echo '开始在uos_arm64_kp上编译'
+    - pwd
+    - debuild -b
+    - echo 'uos_arm64_kp上编译完成'
+
+
+
+
 # deploy-build_centos_x86:
 #   stage: deploy
 #   only:
