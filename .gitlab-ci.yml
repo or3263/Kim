@@ -22,7 +22,7 @@ deploy-build_macos_x86:
     - echo '开始在macos_x86上编译'
     - cd src/
     - /Users/chen/Qt/6.2.2/macos/bin/qmake
-    - make
+    - make -j12
     - /Users/chen/Qt/6.2.2/macos/bin/macdeployqt eda_qt.app
     - open ./eda_qt.app
     - pwd
