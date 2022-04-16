@@ -20,7 +20,7 @@ override_dh_auto_configure:
 	cd $(CURDIR)/debian/build && qmake $(CURDIR)/src
 
 override_dh_auto_build:
-	cd $(CURDIR)/debian/build && make -j4
+	cd $(CURDIR)/debian/build && make -j2
 
 override_dh_auto_install:
 	cd $(CURDIR)/debian/build && make install INSTALL_ROOT=$(CURDIR)/debian/vfeda
