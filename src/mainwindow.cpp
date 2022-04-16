@@ -1130,3 +1130,45 @@ void MainWindow::on_actionEnglish_triggered()
     qApp->installTranslator(&m);
     this->ui->retranslateUi(this);
 }
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    MainWindow::on_actionSave_triggered();
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    MainWindow::on_actionSave_As_triggered();
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    MainWindow::on_actionOpen_triggered();
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    MainWindow::on_actionProject_triggered();
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    MainWindow::on_actionCode_Generate_triggered();
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    MainWindow::on_actionClear_Log_triggered();
+}
+
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    MainWindow::on_actionAbout_triggered();
+}
+
