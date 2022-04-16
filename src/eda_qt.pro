@@ -42,7 +42,7 @@ INSTALLS += target desktop icon lib translations
 
 equals(QT_MAJOR_VERSION,5){
 equals(QT_MINOR_VERSION,15){
-#---5.15.
+equals(QT_PATCH_VERSION,3){#---5.15.3 ubuntu_arm_kp
 LIBS+= "$$PWD/../libs/arm64/5.15.3/libqscintilla2_qt5.so"
 target.path = /usr/bin
 lib.files = $$PWD/../libs/arm64/5.15.3/*
@@ -55,7 +55,25 @@ translations.files = $$PWD/../lang
 translations.path = $$PREFIX/usr/bin/
 
 INSTALLS += target desktop icon lib translations
-}}
+}}}
+
+
+equals(QT_MAJOR_VERSION,5){
+equals(QT_MINOR_VERSION,15){
+equals(QT_PATCH_VERSION,2){#---5.15.2 raspi_arm
+LIBS+= "$$PWD/../libs/arm64/5.15.2/libqscintilla2_qt5.so"
+target.path = /usr/bin
+lib.files = $$PWD/../libs/arm64/5.15.2/*
+lib.path = $$PREFIX/usr/lib
+desktop.files = $$PWD/vfeda.desktop
+desktop.path = $$PREFIX/usr/share/applications
+icon.files = $$PWD/icon.ico
+icon.path = $$PREFIX/usr/share/icons
+translations.files = $$PWD/../lang
+translations.path = $$PREFIX/usr/bin/
+
+INSTALLS += target desktop icon lib translations
+}}}
 
 }
 
