@@ -2,15 +2,16 @@
 ## 此分支为1.0版 开发版本在new分支
 
 
-## 可执行文件请在右侧“发行版”中下载
-## 支持Windows、Macos、Linux(X86 & Arm64)平台
-
+## 可执行文件请在右侧“发行版”中下载，或访问[https://www.vfeda.com](https://www.vfeda.com)
+## 支持Windows、Macos、Ubuntu(X86 & Arm64)
+## Uos(龙芯、兆芯、海光、飞腾、麒麟)平台请在Uos应用商店内下载
+![输入图片说明](pics/mmexport1651912484385.jpg)
 
 ## 简介	Introduction
 
 ![DX-20220118@2x](pics/DX-20220118@2x.png)
 
-此软件是用QT进行编写的一款可视化的用于FPGA设计的EDA软件。具备了传统FPGA EDA软件不具备的可视化设计功能，使开发工作变得更简单、直观。特点是可视化和代码相结合，灵活性高，自动生成代码等。
+此软件是用QT进行编写的一款跨平台的可视化的用于FPGA设计的EDA软件。具备了传统FPGA EDA软件不具备的可视化设计功能，使开发工作变得更简单、直观。特点是可视化和代码相结合，灵活性高，自动生成代码等。
 
 This software is a visualized EDA software for FPGA design written by QT. It has the visual design function that traditional FPGA EDA software does not have, which makes the development work more simple and intuitive. It is characterized by the combination of visualization and code, high flexibility and automatic code generation.
 
